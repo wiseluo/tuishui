@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>开票人管理</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bulma.css" />
+    <style>
+        .notification a:not(.button) {
+            text-decoration: none;
+        }
+
+        .notification {
+            background-color: white;
+        }
+
+        .table th {
+            text-align: center;
+        }
+
+        .modal.is-active {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="notification">
+            <div class="tabs">
+                <ul>
+                    <li class="is-active">
+                        <a>所有</a>
+                    </li>
+                    <li>
+                        <a>草稿</a>
+                    </li>
+                    <li>
+                        <a>审批中</a>
+                    </li>
+                    <li>
+                        <a>审批通过</a>
+                    </li>
+                    <li>
+                        <a>审批退回</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Main container -->
+            <nav class="level">
+                <!-- Left side -->
+                <div class="level-left">
+                    <div class="level-item">
+                        <div class="field has-addons">
+                            <p class="control">
+                                <input class="input" type="text" placeholder="开票人名称／纳税人识别号">
+                            </p>
+                            <p class="control">
+                                <button class="button">
+                                    搜索
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side -->
+                <div class="level-right">
+                    <p class="level-item">
+                        <a class="button is-danger" id="open">添加开票人</a>
+                    </p>
+                </div>
+            </nav>
+            <table class="table" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>开票人名称</th>
+                        <th>纳税人识别号</th>
+                        <th>提交时间</th>
+                        <th>状态</th>
+                        <th>开票人类型</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>易小曦股份有限公司</th>
+                        <th>22</th>
+                        <th>2018-07-27</th>
+                        <th>审批通过</th>
+                        <th>审批通过</th>
+                        <th>
+                            <a class="button is-info" id="open2">详情</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>易小曦股份有限公司</th>
+                        <th>22</th>
+                        <th>2018-07-27</th>
+                        <th>审批通过</th>
+                        <th>审批通过</th>
+                        <th>
+                            <a class="button is-info">详情</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>易小曦股份有限公司</th>
+                        <th>22</th>
+                        <th>2018-07-27</th>
+                        <th>审批通过</th>
+                        <th>审批通过</th>
+                        <th>
+                            <a class="button is-info">详情</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>易小曦股份有限公司</th>
+                        <th>22</th>
+                        <th>2018-07-27</th>
+                        <th>审批通过</th>
+                        <th>审批通过</th>
+                        <th>
+                            <a class="button is-info">详情</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>易小曦股份有限公司</th>
+                        <th>22</th>
+                        <th>2018-07-27</th>
+                        <th>审批通过</th>
+                        <th>审批通过</th>
+                        <th>
+                            <a class="button is-info">详情</a>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <nav class="pagination" role="navigation" aria-label="pagination">
+                <a class="pagination-previous">上一页</a>
+                <a class="pagination-next">下一页</a>
+                <ul class="pagination-list">
+                    <li>
+                        <a class="pagination-link is-current" aria-label="page 1" aria-current="page">1</a>
+                    </li>
+                    <li>
+                        <a class="pagination-link" aria-label="Goto page 2">2</a>
+                    </li>
+                    <li>
+                        <a class="pagination-link" aria-label="Goto Page 3">3</a>
+                    </li>
+                    <li>
+                        <a class="pagination-link" aria-label="Goto page 5">4</a>
+                    </li>
+                    <li>
+                        <span class="pagination-ellipsis">&hellip;</span>
+                    </li>
+                    <li>
+                        <a class="pagination-link" aria-label="Goto page 86">86</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="modal" id="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card" style="width:80%;background: white">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">开票人公司基本信息</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <div class="columns">
+                        <div class="column">
+                            <section class="modal-card-body">
+                                <div class="field">
+                                    <label class="label">开票人公司名称</label>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="开票人公司名称">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">开票人联系方式</label>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="开票人联系方式">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">纳税人识别号</label>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="纳税人识别号">
+                                        <label class="label" style="color: #999;">税务登记证上的号，每个企业的识别号都是唯一的，相当于企业的“身份证”号</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">营业执照注册号</label>
+                                    <div class="control">
+                                        <input class="input" type="date" placeholder="营业执照注册号" value="2018-09-24">
+                                        <label class="label" style="color: #999;">填写一般纳税人认定时间，请与提交的“一般纳税人认定书照片”信息保持一致</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">开票人地址</label>
+                                    <div class="field is-grouped is-grouped-multiline">
+                                        <div class="control">
+                                            <p class="select">
+                                                <select id="one">
+                                                    <option selected>省份</option>
+                                                </select>
+                                            </p>
+                                            <p class="select">
+                                                <select id="two">
+                                                    <option selected>城市</option>
+                                                </select>
+                                            </p>
+                                            <p class="select">
+                                                <select id="three">
+                                                    <option selected>区域</option>
+                                                </select>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="开票人地址">
+                                        <label class="label" style="color: #999;">开票人地址 : 即工厂地址，需和税务登记证地址一致，如不一致，需提供证明材料。</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">境内货源地</label>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="境内货源地">
+                                        <label class="label" style="color: #999;">请根据企业注册地为准，填写正确的境内货源地</label>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="column">
+                            <section class="modal-card-body">
+                                <div class="field">
+                                    <label class="label">营业执照副本</label>
+                                    <div class="control">
+                                        <div class="columns">
+                                            <div class="column">
+                                                <div class="field">
+                                                    <div class="file is-boxed">
+                                                        <label class="file-label">
+                                                            <input class="file-input" type="file" name="resume">
+                                                            <span class="file-cta">
+                                                                <span class="file-icon">
+                                                                    <i class="fas fa-cloud-upload-alt"></i>
+                                                                </span>
+                                                                <span class="file-label">
+                                                                    Warning file…
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="column">
+                                                <div class="field">
+                                                    <div class="file is-boxed">
+                                                        <label class="file-label">
+                                                            <input class="file-input" type="file" name="resume">
+                                                            <span class="file-cta">
+                                                                <span class="file-icon">
+                                                                    <i class="fas fa-cloud-upload-alt"></i>
+                                                                </span>
+                                                                <span class="file-label">
+                                                                    Warning file…
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="column">
+                                                <div class="field">
+                                                    <div class="file is-boxed">
+                                                        <label class="file-label">
+                                                            <input class="file-input" type="file" name="resume">
+                                                            <span class="file-cta">
+                                                                <span class="file-icon">
+                                                                    <i class="fas fa-cloud-upload-alt"></i>
+                                                                </span>
+                                                                <span class="file-label">
+                                                                    Warning file…
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="column">
+                                                <div class="field">
+                                                    <div class="file is-boxed">
+                                                        <label class="file-label">
+                                                            <input class="file-input" type="file" name="resume">
+                                                            <span class="file-cta">
+                                                                <span class="file-icon">
+                                                                    <i class="fas fa-cloud-upload-alt"></i>
+                                                                </span>
+                                                                <span class="file-label">
+                                                                    Warning file…
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="columns">
+                                            <div class="column">
+                                                <div class="field">
+                                                    <div class="file is-boxed">
+                                                        <label class="file-label">
+                                                            <input class="file-input" type="file" name="resume">
+                                                            <span class="file-cta">
+                                                                <span class="file-icon">
+                                                                    <i class="fas fa-cloud-upload-alt"></i>
+                                                                </span>
+                                                                <span class="file-label">
+                                                                    Warning file…
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="column">
+                                                <div class="field">
+                                                    <div class="file is-boxed">
+                                                        <label class="file-label">
+                                                            <input class="file-input" type="file" name="resume">
+                                                            <span class="file-cta">
+                                                                <span class="file-icon">
+                                                                    <i class="fas fa-cloud-upload-alt"></i>
+                                                                </span>
+                                                                <span class="file-label">
+                                                                    Warning file…
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="column">
+                                                <div class="field">
+                                                    <div class="file is-boxed">
+                                                        <label class="file-label">
+                                                            <input class="file-input" type="file" name="resume">
+                                                            <span class="file-cta">
+                                                                <span class="file-icon">
+                                                                    <i class="fas fa-cloud-upload-alt"></i>
+                                                                </span>
+                                                                <span class="file-label">
+                                                                    Warning file…
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="column">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <table class="table" style="width:100%">
+                                        <a class="button is-danger" id="open3">产品列表</a>
+
+                                        <thead>
+                                            <tr>
+                                                <th>开票人名称</th>
+                                                <th>纳税人识别号</th>
+                                                <th>提交时间</th>
+                                                <th>状态</th>
+                                                <th>开票人类型</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>易小曦股份有限公司</th>
+                                                <th>22</th>
+                                                <th>2018-07-27</th>
+                                                <th>审批通过</th>
+                                                <th>审批通过</th>
+                                                <th>
+                                                    <a class="button is-info" id="open2">详情</a>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>易小曦股份有限公司</th>
+                                                <th>22</th>
+                                                <th>2018-07-27</th>
+                                                <th>审批通过</th>
+                                                <th>审批通过</th>
+                                                <th>
+                                                    <a class="button is-info">详情</a>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>易小曦股份有限公司</th>
+                                                <th>22</th>
+                                                <th>2018-07-27</th>
+                                                <th>审批通过</th>
+                                                <th>审批通过</th>
+                                                <th>
+                                                    <a class="button is-info">详情</a>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>易小曦股份有限公司</th>
+                                                <th>22</th>
+                                                <th>2018-07-27</th>
+                                                <th>审批通过</th>
+                                                <th>审批通过</th>
+                                                <th>
+                                                    <a class="button is-info">详情</a>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>易小曦股份有限公司</th>
+                                                <th>22</th>
+                                                <th>2018-07-27</th>
+                                                <th>审批通过</th>
+                                                <th>审批通过</th>
+                                                <th>
+                                                    <a class="button is-info">详情</a>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="checkbox">
+                                            <input type="checkbox"> I agree to the
+                                            <a href="#">terms and conditions</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <footer class="modal-card-foot">
+                        <button class="button is-success">保存</button>
+                        <button class="button" id="cancel">关闭</button>
+                    </footer>
+                </div>
+            </div>
+            <div class="modal" id="modal2">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">开票人公司基本信息</p>
+                        <button class="delete" aria-label="close" id="delete2"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <div class="field">
+                            <label class="label">开票人公司名称</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="开票人公司名称" disabled>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">开票人联系方式</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="开票人联系方式" disabled>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">纳税人识别号</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="纳税人识别号" disabled>
+                                <label class="label" style="color: #999;">税务登记证上的号，每个企业的识别号都是唯一的，相当于企业的“身份证”号</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">营业执照注册号</label>
+                            <div class="control">
+                                <input class="input" type="date" placeholder="营业执照注册号" value="2018-09-24" disabled>
+                                <label class="label" style="color: #999;">填写一般纳税人认定时间，请与提交的“一般纳税人认定书照片”信息保持一致</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">开票人地址</label>
+                            <div class="field is-grouped is-grouped-multiline">
+                                <div class="control">
+                                    <p class="select">
+                                        <select disabled>
+                                            <option selected>省份</option>
+                                        </select>
+                                    </p>
+                                    <p class="select">
+                                        <select disabled>
+                                            <option selected>城市</option>
+                                        </select>
+                                    </p>
+                                    <p class="select">
+                                        <select disabled>
+                                            <option selected>区域</option>
+                                        </select>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="开票人地址" disabled>
+                                <label class="label" style="color: #999;">开票人地址 : 即工厂地址，需和税务登记证地址一致，如不一致，需提供证明材料。</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">境内货源地</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="境内货源地" disabled>
+                                <label class="label" style="color: #999;">请根据企业注册地为准，填写正确的境内货源地</label>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button is-success">确认</button>
+                        <button class="button" id="cancel2">关闭</button>
+                    </footer>
+                </div>
+            </div>
+            <div class="modal" id="modal3">
+                <div class="modal-background"></div>
+                <div class="modal-card" style="width:80%;">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">产品信息</p>
+                    </header>
+                    <section class="modal-card-body">
+                        <div class="field">
+                            <div class="control">
+                                <table class="table" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <input type="checkbox">
+                                            </th>
+                                            <th>产品图片</th>
+                                            <th>产品名称</th>
+                                            <th>HSCode</th>
+                                            <th>型号</th>
+                                            <th>货号</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <input type="checkbox">
+                                            </th>
+                                            <th>
+                                                <img src="https://www.itsvse.com/uc_server/data/avatar/000/00/18/07_avatar_middle.jpg" alt="">
+                                            </th>
+                                            <th>地垫</th>
+                                            <th>57050020</th>
+                                            <th>无型号</th>
+                                            <th></th>
+                                            <th>
+                                                <a class="button is-danger">删除</a>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <input type="checkbox">
+                                            </th>
+                                            <th>
+                                                <img src="https://www.itsvse.com/uc_server/data/avatar/000/00/18/07_avatar_middle.jpg" alt="">
+                                            </th>
+                                            <th>地垫</th>
+                                            <th>57050020</th>
+                                            <th>无型号</th>
+                                            <th></th>
+                                            <th>
+                                                <a class="button is-danger">删除</a>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <input type="checkbox">
+                                            </th>
+                                            <th>
+                                                <img src="https://www.itsvse.com/uc_server/data/avatar/000/00/18/07_avatar_middle.jpg" alt="">
+                                            </th>
+                                            <th>地垫</th>
+                                            <th>57050020</th>
+                                            <th>无型号</th>
+                                            <th></th>
+                                            <th>
+                                                <a class="button is-danger">删除</a>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <input type="checkbox">
+                                            </th>
+                                            <th>
+                                                <img src="https://www.itsvse.com/uc_server/data/avatar/000/00/18/07_avatar_middle.jpg" alt="">
+                                            </th>
+                                            <th>地垫</th>
+                                            <th>57050020</th>
+                                            <th>无型号</th>
+                                            <th></th>
+                                            <th>
+                                                <a class="button is-danger">删除</a>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <input type="checkbox">
+                                            </th>
+                                            <th>
+                                                <img src="https://www.itsvse.com/uc_server/data/avatar/000/00/18/07_avatar_middle.jpg" alt="">
+                                            </th>
+                                            <th>地垫</th>
+                                            <th>57050020</th>
+                                            <th>无型号</th>
+                                            <th></th>
+                                            <th>
+                                                <a class="button is-danger">删除</a>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button is-success">保存</button>
+                        <button class="button" id="cancel3">关闭</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $("#open").click(function () {
+            $("#modal").addClass("is-active");
+        })
+        $(".delete").click(function () {
+            $("#modal").removeClass("is-active");
+        })
+        $("#cancel").click(function () {
+            $("#modal").removeClass("is-active");
+        })
+    </script>
+    <script>
+        $("#open2").click(function () {
+            $("#modal2").addClass("is-active");
+        })
+        $("#delete2").click(function () {
+            $("#modal2").removeClass("is-active");
+        })
+        $("#cancel2").click(function () {
+            $("#modal2").removeClass("is-active");
+        })
+    </script>
+    <script>
+        $("#open3").click(function () {
+            $("#modal3").addClass("is-active");
+        })
+        $("#cancel3").click(function () {
+            $("#modal3").removeClass("is-active");
+        })
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var province = [{
+                    "name": "广东省",
+                    "city": [{
+                            "name": "义乌市",
+                            "area": ["越秀区", "荔湾区", "海珠区", "天河区,白云区"]
+                        },
+                        {
+                            "name": "深圳市",
+                            "area": ["福田区", "罗湖区", "南山区", "宝安区", "龙岗区"]
+                        }
+                    ]
+                },
+                {
+                    "name": "浙江省",
+                    "city": [{
+                            "name": "杭州市",
+                            "area": ["上城区", "下城区", "江干区", "西湖区"]
+                        },
+                        {
+                            "name": "丽水",
+                            "area": ["莲都区", "松阳县", "遂昌县", "云和县"]
+                        }
+                    ]
+                },
+                {
+                    "name": "江西省",
+                    "city": [{
+                            "name": "南昌市",
+                            "area": ["东湖区", "西湖区", "青云谱区", "湾里区"]
+                        },
+                        {
+                            "name": "九江市",
+                            "area": ["浔阳区", "庐山区", "瑞昌市", "九江县"]
+                        },
+                        {
+                            "name": "赣州市",
+                            "area": ["章贡区", "南康区", "上犹县", "赣县"]
+                        }
+                    ]
+                },
+            ];
+
+            // 二级联动
+            $("#two").change(function () {
+                var one_index = $("#one option:selected").index();
+                var two_index = $("#two option:selected").index();
+                var three = $("#three");
+                three.empty().append("<option>请选择区域</option>");
+
+                if (two_index > 0) {
+                    var area = province[one_index - 1].city[two_index - 1].area;
+                    for (var i = 0; i < area.length; i++) {
+                        three.append("<option>" + area[i] + "</option>");
+                    }
+                }
+            });
+
+            // 一级联动
+            $("#one").change(function () {
+                var one_index = $("#one option:selected").index();
+                var two = $("#two");
+                console.log(one_index)
+                two.empty().append("<option>请选择城市</option>");
+                $("#three").empty().append("<option>请选择区域</option>"); //清除
+
+                if (one_index > 0) {
+                    var city = province[one_index - 1].city;
+                    console.log(province[one_index - 1].city)
+                    for (var i = 0; i < city.length; i++) {
+                        two.append("<option>" + city[i].name + "</option>");
+                    }
+                }
+            });
+
+
+            init();
+
+            function init() {
+                for (var i = 0; i < province.length; i++) {
+                    $("#one").append("<option>" + province[i].name + "</option>");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

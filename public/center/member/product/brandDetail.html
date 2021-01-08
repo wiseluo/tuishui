@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://libs.cdnjs.net/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+</head>
+<style>
+  /* .img_box img{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+  } */
+</style>
+
+<body>
+  <div id="brandDetail">
+    <div class="am-popup-inner">
+      <div class="am-popup-hd">
+        <h4 class="am-popup-title">品牌基本信息</h4>
+        <a href="./brand.html"><span data-am-modal-close class="am-close">&times;</span></a>
+      </div>
+      <div class="am-popup-bd">
+        <form class="am-form">
+          <fieldset>
+            <div class="am-form-group">
+              <label>
+                <small>品牌名称</small>
+              </label>
+              <input type="text" id="" readonly class="name" placeholder="输入品牌名称">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>品牌类型</small>
+              </label>
+              <input type="text" class="type_str">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>产品分类</small>
+              </label>
+              <input type="text" class="classify_str">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>品牌 Logo 图</small>
+              </label>
+              <div class="logo_box">
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>授权书</small>
+              </label>
+              <div class="auth_box">
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>联系人</small>
+              </label>
+              <div class="am-g" style="padding-top:10px">
+                <table class="am-table am-table-bordered am-table-radius am-table-striped" id="linksList">
+                  <thead>
+                    <tr>
+                      <th>
+                        <small>名字</small>
+                      </th>
+                      <th>
+                        <small>电话</small>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>审核意见</small>
+              </label>
+              <textarea class="opinion" id="opinion" rows="3" disabled></textarea>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../../static/js/common.js"></script>
+<script>
+  function creImg(str, className) {
+    str != null ? str : str = ''
+    var imgArr = [],
+      html = ''
+    if (str.indexOf('|') != -1) {
+      imgArr = str.split('|')
+      imgArr.map(function (item, index) {
+        html += '<img class="preview" style="margin-left:5px" src=http://' + window.location.host + item + ' height="50">'
+      })
+  } else if(str != '') {
+      html = '<img class="preview" style="margin-left:5px" src=http://' + window.location.host + str + ' height="50">'
+    }
+    $('.' + className).append('<div style="display:inline-block">' + html + '</div>')
+  }
+  $(function () {
+    $.get('/api/brand/' + getUrlParam('id'), {
+      token: $.cookie('token')
+    }, function (res) {
+      if (res.code == 200) {
+        res = res.data
+        var html = ''
+        if (res.link !== null && res.link != '') {
+          html = `<tr id="${res.link.id}">
+            <td>${res.link.name}</td>
+            <td>${res.link.phone}</td>
+            </tr>`
+        } else {
+          html = `<tr>
+            <td colspan="2">暂无联系人</td>
+            </tr>`
+        }
+        $('#linksList tbody').html(html)
+        $('.name').val(res.name)
+        $('.classify_str').val(res.classify_str)
+        $('.type_str').val(res.type_str)
+        $('.order_time').val(res.created_at)
+        creImg(res.logo_img, 'logo_box')
+        creImg(res.auth_img, 'auth_box')
+      } else {
+        layer.msg(res.msg)
+      }
+    })
+  })
+</script>

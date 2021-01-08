@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+  <link rel="stylesheet" href="../../static/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../static/css/font.css" type="text/css" />
+  <link href="../../static/css/personal_info.css" rel="stylesheet">
+</head>
+<style>
+  .image_box li {
+    width: 100%;
+  }
+  .am-form-file {
+    position: relative;
+    display: inline-block;
+  }
+  .red {
+    color: red;
+  }
+</style>
+
+<body>
+  <div class="content_right">
+    <div class="money_top">
+      <ul id="myTab" class="nav nav-tabs">
+        <li class="orange">
+          <a>基本信息</a>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div>
+    <div class="am-popup-bd" style="width: 100%;background-color: #ffffff;">
+      <a class="login_a" target="_parent" href="/">前往登录<span></span></a>
+      <fieldset>
+        <form id="info_form" class="am-form">
+          <div class="input-ticket">
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small><small>开票人名称</small>
+              </label>
+              <input type="text" class="drawer_name base_info" name="drawer_name" placeholder="请输入开票人名称" value="">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small><small>法人</small>
+              </label>
+              <input type="text" class="legal_person base_info" name="legal_person" placeholder="请输入法人">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small><small>联系电话</small>
+              </label>
+              <input type="text" class="phone base_info" name="phone" placeholder="请输入联系电话" />
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small><small>纳税人识别号</small>
+              </label>
+              <input type="text" class="tax_id base_info" name="tax_id" placeholder="请输入纳税人识别号">
+            </div>
+            <div class="am-form-group">
+              <label style="width: 121px;">
+                <small class="red">*</small><small>一般纳税人认定时间</small>
+              </label>
+              <input type="text" class="tax_at base_info" name="tax_at" placeholder="输入一般纳税人认定时间" data-am-datepicker readonly
+                required style="width: calc(100% - 130px);" />
+              <small class="gray">请查询一般纳税人认定时间并准确填写，如开票人所在地区无法查询，请提供一般纳税人认定证明，并填写一般纳税人认定文件上认定证明，并填写认定文件上认定时间。查询网址:http://www.yibannashuiren.com</small>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small><small>境内货源地</small>
+              </label>
+              <input type="text" class="original_addr base_info" name="original_addr" placeholder="输入境内货源地">
+              <small>请根据企业注册第为准，选择正确的境内货源地</small>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>备注</small>
+              </label>
+              <input type="text" class="remark" name="remark" placeholder="输入了解途径">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>证照信息</small>
+              </label>
+              <div class="image_box">
+                <ul class="am-avg-sm am-thumbnails">
+                  <li>
+                    <div class="am-form-file pic_invoice ">
+                      <button type="button" class="am-btn am-btn-default am-btn-sm">
+                        <i class="am-icon-cloud-upload"></i><small class="red">*</small>销项发票（近6个月至少上传两张)</button>
+                      <input type="file" accept="image/*" multiple>
+                      <input type="hidden" name="pic_invoice">
+                    </div>
+                    <div class="am-form-file">
+                    </div>
+                  </li>
+                  <li>
+                    <div class="am-form-file pic_verification">
+                      <button type="button" class="am-btn am-btn-default am-btn-sm">
+                        <i class="am-icon-cloud-upload"></i> <small class="red">*</small>一般纳税人认定书照片</button>
+                      <input type="file" class="pic_verification" accept="image/*" multiple>
+                      <input type="hidden" name="pic_verification">
+                    </div>
+                    <div class="am-form-file"></div>
+                  </li>
+                  <li>
+                    <div class="am-form-file pic_register">
+                      <button type="button" class="am-btn am-btn-default am-btn-sm">
+                        <i class="am-icon-cloud-upload"></i><small class="red">*</small> 最新营业执照</button>
+                      <input type="file" accept="image/*" multiple>
+                      <input type="hidden" name="pic_register">
+                    </div>
+                    <div class="am-form-file"></div>
+                  </li>
+                  <li class="download" style="display: none">
+                    <a href="/download/advance_tax_refund_agreement.doc">
+                      <button type="button" class="am-btn am-btn-default am-btn-sm">下载外贸综合服务协议书模板</button>
+                    </a>
+                    <!-- <div class="am-form-file"></div> -->
+                  </li>
+                  <li class="download" style="display: none">
+                    <a href="/download/foreign_trade_comprehensive_service_agreement.doc">
+                      <button type="button" class="am-btn am-btn-default am-btn-sm">下载垫付退税协议模板</button>
+                    </a>
+                    <!-- <div class="am-form-file"></div> -->
+                  </li>
+                  <li class="upload" style="display: none">
+                    <div class="am-form-file service_agreement_pic">
+                      <button type="button" class="am-btn am-btn-default am-btn-sm">
+                        <i class="am-icon-cloud-upload"></i><small class="red">*</small>外贸综合服务协议书(请先下载模板进行填写)</button>
+                      <input type="file" accept="file/*" multiple>
+                      <input type="hidden" name="service_agreement_pic">
+                    </div>
+                    <div class="am-form-file"></div>
+                  </li>
+                  <li class="upload" style="display: none">
+                    <div class="am-form-file tax_refund_agreement_pic">
+                      <button type="button" class="am-btn am-btn-default am-btn-sm">
+                        <i class="am-icon-cloud-upload"></i><small class="red">*</small>垫付退税协议(请先下载模板进行填写)</button>
+                      <input type="file" accept="file/*" multiple>
+                      <input type="hidden" name="tax_refund_agreement_pic">
+                    </div>
+                    <div class="am-form-file"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="opinion" style="display: none">
+                <p>审核意见：<span></span></p>
+            </div>
+          </div>
+        </form>
+        <p class="buttonContent" style="text-align: center">
+          <button class="submit_btn am-btn am-btn-primary" data-type="2">提交审核</button>
+          <button class="submit_save am-btn am-btn-default" data-type="1" style="display: none;">确认上传</button>
+        </p>
+      </fieldset>
+    </div>
+  </div>
+  <div class="clear"></div>
+</body>
+
+</html>
+<script type="text/javascript" src="../../static/js/common.js"></script>
+<script>
+  $(function () {
+    $.get('/api/personal', {
+      token: $.cookie('token')
+    }, function (res) {
+      var data = res.data
+      var str = ['pic_verification', 'pic_register', 'pic_invoice','tax_refund_agreement_pic','service_agreement_pic']
+      for (var i in data) {
+        $('input[name=' + i + ']').val(data[i])
+        str.map(function (item, k) {
+          if (item == i) {
+            data[i] != null ? creImg(data[i], i) : ''
+          }
+        })
+      }
+      if(data.status==3&&data.drawer_status==3){
+        $('.download').show()
+        $('.upload').show()
+        $('.submit_save').show()
+      }
+
+      if(data.status == 4){
+          let opinion = ''
+          if(data.option != null) opinion = data.option
+          $('.opinion').show()
+          $('.opinion span').html(opinion)
+      }
+
+      if (data.status == 3 || data.status == 2) {
+        $('.submit_btn').css('display', 'none')
+        $('.base_info, .remark').prop('disabled',true)
+      }
+    })
+
+    $('.submit_save').on('click',function(){
+      if ($('[name="service_agreement_pic"]').val() == '') {
+        layer.msg('外贸综合服务协议书还未上传')
+        return false;
+      }
+      if ($('[name="tax_refund_agreement_pic"]').val() == '') {
+        layer.msg('垫付退税协议还未上传')
+        return false;
+      }
+      $.post('/api/personal/upload_img',{
+        token:$.cookie('token'),
+        service_agreement_pic:$('[name="service_agreement_pic"]').val(),
+        tax_refund_agreement_pic:$('[name="tax_refund_agreement_pic"]').val()
+      },function(res){
+        if(res.code!=200){
+          layer.msg(res.code+res.msg)
+        }else {
+          layer.msg(res.msg)
+        }
+      })
+    })
+
+    $('.submit_btn').on('click', function () {
+      if ($(".drawer_name").val() == '') {
+        $(".drawer_name").focus();
+        layer.msg('请输入开票人姓名')
+        return false;
+      }
+
+      if ($(".legal_person").val() == '') {
+        $(".legal_person").focus();
+        layer.msg('请输入法人姓名')
+        return false;
+      }
+
+      if ($(".phone").val() == '') {
+        $(".phone").focus();
+        layer.msg('请输入联系电话')
+        return false;
+      }
+
+      if ($(".tax_id").val() == '') {
+        $(".tax_id").focus();
+        layer.msg('请输入纳税人识别号')
+        return false;
+      }
+
+      if ($(".tax_at").val() == '') {
+        $(".tax_at").focus();
+        layer.msg('请输入一般纳税人认定时间')
+        return false;
+      }
+
+      if ($(".original_addr").val() == '') {
+        $(".original_addr").focus();
+        layer.msg('请输入境内货源地')
+        return false;
+      }
+
+      if ($('.pic_invoice').next().find('img').length < 2) {
+        layer.msg('发票至少需要上传两张')
+        return false
+      }
+
+      if ($('.pic_verification').next().find('img').length == 0) {
+        layer.msg('请上传一般纳税人认定书照片')
+        return false
+      }
+
+      if ($('.pic_register').next().find('img').length == 0) {
+        layer.msg('请上传最新营业执照')
+        return false
+      }
+
+      var data = $('#info_form').serializeObject()
+      data.token = $.cookie('token')
+      $.post('/api/personal', {
+        token: $.cookie('token'),
+        pic_verification: $('[name="pic_verification"]').val(),
+        pic_register: $('[name="pic_register"]').val(),
+        pic_invoice: $('[name="pic_invoice"]').val(),
+        original_addr: $('.original_addr').val(),
+        tax_at: $('.tax_at').val(),
+        tax_id: $('.tax_id').val(),
+        phone: $('.phone').val(),
+        legal_person: $('.legal_person').val(),
+        drawer_name: $('.drawer_name').val()
+      }, function (res) {
+        if(res.code!=200){
+          layer.msg(res.code + res.msg)
+          return false
+      } else {
+          layer.confirm(""+res.msg+"", {
+            btn: ["确定","取消"] //按钮
+        }, function(){
+            window.location.reload()
+        }, function(){
+
+        });
+      }
+        // layer.msg(res.msg)
+
+        // $.cookie('token',null, {
+        //             path: '/'
+        //         })
+        //$('.login_a span').trigger('click')
+        console.log('111111')
+      })
+    })
+
+    // $('.login_a').on('click',function(){
+    //     window.parent.location.href = '/member/user/login.html'
+    // })
+  })
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>homepage</title>
+    <!-- <link href="https://cdn.bootcss.com/bulma/0.7.1/css/bulma.min.css" rel="stylesheet"> -->
+    <!-- <script type="text/javascript" src="/echarts/echarts.min.js"></script> -->
+    <style>
+        .table th {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="max-height:800px"><img class="content_img" src="../images/center/welcome.png" width="94%" /></div>
+    <!-- <div class="container">
+        <div class="notification">
+            <div class="notification is-danger" style="text-align: center;">
+                欢迎加入<i class="company" style="font-style: normal">商翔集团</i>中国供应商（Gold Supplier）,目前贵司处于主账号的资料提交阶段，待正式开通服务，您方可正常开展业务，请耐心等待！
+            </div>
+        </div>
+    </div> -->
+    <script type="text/javascript" src="../hui/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        var host = window.location.hostname
+            port = window.location.port
+            console.log(host);
+            console.log(port);
+        if(host == 'myts.sumsoar.com' || port == '817'){
+            $('.content_img').attr('src','../images/center/maoyi1.png')
+        } else if(host == 'jdts.sumsoar.com' || port == '818') {
+            $('.content_img').attr('src','../images/center/welcome.jpg')
+        }
+    </script>
+</body>
+
+</html>

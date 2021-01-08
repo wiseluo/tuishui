@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link href="../../static/css/base.css" rel="stylesheet">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+</head>
+
+<body>
+  <div>
+    <div class="am-popup-inner">
+      <div class="am-popup-hd">
+        <h4 class="am-popup-title">产品基本信息</h4>
+        <a href="./product.html"><span data-am-modal-close class="am-close">&times;</span></a>
+      </div>
+      <div class="am-popup-bd">
+        <form class="am-form">
+          <fieldset>
+            <div class="am-form-group">
+              <label>
+                <small>产品名称</small>
+              </label>
+              <input readonly type="text" class="name">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>产品英文名称</small>
+              </label>
+              <input readonly type="text" class="en_name">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>HSCode</small>
+              </label>
+              <input readonly type="text" class="hscode">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>货号</small>
+              </label>
+              <input readonly type="text" class="number">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>申报单位</small>
+              </label>
+              <input readonly type="text" class="measure_unit_str">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>法定单位</small>
+              </label>
+              <input readonly type="text" class="unit">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>品牌</small>
+              </label>
+              <input readonly type="text" class="brand">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>退税率(%)</small>
+              </label>
+              <select class="tax_refund_rate" disabled>
+
+              </select>
+              <span class="am-form-caret"></span>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>商品图片</small>
+              </label>
+              <div class="img_box">
+
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>备注</small>
+              </label>
+              <textarea class="remark" rows="5"></textarea>
+            </div>
+            <div class="am-g" style="padding-top:10px">
+              <table class="am-table am-table-bordered am-table-radius am-table-striped" id="standard_tab">
+                <thead>
+                  <tr>
+                    <th>
+                      <small>名字</small>
+                    </th>
+                    <th>
+                      <small>值</small>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>联系人</small>
+              </label>
+              <div class="am-g" style="padding-top:10px">
+                <table class="am-table am-table-bordered am-table-radius am-table-striped" id="linksList">
+                  <thead>
+                    <tr>
+                      <th>
+                        <small>名字</small>
+                      </th>
+                      <th>
+                        <small>电话</small>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="am-form-group">
+                <label>
+                  <small>审核意见</small>
+                </label>
+                <textarea class="opinion" rows="3" disabled></textarea>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../../static/js/common.js"></script>
+<script>
+  //图片展示
+  function creImg(str) {
+    str != null ? str : str = ''
+    var imgArr = [],
+      html = ''
+    if (str.indexOf('|') != -1) {
+      imgArr = str.split('|')
+      imgArr.map(function (item, index) {
+        html += '<img class="preview" style="margin-left:5px" src=http://' + window.location.host + item + ' height="50">'
+      })
+    } else {
+      html = '<img class="preview" style="margin-left:5px" src=http://' + window.location.host + str + ' height="50">'
+    }
+    $('.img_box').append('<div style="display:inline-block">' + html + '</div>')
+  }
+  $(function () {
+    //退税率
+    $.get('/api/father/12', {
+      token: $.cookie('token')
+    }, function (res) {
+      // var html = ''
+      // for (var i in res.data) {
+      //   html += '<option value="' + i + '">' + res.data[i] + '</option>'
+      // };
+      // $('.tax_refund_rate').html(html)
+
+      //详情
+      $.get('/api/product/' + getUrlParam('id'), {
+        token: $.cookie('token')
+      }, function (res) {
+        var data = res.data,
+          str = ['customs_img', 'appearance_img', 'picture', 'brand_img', 'pack_img', 'other_img']
+            $('.tax_refund_rate').html('<option>' + data.tax_refund_rate + '</option>')
+        for (var i in data) {
+          $('.' + i).val(data[i])
+        if (i == 'brand') {
+            data.brand != null ? $('.brand').val(data.brand.name) : ''
+        } else if (i == 'measure_unit_data') {
+            data.measure_unit_data != null ? $('.measure_unit_str').val(data.measure_unit_data.name) : ''
+        } else {
+            str.map(function (item, k) {
+              if (item == i) {
+                data[i] != null&&data[i] != '' ? creImg(data[i], i) : ''
+              }
+            })
+          }
+        }
+        var proValue = data.standard.split('|')
+        //产品属性
+        $.get('/api/customer/element/' + res.data.hscode, {
+          token: $.cookie('token')
+        }, function (response) {
+          var html = ''
+          response.data.map(function (i, k) {
+            html +=
+              ` <tr>
+                  <td>
+                    <small>` + i +
+              `</small>
+                  </td>
+                  <td>
+                    <small>` +
+              (proValue[k] != undefined ? proValue[k] : '') +
+              `</small>
+                  </td>
+                </tr>`
+          })
+          $('#standard_tab tbody').html(html)
+        })
+        //联系人
+        var html = ''
+        if (data.link !== null && data.link != '') {
+          html = '<tr id="' + res.data.link.id + '">' +
+            '<td>' + data.link.name + '</td>' +
+            '<td>' + data.link.phone + '</td>' +
+            '</tr>'
+        } else {
+          html = '<tr>' +
+            '<td colspan="2">暂无联系人</td>' +
+            '</tr>'
+        }
+        $('#linksList tbody').html(html)
+      })
+    })
+  })
+</script>

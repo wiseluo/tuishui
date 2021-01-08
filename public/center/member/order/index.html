@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>homepage</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link href="../../static/js/layer/theme/default/layer.css" rel="stylesheet">
+  <link href="../../static/css/base.css" rel="stylesheet">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script src="//at.alicdn.com/t/font_772847_1kzy3qkk2l9i.js" charset="utf-8"></script>
+  <script src="../../static/js/jquery.cookie.js"></script>
+  <script src="../../static/js/common.js"></script>
+  <script src="../../static/js/bootstrap-paginator.min.js"></script>
+  <script src="../../static/js/layer/layer.js"></script>
+  <style>
+    fieldset {
+      margin-bottom: 0px;
+    }
+
+    .body {
+      font-size: 16px;
+    }
+
+    .am-container {
+      max-width: 100%;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .am-selected {
+      width: 100%;
+    }
+
+    .unloading_port {
+      width: calc(100% - 125px);
+      display: inline-block;
+    }
+
+    .port_div,
+    .country_div, .trade_country_div {
+      width: 100%;
+      display: inline-block;
+      display: none;
+      font-size: 14px;
+      z-index: 20;
+    }
+
+    .port_div ul,
+    .country_div ul, .trade_country_div ul{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      max-height: 400px;
+      overflow-y: scroll;
+      background: white;
+      border: 1px solid black;
+    }
+
+    .port_div li,
+    .country_div li, .trade_country_div li {
+      list-style: none;
+      cursor: pointer;
+      line-height: 32px;
+      padding-left: 10px;
+      height: 32px;
+    }
+
+    .clearfix:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden
+    }
+
+    .pro_sec ul,
+    .pro_sec li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .am-popup-bd .am-form-group li label {
+      width: auto;
+    }
+
+    .am-panel-title input {
+      border: none;
+      background: none;
+      color: #0e90d2;
+      margin-bottom: 3px;
+    }
+
+    .pro_sec input,
+    .pro_sec select {
+      border: none;
+      height: 24px;
+      line-height: 24px;
+      padding-left: 5px;
+
+    }
+
+    .pro_sec input {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .pro_sec li {
+      width: 33%;
+      float: left;
+      padding: 2px 0 2px 10px;
+      border-right: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
+    }
+
+    .pro_sec .last_li {
+      width: 34%;
+      border-right: none;
+    }
+
+    .pro_sec {
+      font-size: 12px;
+    }
+
+    .pro_sec ul li .am-btn {
+      font-size: 12px;
+    }
+
+    .am-popup-bd .am-form-group li select {
+      width: 150px;
+      height: auto;
+      display: inline-block;
+      text-indent: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    @media (min-height: 630px) and (min-width: 630px) {
+      .am-popup {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        margin-left: 0;
+        margin-top: 0;
+        -webkit-transform: translateY(1024px);
+        -ms-transform: translateY(1024px);
+        transform: translateY(1024px);
+      }
+    }
+
+    .active {
+      background-color: #FFC;
+    }
+
+    .am-input-group-label {
+      height: 0;
+      font-size: 0.6em;
+      line-height: 19px
+    }
+
+    .am-input-group-btn,
+    .am-input-group-label {
+      width: 0;
+    }
+    .search_box{
+        margin-bottom: 10px
+    }
+  </style>
+  <style type="text/css">
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="am-container">
+    <div class="am-g">
+      <div class="am-u-sm am-center am-popup-bd">
+        <a class="close_a" href="./order.html"><span></span></a>
+        <div>
+          <legend>1、选择收汇方式与报关方式</legend>
+          <fieldset id="1" style="display:block">
+            <form class="am-form" method='post' enctype="multipart/form-data" id="cusform" style="margin:30px">
+              <div class="am-form-group specialLabel">
+                <label>
+                  <small>收汇方式
+                  </small>
+                </label>
+                <label class="am-radio-inline" id="remit">
+                  <input type="radio" value="0" name="exchange_method" id="docInlineRadio"> <span>汇款(如T/T)</span>
+                </label>
+                <label class="am-radio-inline" id="collection">
+                  <input type="radio" name="exchange_method" id="docInlineRadio1" value="1"> <span>托收(D/P，D/A)</span>
+                </label>
+                <label class="am-radio-inline" id="credit">
+                  <input type="radio" name="exchange_method" id="docInlineRadio2" value="2"> <span>信用证(L/C)</span>
+                </label>
+                <label class="am-radio-inline" id="tick">
+                  <input type="radio" name="exchange_method" id="docInlineRadio3" value="3"> <span>赊销(OA)</span>
+                </label>
+              </div>
+              <div class="am-form-group" id="lcnumber" style="display: none">
+                <label>
+                  <small>信用证号
+                  </small>
+                </label>
+                <input type="text" name="lc_no" id="lc_no" class="am-form-field" placeholder="输入信用证号">
+              </div>
+              <div class="am-form-group">
+                <label>
+                  <small class="red">*</small> <small>离境口岸
+                  </small>
+                </label>
+                <select data-type="required" class="am-form-field" name="shipment_port" id="shipment_port"></select>
+                <p class="am-form-help">原报检项目的“离境口岸”，请填写运输工具离境的第一个境内口岸（类型包括港口、码头、机场、机场货运通道、边境口岸等）</p>
+              </div>
+              <!-- <div class="am-form-group">
+                <label>
+                  <small>出境关别
+                  </small>
+                </label>
+                <select name="clearance_port" id="clearance_port">
+
+                </select>
+                <p class="am-form-help">原报关“出口口岸”，请填写货物实际出境的口岸海关</p>
+              </div> -->
+              <div class="am-form-group">
+                <label>
+                  <small>报关方式
+                  </small>
+                </label>
+                <select id="declare_mode" data-type="required" name="declare_mode">
+                </select>
+                <p class="am-form-help">聚达负责报关（聚达为您出具报关资料且帮您报关）；客户自行报关（我司为您出具报关资料，您自行选择报关行帮您报关，报关资料在订单状态为审批通过后可自助下载）</p>
+              </div>
+              <div class="am-form-group">
+                <label>
+                  <small>报关行
+                  </small>
+                </label>
+                <input name="broker_name" id="broker_name" type="text">
+              </div>
+              <div class="am-form-group">
+                <label> <small class="red">*</small>
+                  <small>本单联系人
+                  </small>
+                </label>
+                <div id="liken">
+                </div>
+                <a type="button" class="new_links am-btn am-btn-default" data-am-modal="{target: '#choseuser'}">选择联系人</a>
+              </div>
+          </fieldset>
+          <a id="net_one" class="am-btn am-btn-primary">下一步</a>
+          <a id="net_one_show" class="am-btn am-btn-primary" style="display:none">修改</a>
+        </div>
+        <div>
+          <legend>2、产品及开票人信息</legend>
+          <fieldset id="2" style="display:none">
+            <div class="am-form-group ">
+              <label for="doc-select-1"><small>装柜方式</small>
+              </label>
+              <select name="loading_mode" id="loading_mode"></select>
+              <!-- <input type="radio" name="loading_mode" id="loading_mode" value="0"><label for="">整柜</label>
+              <input type="radio" name="loading_mode" id="loading_mode1" value="1"><label for="">拼柜</label> -->
+              <p class="am-form-help">风险预警:1.北仑海关查验一经发现出口夹带,产品编码及参数申报不符订单一律缉私处罚，请务必如实申报2.北仑海关对查验货物申报重量误差超过5%，海关按删单重报处罚</p>
+            </div>
+            <div class="am-form-group">
+              <label for="doc-select-1"><small>柜号</small>
+              </label>
+              <input type="text" name="box_number" id="box_number" placeholder="请填写柜号">
+            </div>
+            <div class="am-form-group">
+              <label for="doc-select-1"><small>提单号</small>
+              </label>
+              <input type="text" name="tdnumber" id="tdnumber" placeholder="请填写提单号">
+            </div>
+            <div class="am-form-group">
+              <label for="doc-select-1"><small>船名航次</small>
+              </label>
+              <input type="text" name="ship_name" id="ship_name" placeholder="请填写船名航次">
+            </div>
+            <div class="am-form-group">
+              <label for="doc-select-1"><small>唛头</small>
+              </label>
+              <input type="text" name="shipping_mark" id="shipping_mark" placeholder="请填写唛头">
+            </div>
+            <div class="am-form-group">
+              <label for="currency"> <small class="red">*</small><small>币制</small>
+              </label>
+              <select data-type="required" id="currency" name="currency" value="">
+              </select>
+              <span class="am-form-caret"></span>
+            </div>
+            <div class="am-form-group">
+              <label><small class="red">*</small><small>成交方式</small></label>
+              <select data-type="required" name="price_clause" id="price_clause"></select>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small><small>整体包装方式
+                </small>
+              </label>
+              <select data-type="required" id="order_package" name="order_package"></select>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small> <small>贸易国（地区）
+                </small>
+              </label>
+              <div class="unloading_port" style="position: relative;">
+                <input type="text" readonly id="trade_country_name" data-choose="tradeCountry" placeholder="点击选取" style="width: 100%;">
+                <input type="hidden" name="trade_country" id="trade_country">
+                <div class="trade_country_div" style="position: absolute">
+                  <div><input class="serach_trade_country" data-choose="tradeCountry" style="width: 100%;" placeholder="请输入搜索内容" type="text"></div>
+                  <ul></ul>
+                </div>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small> <small>运抵国（地区）
+                </small>
+              </label>
+              <div class="unloading_port" style="position: relative;">
+                <input type="text" readonly id="aim_country_name" data-choose="aimCountry" placeholder="点击选取" style="width: 100%;">
+                <input type="hidden" name="aim_country" id="aim_country">
+                <div class="country_div" style="position: absolute">
+                  <div><input class="serach_country" data-choose="aimCountry" style="width: 100%;" placeholder="请输入搜索内容" type="text"></div>
+                  <ul></ul>
+                </div>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small> <small>指运港
+                </small>
+              </label>
+              <div class="unloading_port" style="position: relative;">
+                <input type="text" readonly id="unloading_port_name" placeholder="点击选取" style="width: 100%;">
+                <input type="hidden" name="unloading_port" id="unloading_port">
+                <div class="port_div" style="position: absolute">
+                  <div><input class="serach_upport" style="width: 100%;" placeholder="请输入搜索内容" type="text"></div>
+                  <ul></ul>
+                </div>
+              </div>
+            </div>
+            </form>
+            <div class="am-form-group">
+              <small class="red">*</small><label>
+                <small>出货产品清单
+                </small>
+              </label>
+              <a type="button" class="am-btn am-btn-primary am-btn-xs add_orderPro" style="padding: 0.4rem 0.8rem;"
+                data-am-modal="{target: '#productlist'}">增加</a>
+              <form id="pro_form">
+                <div id="pro_sec_box">
+                </div>
+              </form>
+            </div>
+            <form action="" id="three_form">
+              <div class="am-form-group">
+                <label for="doc-select-1"><small>产品数量</small>
+                </label>
+                <input type="text" name="" id="total_num" class="clear_this" placeholder="产品数量根据产品信息计算得出" readonly>
+              </div>
+              <div class="am-form-group">
+                <label for="doc-select-1"><small>总体积</small>
+                </label>
+                <input type="text" name="" id="total_volume" class="clear_this" placeholder="总体积根据产品信息计算得出" readonly>
+              </div>
+              <div class="am-form-group">
+                <label for="doc-select-1"><small>总货值</small>
+                </label>
+                <input type="text" name="" id="total_value" class="clear_this" placeholder="总货值根据产品信息计算得出" readonly>
+              </div>
+              <div class="am-form-group">
+                <label for="doc-select-1"><small>总毛重</small>
+                </label>
+                <input type="text" class="sum_weight clear_this" name="" placeholder="总毛重根据产品信息计算得出" id="total_weight"
+                  readonly>
+              </div>
+              <div class="am-form-group">
+                <label for="doc-select-1"><small>总净重</small>
+                </label>
+                <input type="text" name="" id="total_net_weight" class="clear_this" placeholder="总净重根据产品信息计算得出" readonly>
+              </div>
+              <div class="am-form-group">
+                <label>
+                  <small>运输包装件数</small>
+                </label>
+                <input readonly type="text" data-type="required" placeholder="运输包装件数根据产品最大包装件数计算得出" name="" id="total_packnum" class="clear_this" readonly>
+              </div>
+              <div class="am-form-group">
+                <label><small class="red">*</small>
+                  <small>运输方式</small>
+                </label>
+                <select data-type="required" id="transport" name="transport" value=""></select>
+              </div>
+              <div class="am-form-group">
+                <label for="package"><small class="red">*</small>
+                  <small>包装方式</small>
+                </label>
+                <select data-type="required" id="package" name="package" value=""></select>
+                <span class="am-form-caret"></span>
+              </div>
+          </fieldset>
+          <a id="net_twoshow" style="display:none" class="am-btn am-btn-primary">下一步</a>
+          <a id="net_twotoggle" class="am-btn am-btn-primary" style="display:none">修改</a>
+        </div>
+        <div>
+          <legend>3、报关信息</legend>
+          <fieldset id="3" style="display:none">
+            <div class="am-form-group">
+              <label>
+                <small>预计出货日期
+                </small>
+              </label>
+              <input type="text" id="shipping_at" class="am-form-field" name="shipping_at" value="" placeholder="请选择预计出货日期" readonly />
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small>
+                <small>开船日期</small>
+              </label>
+              <input type="text" id="sailing_at" class="am-form-field" name="sailing_at" value="" placeholder="请选择开船日期" readonly />
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small>
+                <small>报关日期</small>
+              </label>
+              <input type="text" id="customs_at" class="am-form-field" name="customs_at" value="" placeholder="请选择报关日期" readonly />
+            </div>
+            <div class="am-form-group">
+              <label> <small class="red">*</small>
+                <small>境外收货人
+                </small>
+              </label>
+              <div id="receivep">
+
+              </div>
+              <a type="button" class="new_receive am-btn am-btn-default" data-am-modal="{target: '#consignee'}">选择境外收货人</a>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small> 特殊关系确认
+                </small>
+              </label>
+              <label class="am-radio">
+                <input type="radio" name="is_special" id="is_special" value="0"> 否
+              </label>
+              <label class="am-radio">
+                <input type="radio" name="is_special" id="is_special1" value="1"> 是
+              </label>
+            </div>
+            <div class="am-form-group">
+              <label style="width: 130px;">
+                <small> 支付特许权使用费确认
+                </small>
+              </label>
+              <label class="am-radio">
+                <input type="radio" name="is_pay_special" id="is_pay_special" value="0"> 否
+              </label>
+              <label class="am-radio">
+                <input type="radio" name="is_pay_special" id="is_pay_special1" value="1"> 是
+              </label>
+            </div>
+            <div class="am-form-group">
+              <label> <small class="red">*</small>
+                <small>货物存放地址
+                </small>
+              </label>
+              <div id="Storage_address">
+              </div>
+
+              <a type="button" class="new_deposit am-btn am-btn-default" data-am-modal="{target: '#packloalction'}">选择货物存放地址</a>
+              <p class="am-form-help">请填写货物装柜地址，如有多个装货地址则填写最后装货地</p>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>合同类型
+                </small>
+              </label>
+              <textarea class="" id="contract" name="contract"></textarea>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>看货任务
+                </small>
+              </label>
+              <input type="text" placeholder="系统自动生成" name="look_goods_task" id="look_goods_task">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>订单备注号
+                </small>
+              </label>
+              <input type="text" class="" id="note_number" name="note_number"></input>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>出货备注
+                </small>
+              </label>
+              <textarea row="4" class="" id="shipment_notes" name="shipment_notes"></textarea>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>附件上传
+                </small>
+              </label>
+              <ul  class="am-avg-sm am-thumbnails">
+                  <li>
+                      <div class="am-form-group am-form-file" style="display:inline-block">
+                          <button type="button" class="am-btn am-btn-default am-btn-sm">
+                              <i class="am-icon-cloud-upload"></i> 选择要上传的文件</button>
+                              <input type="file" accept="file/*" multiple class="auth_file" name="pic" accept="value">
+                              <input type="hidden" id="auth_file" name="attach_upload">
+                          </div>
+                          <div class="am-form-file" style="float:right"></div>
+                  </li>
+              </ul>
+            </div>
+            <input type="hidden" id="links" name="link_id" class="links">
+            <input type="hidden" id="receive" name="receive_id" class="receive">
+            <input type="hidden" id="deposit" name="deposit_id" class="deposit">
+            <p>
+              <button type="button" data-type="1" class="am-btn am-btn-success" id="save">保存草稿</button>
+              <button type="button" data-type="2" class="am-btn am-btn-primary" id="submit">提交订单</button>
+            </p>
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="am-popup" id="cdainfo">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">请选择报关地址</h4>
+          <span data-am-modal-close class="am-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <table class="am-table am-table-bordered">
+            <thead>
+              <tr>
+                <th></th>
+                <th>收件人</th>
+                <th>地址</th>
+                <th>详细地址</th>
+                <th>联系电话</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input type="radio" name="cdainfo">
+                </td>
+                <td>
+                  <input type="text" class="am-form-field" value="收件人姓名">
+                </td>
+                <td>
+                  <input type="text" class="am-form-field" value="收件人地址">
+                </td>
+                <td>
+                  <input type="text" class="am-form-field" value="收件人详细地址">
+                </td>
+                <td>
+                  <input type="text" class="am-form-field" value="收件人联系电话">
+                </td>
+                <td>
+                  <a type="button" class="am-btn am-btn-default">保存</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <a type="button" class="am-btn am-btn-default">提交</a>
+          <a type="button" class="am-btn am-btn-default">删除</a>
+        </div>
+      </div>
+    </div>
+    <div class="am-popup" id="consignee">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">请选择境外收货人</h4>
+          <span data-am-modal-close class="am-close receive-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <form action="" id="receiveForm">
+            <table class="am-table am-table-bordered" id="receiveList">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>名称</th>
+                  <th>国家</th>
+                  <th>详细地址</th>
+                  <th>AEO编码</th>
+                  <th>传真</th>
+                  <th>网址</th>
+                  <th>联系电话</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </form>
+          <a type="button" class="am-btn am-btn-primary receivebutton">提交</a>
+          <a type="button" class="receive_del am-btn am-btn-default">删除</a>
+        </div>
+      </div>
+    </div>
+    <div class="am-popup" id="packloalction">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">货物存放地址</h4>
+          <span data-am-modal-close class="am-close deposit-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <form action="" id="depositForm">
+            <table class="am-table am-table-bordered" id="depositList">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>存放地址:</th>
+                  <th>货物联系人</th>
+                  <th>联系电话</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </form>
+          <a type="button" class="deposit_sub am-btn am-btn-primary">提交</a>
+          <a type="butotn" class="deposit_del am-btn am-btn-default">删除</a>
+        </div>
+      </div>
+    </div>
+    <div class="am-popup" id="choseuser">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">请选择联系人</h4>
+          <span data-am-modal-close class="am-close links-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <form action="" id="linksForm">
+            <table class="am-table am-table-bordered" id="linksList">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>收件人</th>
+                  <th>联系电话</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </form>
+          <a type="button" class="links_sub am-btn am-btn-primary">提交</a>
+          <a type="button" class="links_del am-btn am-btn-default">删除</a>
+        </div>
+      </div>
+    </div>
+    <div class="am-popup" id="maoyishang">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">产品基本信息</h4>
+          <span data-am-modal-close class="am-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <table class="am-table am-table-bordered">
+            <thead>
+              <tr>
+                <th></th>
+                <th>贸易商名称</th>
+                <th>贸易商国家</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input type="radio" name="maoyishang1">
+                </td>
+                <td>
+                  <input type="text" class="am-form-field" value="商翔通">
+                </td>
+                <td>
+                  <input type="text" class="am-form-field" value="文莱">
+                </td>
+                <td>
+                  <button type="button" class="am-btn am-btn-default">编辑</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" class="am-btn am-btn-primary">提交</button>
+        </div>
+      </div>
+    </div>
+    <div class="am-popup" id="productinfo">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">产品基本信息</h4>
+          <span data-am-modal-close class="am-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <div class="am-form-group">
+            <label>
+              <small>产品名称
+                <small>
+            </label>
+            <input type="text" class="am-form-field">
+          </div>
+          <div class="am-form-group">
+            <label>
+              <small>产品英文名称
+                <small>
+            </label>
+            <input type="text" class="am-form-field">
+          </div>
+          <div class="am-form-group">
+            <label>
+              <small>HSCode
+                <small>
+            </label>
+            <input type="text" class="am-form-field">
+          </div>
+          <div class="am-form-group">
+            <label>
+              <small>退税率
+                <small>
+            </label>
+            <input type="text" class="am-form-field">
+          </div>
+          <div class="am-form-group">
+            <label>
+              <small>货号
+                <small>
+            </label>
+            <input type="text" class="am-form-field">
+          </div>
+          <button type="button" class="am-btn am-btn-primary">提交</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="am-popup" id="productlist">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">请选择产品</h4>
+          <span data-am-modal-close class="am-close pro-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+          <table class="am-table am-table-bordered" class="order_prolists" id="product_list">
+            <thead>
+              <tr>
+                <th>产品图片</th>
+                <th>产品名称</th>
+                <th>产品信息</th>
+                <th>HS编码(退税/监管条件)</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+          <div class="purpage page_turn">
+            <ul id="pro_page"></ul>
+          </div>
+          <button class="submit_pro am-btn am-btn-primary" id="product_list_submit">提交</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="districtlist" style="display: none">
+    <!-- <div class="am-popup-inner"> -->
+      <!-- <div class="am-popup-hd">
+        <h4 class="am-popup-title">请选择境内货源地</h4>
+        <span data-am-modal-close class="am-close dis-close">&times;</span>
+      </div> -->
+      <div class="am-popup-bd">
+          <div class="search_box">
+              <input type="text" class="district_name" placeholder="输入境内货源地名称">
+              <input type="button" class="search_dis am-btn am-btn-primary" value="查询">
+          </div>
+        <table class="am-table am-table-bordered">
+          <thead>
+            <tr>
+                <th>境内货源地</th>
+                <th>境内货源地编号</th>
+            </tr>
+          </thead>
+          <tbody class="districtList">
+
+          </tbody>
+        </table>
+        <div class="purpage page_turn">
+          <ul id="district_page"></ul>
+        </div>
+        <!-- <button class="submit_dis am-btn am-btn-primary">提交</button> -->
+      </div>
+    <!-- </div> -->
+  </div>
+  <div id="countrylist" style="display: none">
+    <!-- <div class="am-popup-inner"> -->
+      <!-- <div class="am-popup-hd">
+        <h4 class="am-popup-title">请选择国家</h4>
+        <span data-am-modal-close class="am-close cou-close">&times;</span>
+      </div> -->
+      <div class="am-popup-bd">
+          <div class="search_box">
+              <input type="text" class="country_name" placeholder="输入国家名称">
+              <input type="button" class="search_cou am-btn am-btn-primary" value="查询">
+          </div>
+        <table class="am-table am-table-bordered">
+          <thead>
+            <tr>
+                <th>国家中文名称</th>
+                <th>国家英文名称</th>
+                <th>国家编号</th>
+            </tr>
+          </thead>
+          <tbody class="countryList">
+
+          </tbody>
+        </table>
+        <div class="purpage page_turn">
+          <ul id="country_page"></ul>
+        </div>
+        <!-- <button class="submit_cou am-btn am-btn-primary" data-type="1">提交</button>
+        <button class="submit_cou_to am-btn am-btn-primary" data-type="2" style="display:hidden">提交</button> -->
+      </div>
+    <!-- </div> -->
+  </div>
+  <div id="unitlist" style="display: none">
+    <!-- <div class="am-popup-inner"> -->
+      <!-- <div class="am-popup-hd">
+        <h4 class="am-popup-title">请选择单位</h4>
+        <span data-am-modal-close class="am-close unit-close">&times;</span>
+      </div> -->
+      <div class="am-popup-bd">
+          <div class="search_box">
+              <input type="text" class="unit_name" placeholder="输入单位名称">
+              <input type="button" class="search_unit am-btn am-btn-primary" value="查询">
+          </div>
+        <table class="am-table am-table-bordered">
+          <thead>
+            <tr>
+                <th>单位名称</th>
+                <th>单位符号</th>
+            </tr>
+          </thead>
+          <tbody class="unitList">
+
+          </tbody>
+        </table>
+        <div class="purpage page_turn">
+          <ul id="unit_page"></ul>
+        </div>
+        <!-- <button class="submit_unit am-btn am-btn-primary" data-type="1">提交</button>
+        <button class="submit_unit_to am-btn am-btn-primary" data-type="2" style="display:hidden">提交</button> -->
+      </div>
+    <!-- </div> -->
+  </div>
+  <script src="../../static/js/order/order.js"></script>
+  <script src="../../static/js/laydate/laydate.js"></script>
+  <script>
+      laydate.render({
+          elem: '#shipping_at' //指定元素
+        });
+      laydate.render({
+          elem: '#sailing_at' //指定元素
+        });
+      laydate.render({
+          elem: '#customs_at' //指定元素
+        });
+  </script>
+</body>
+
+</html>

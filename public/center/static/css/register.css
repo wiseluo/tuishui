@@ -1,0 +1,217 @@
+
+.notification {
+  background-color: #f5f5f500
+}
+
+.contentCenter {
+  border-bottom: 2px solid #cccccc;
+}
+
+.navbar-brand,
+.navbar-tabs {
+  min-height: 5rem;
+}
+
+a.img_a {
+  width: 34%;
+  float: left;
+}
+
+.navbar-item img {
+  max-height: 5rem;
+  width: 80%;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 1.75rem
+}
+
+.control,.button {
+  text-align: center;
+  width: 100%;
+}
+.login {
+  text-align: center;
+  width: 45%;
+}
+.contentCenter{width:100%;}
+.navbar-brand{ width: 50%; display: inline; }
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+  font-family: 'Arial Normal', 'Arial';
+  border-right: 1px solid #d6d9db;
+  border-left: 1px solid #d6d9db;
+  background: #F8FDFF;
+}
+.box_contenttop{
+width: 100%;
+height: 80px;
+}
+.box_contenttop1{
+height: 100%;
+}
+.box_contenttopadd{
+border-bottom:3px solid #0090EC;
+}
+.box_contenttop1 p{
+font-family: "寰蒋闆呴粦";
+font-size: 25px;
+color: #616161;
+line-height: 80px;
+text-align: center;
+}
+.box_contenttop1 i{
+font-size: 18px;
+font-style: normal;
+padding-left: 5px;
+}
+.box_contentcenter input{
+text-indent: 6px;
+}
+.zhuce{
+height: 35px;
+font-size: 13px;
+margin-top: 15px;
+}
+.zhuce_right{
+width:106px;
+display:inline-block;
+text-align:right;
+}
+.zhuce label:first-child{
+float: left;
+text-align: right;
+width: 330px;
+padding-right: 10px;
+height: 44px;
+line-height: 23px;
+padding-top: 6px;
+}
+.zhuce input, .zhuce select{
+width: 308px;
+height: 30px;
+border: 1px solid #B9D1E0;
+border-radius: 3px;
+text-indent: 4px;
+padding: 8px;
+}
+.zhuce .province,  .zhuce .city,  .zhuce .area{ width: 11%; padding: 0; }
+.zhuce input.searchbutton{ width:50px; background:#ff4800; color:#fff;
+  border: none;
+  margin-left: 20px;
+  font-size: 14px;
+  height: 18px;
+  line-height: 18px;
+box-sizing: content-box;
+}
+
+.zhuce4 input{
+width: 13px;
+height: 13px;
+transform: translateY(2px);
+}
+
+.zhuce5 .zhuce51{
+width: 77px;
+}
+.zhuce5 .zhuce52{
+width: 208px;
+}
+.zhuce6{
+margin-left: 346px;
+}
+.zhuce7{
+margin-left: 332px;
+height: auto;
+}
+.zhuce select{
+height: 30px;
+border: 1px solid #B9D1E0;
+border-radius: 3px;
+margin-right: 8px;
+}
+.province{
+width: 85px;
+margin-left: 3px;
+}
+.city{
+width: 78px;
+}
+.area{
+width: 105px;
+}
+.zhuce8{
+margin-left: 415px;
+height: 150px;
+}
+.zhuce8 textarea{
+resize:none;
+border-radius: 3px;
+border: 1px solid #B9D1E0;
+outline: none;
+}
+.zhuce3 p{
+float: left;
+}
+.zhuce3 textarea{
+margin-left: 4px;
+float: left;
+resize:none;
+border-radius: 3px;
+border: 1px solid #B9D1E0;
+outline: none;
+}
+.zhuce9{
+height: 150px;
+}
+.iftongyi{
+margin-top: 40px;
+font-size: 13px;
+margin-left: 330px;
+}
+.iftongyi input{
+margin-right: 7px;
+float: left;
+margin-top: 1px;
+}
+.iftongyi span{
+color: #0066FF;
+}
+.zhuces{
+overflow: hidden;
+margin-top: 35px;
+margin-left: 330px;
+margin-bottom: 50px;
+}
+.zhuces button{
+width: 285px;
+height: 35px;
+border: 0;
+background: #999999;
+line-height: 35px;
+text-align: center;
+float: left;
+color: #fff;
+font-size: 20px;
+}
+.zhuces span{
+float: left;
+font-size: 13px;
+margin-left: 5px;
+line-height: 35px;
+color: #999;
+}
+.zhuces input {
+width: 285px;
+height: 35px;
+border: 0;
+border-radius: 4px;
+background: #999999;
+line-height: 35px;
+text-align: center;
+float: left;
+color: #fff;
+font-size: 20px;
+}

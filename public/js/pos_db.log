@@ -1,0 +1,3715 @@
+
+[POST] ****215:5555 2017-12-26 06:48:17:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>064817</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226064817_134</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****215:5555 2017-12-26 06:49:20:
+-------------------服务器返回-----------------------
+
+
+[POST] ****215:5555 2017-12-26 06:49:29:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>064929</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226064929_792</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****215:5555 2017-12-26 06:49:42:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>064942</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226064942_120</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****215:5555 2017-12-26 06:50:32:
+-------------------服务器返回-----------------------
+
+
+[POST] ****215:5555 2017-12-26 06:50:45:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 06:52:53:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>065253</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226065253_863</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 06:53:56:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:05:57:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>080557</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226080557_272</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:07:00:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:24:02:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>082402</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226082402_673</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:25:05:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:25:05:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>082505</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226082505_407</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:26:08:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:26:09:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>082609</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226082609_919</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:27:12:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:27:12:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>082712</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226082712_463</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:28:15:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:28:15:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>082815</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226082815_375</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:29:18:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:29:18:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>082918</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226082918_280</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:30:21:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:30:21:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>083021</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226083021_218</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:31:24:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:35:36:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>083536</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226083536_309</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:35:46:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>083546</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226083546_550</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:35:46:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>083546</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226083546_818</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:35:47:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>083547</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226083547_685</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:36:39:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:36:49:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:36:49:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:36:50:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:37:13:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>083713</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226083713_870</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:38:16:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:38:17:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>083817</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226083817_395</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:39:20:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-26 08:44:53:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171226</actdate>
+            <trdate>20171226</trdate>
+            <trtime>084453</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171226084453_377</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-26 08:45:56:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-27 01:22:51:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171227</actdate>
+            <trdate>20171227</trdate>
+            <trtime>012251</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171227012251_162</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-27 01:23:54:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-27 01:50:28:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171227</actdate>
+            <trdate>20171227</trdate>
+            <trtime>015028</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171227015028_974</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-27 02:06:00:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171227</actdate>
+            <trdate>20171227</trdate>
+            <trtime>020600</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171227020600_145</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-27 02:12:10:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171227</actdate>
+            <trdate>20171227</trdate>
+            <trtime>021210</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171227021210_594</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-27 02:13:13:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-27 02:13:35:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171227</actdate>
+            <trdate>20171227</trdate>
+            <trtime>021335</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171227021335_237</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-27 02:16:50:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171227</actdate>
+            <trdate>20171227</trdate>
+            <trtime>021650</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171227021650_858</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-27 03:06:56:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171227</actdate>
+            <trdate>20171227</trdate>
+            <trtime>030656</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171227030656_796</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-27 03:07:59:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-27 03:08:04:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171227</actdate>
+            <trdate>20171227</trdate>
+            <trtime>030804</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171227030804_514</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-27 03:09:07:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-27 08:27:05:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171227</actdate>
+            <trdate>20171227</trdate>
+            <trtime>082705</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171227082705_151</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-27 08:28:08:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2017-12-29 08:57:46:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20171229</actdate>
+            <trdate>20171229</trdate>
+            <trtime>085746</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20171229085746_126</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2017-12-29 08:58:49:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 00:48:38:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>004838</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102004838_522</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 00:49:41:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:08:05:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>010805</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102010805_463</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:09:08:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:09:08:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>010908</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102010908_368</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:10:11:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:11:26:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>011126</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102011126_284</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:12:29:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:17:16:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>011716</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102011716_801</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:18:19:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:39:48:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>013948</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102013948_924</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:40:51:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:41:37:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>014137</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102014137_746</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:42:40:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:48:07:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>014807</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102014807_395</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:49:10:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:49:10:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>014910</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102014910_938</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:50:13:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:50:22:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>015022</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102015022_998</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:51:25:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:51:54:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>015154</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102015154_733</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:52:57:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:55:32:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>015532</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102015532_557</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:56:35:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:56:53:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>015653</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102015653_692</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 01:57:56:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 01:59:12:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>015912</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102015912_834</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:00:15:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 02:04:30:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>020430</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102020430_749</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:05:33:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 02:24:44:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>022444</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102022444_395</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:25:47:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 02:26:26:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>022626</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102022626_356</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:27:29:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 02:28:26:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>022826</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102022826_585</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:29:29:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 02:30:03:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>023003</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102023003_954</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:31:06:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 02:37:48:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>023748</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102023748_357</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:38:51:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 02:39:03:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>023903</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102023903_215</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:39:36:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>023936</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102023936_604</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:40:06:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 02:40:39:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 02:40:56:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>024056</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102024056_731</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 02:41:59:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:07:57:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>030757</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102030757_598</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:09:00:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:09:07:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>030907</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102030907_129</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:10:10:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:11:31:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>031131</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102031131_368</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:12:34:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:12:44:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>031244</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102031244_362</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:13:47:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:15:38:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>031538</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102031538_706</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:16:34:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>031634</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102031634_505</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:16:41:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:16:41:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>031641</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102031641_226</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:17:37:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:17:44:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:18:48:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>031848</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102031848_675</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:19:51:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:21:52:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>032152</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102032152_769</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:22:55:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:23:30:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>032330</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102032330_760</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:24:33:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:25:57:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>032557</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102032557_895</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:27:00:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:27:09:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>032709</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102032709_485</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:28:12:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:29:03:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>032903</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102032903_833</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:30:06:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 03:30:11:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>033011</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102033011_435</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 03:31:14:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 04:44:09:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>044409</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102044409_786</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 04:45:12:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 04:45:42:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>044542</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102044542_534</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 04:46:45:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 04:47:21:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>044721</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102044721_294</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 04:47:40:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>044740</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102044740_228</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 04:48:24:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 04:48:38:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>044838</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102044838_884</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 04:48:43:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 04:49:41:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 04:49:42:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>044942</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102044942_363</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 04:50:45:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 04:56:16:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>045616</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102045616_547</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 04:57:18:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>045718</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102045718_505</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 04:57:19:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 04:58:21:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:02:13:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>050213</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102050213_696</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:03:16:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:03:19:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>050319</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102050319_314</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:04:22:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:05:53:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>050553</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102050553_175</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:06:41:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>050641</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102050641_585</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:06:56:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:07:44:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:09:43:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>050943</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102050943_149</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:10:46:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:10:50:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>051050</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102051050_377</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:11:53:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:17:37:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>051737</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102051737_760</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:18:40:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:18:40:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>051840</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102051840_804</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:18:42:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>051842</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102051842_453</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:19:43:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:19:45:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:21:43:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>052143</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102052143_489</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:21:52:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>052152</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102052152_356</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:22:46:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:22:55:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:22:59:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>052259</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102052259_966</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:24:02:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:24:08:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>052408</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102052408_394</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:25:11:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:28:33:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>052833</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102052833_151</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:29:36:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:29:40:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>052940</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102052940_844</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:30:43:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:31:10:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>053110</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102053110_636</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:32:13:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:32:18:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>053218</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102053218_982</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:33:21:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-02 05:35:41:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180102</actdate>
+            <trdate>20180102</trdate>
+            <trtime>053541</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180102053541_812</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-02 05:36:44:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-03 02:29:00:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180103</actdate>
+            <trdate>20180103</trdate>
+            <trtime>022900</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-03 02:30:03:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-03 06:09:52:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180103</actdate>
+            <trdate>20180103</trdate>
+            <trtime>060952</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180103060952_237</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-03 06:10:55:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-03 07:28:57:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180103</actdate>
+            <trdate>20180103</trdate>
+            <trtime>072857</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-03 07:30:00:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-04 01:57:13:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180104</actdate>
+            <trdate>20180104</trdate>
+            <trtime>015713</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180104015713_510</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-04 01:58:16:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-04 02:28:58:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180104</actdate>
+            <trdate>20180104</trdate>
+            <trtime>022858</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-04 02:30:01:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-04 07:28:56:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180104</actdate>
+            <trdate>20180104</trdate>
+            <trtime>072856</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-04 07:29:59:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-05 01:23:06:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180105</actdate>
+            <trdate>20180105</trdate>
+            <trtime>012306</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180105012306_799</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-05 01:24:09:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-05 02:23:18:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180105</actdate>
+            <trdate>20180105</trdate>
+            <trtime>022318</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180105022318_766</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-05 02:24:21:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-05 02:28:56:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180105</actdate>
+            <trdate>20180105</trdate>
+            <trtime>022856</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-05 02:29:59:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-05 07:28:53:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180105</actdate>
+            <trdate>20180105</trdate>
+            <trtime>072853</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-05 07:29:56:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-06 02:28:53:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180106</actdate>
+            <trdate>20180106</trdate>
+            <trtime>022853</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-06 02:29:56:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-06 02:39:27:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180106</actdate>
+            <trdate>20180106</trdate>
+            <trtime>023927</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180106023927_327</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-06 02:40:30:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-06 07:28:51:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180106</actdate>
+            <trdate>20180106</trdate>
+            <trtime>072851</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-06 07:29:54:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-07 02:28:52:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180107</actdate>
+            <trdate>20180107</trdate>
+            <trtime>022852</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-07 02:29:55:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-07 02:39:29:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180107</actdate>
+            <trdate>20180107</trdate>
+            <trtime>023929</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180107023929_705</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-07 02:40:32:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-07 07:28:48:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180107</actdate>
+            <trdate>20180107</trdate>
+            <trtime>072848</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-07 07:29:51:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-08 01:06:04:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180108</actdate>
+            <trdate>20180108</trdate>
+            <trtime>010604</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180108010604_623</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-08 01:07:07:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-08 02:28:49:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180108</actdate>
+            <trdate>20180108</trdate>
+            <trtime>022849</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-08 02:29:52:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-08 02:39:38:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180108</actdate>
+            <trdate>20180108</trdate>
+            <trtime>023938</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180108023938_868</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-08 02:40:41:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-08 05:33:24:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180108</actdate>
+            <trdate>20180108</trdate>
+            <trtime>053324</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180108053324_760</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-08 05:34:27:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-08 05:34:28:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180108</actdate>
+            <trdate>20180108</trdate>
+            <trtime>053428</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180108053428_860</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-08 05:35:31:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-08 07:28:47:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180108</actdate>
+            <trdate>20180108</trdate>
+            <trtime>072847</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-08 07:29:50:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-09 02:28:48:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180109</actdate>
+            <trdate>20180109</trdate>
+            <trtime>022848</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-09 02:29:51:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-09 06:26:40:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180109</actdate>
+            <trdate>20180109</trdate>
+            <trtime>062640</trtime>
+            <trcode>1040800201</trcode>
+            <corpseqno>20180109062640_467</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-09 06:27:43:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-09 07:28:45:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180109</actdate>
+            <trdate>20180109</trdate>
+            <trtime>072845</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-09 07:29:48:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-10 02:28:46:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180110</actdate>
+            <trdate>20180110</trdate>
+            <trtime>022846</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-10 02:29:49:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-10 07:28:43:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180110</actdate>
+            <trdate>20180110</trdate>
+            <trtime>072843</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-10 07:29:46:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-11 02:28:43:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180111</actdate>
+            <trdate>20180111</trdate>
+            <trtime>022843</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-11 02:29:46:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-11 07:28:41:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180111</actdate>
+            <trdate>20180111</trdate>
+            <trtime>072841</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-11 07:29:44:
+-------------------服务器返回-----------------------
+
+
+[POST] ****.29:5555 2018-01-12 02:28:41:
+-------------------开始提交------------------------
+<?xml version="1.0" encoding="GBK"?>
+	<root>
+					
+		<head>
+            <version>1</version>
+            <actdate>20180112</actdate>
+            <trdate>20180112</trdate>
+            <trtime>022841</trtime>
+            <trcode>1010800203</trcode>
+            <corpseqno>JH170003540005</corpseqno>
+            <bankseqno></bankseqno>
+            <filenum></filenum>
+        </head>
+					
+		<body>
+            <instId>08013</instId>
+            <txnodeid>08013</txnodeid>
+			<frnAmt>104896.1</frnAmt>
+			<rmbAmt></rmbAmt>
+			<txnChar>110</txnChar>
+			<entrstUnitMainChar>03</entrstUnitMainChar>
+			<bsnClass>2201</bsnClass>
+			<bsnType>CK</bsnType>
+			<refundFlag>N</refundFlag>
+			<BCTrcFlg>N</BCTrcFlg>
+			<ecUserId>999999</ecUserId>
+			<capitalNo>N/A</capitalNo>
+			<custType>02</custType>
+			<ecBsnTrcNo>JH170003540005</ecBsnTrcNo>
+			<instName>义乌商翔贸易有限公司</instName>
+			<instCrdtTpCd>11</instCrdtTpCd>
+			<instCrdtNo>9133078279646837XW</instCrdtNo>
+			<txnECD>121010</txnECD>
+			<fndsChar>110AN货物贸易</fndsChar>
+			<rsdtCty>CHN</rsdtCty>
+			<currency>USD</currency>
+			<frnCyAccNo>33050167623500001646</frnCyAccNo>
+			<rmbAccNo>33050167625600000059</rmbAccNo>
+			<useECD>001</useECD>
+			<useDsc>支付货款</useDsc>
+			
+        </body>
+	</root>
+
+[POST] ****.29:5555 2018-01-12 02:29:44:
+-------------------服务器返回-----------------------
+

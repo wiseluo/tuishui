@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+  <link rel="stylesheet" href="../../static/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../static/css/font.css" type="text/css" />
+</head>
+<style>
+  .red{
+    color:red;
+  }
+  .gray {
+    color:#cccccc;
+  }
+  .am-avg-sm li {
+    width: 90%;
+  }
+
+  .am-form-file {
+    display: inline-block;
+  }
+  .am-popup-hd .am-popup-title{ text-align: left; }
+  .am-form div.input-ticket label{font-size: 14px; }
+  .am-form div.input-ticket input{ font-size: 14px; }
+  .am-popup {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    margin-top: 0;
+    -webkit-transform: translateY(1024px);
+    -ms-transform: translateY(1024px);
+    transform: translateY(1024px);
+  }
+
+  /* .buttonForm{ width: 100%; height: 40px;  position: fixed;
+    bottom: 20px;
+    right: 0px;background: #fff; border-top: 1px solid #ccc; padding: 0 20px; text-align: right;}
+   .buttonForm button{ margin: 10px; } */
+</style>
+
+<body>
+  <div id="draweredit">
+    <div class="am-popup-inner">
+      <div class="am-popup-hd">
+        <h4 class="am-popup-title">
+          <small>开票人公司基本信息</small>
+        </h4>
+        <a class="close_a" href="./drawer.html"><span data-am-modal-close class="am-close">&times;</span></a>
+      </div>
+      <ul class="am-avg-sm-2 am-avg-md-2 am-avg-lg-2">
+        <li style="width: 37%">
+          <div class="am-popup-bd">
+            <fieldset>
+              <form id="info_form" class="am-form">
+                <div class="input-ticket">
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>开票人公司名称</small>
+                    </label>
+                    <input type="text" name="company" placeholder="输入开票人公司名称" value="">
+                  </div>
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>纳税人识别号</small>
+                    </label>
+                    <input type="text" name="tax_id" placeholder="输入纳税人识别号">
+                  </div>
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>一般纳税人认定时间</small>
+                    </label>
+                    <input type="text" name="tax_at" placeholder="输入一般纳税人认定时间" data-am-datepicker readonly required />
+                    <small class="gray">请查询一般纳税人认定时间并准确填写，如开票人所在地区无法查询，请提供一般纳税人认定证明，并填写认定文件上认定时间。查询网址:http://www.yibannashuiren.com</small>
+                  </div>
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>开票工厂收件人</small>
+                    </label>
+                    <input type="text" name="addressee" placeholder="输入收件人">
+                    <small>请正确填写工厂收件信息，聚达寄送资料将以此收件信息为准</small>
+                  </div>
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>开票工厂收件地址</small>
+                    </label>
+                    <input type="text" name="raddress" placeholder="输入详细地址">
+                  </div>
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>开票工厂联系电话</small>
+                    </label>
+                    <input type="text" name="telephone" placeholder="输入详细地址">
+                  </div>
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>工厂生产地址</small>
+                    </label>
+                    <input type="text" name="address" placeholder="输入详细地址">
+                    <small>工厂生产地址:即工厂地址，需和税务登记证地址一致,如不一致，需提供材料证明</small>
+                  </div>
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>境内货源地</small>
+                    </label>
+                    <input type="text" class="district" name="domestic_source" data-am-modal="{target: '#districtlist'}" placeholder="输入境内货源地" readonly />
+                    <input type="hidden" name="domestic_source_id" value="" />
+                    <small>请根据企业注册第为准，选择正确的境内货源地</small>
+                  </div>
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>开票人增值税率(%)</small>
+                    </label>
+                    <input name="tax_rate" id="tax_rate" class="tax_rate">
+                  </div>
+                  <div>
+                    <label>
+                      <small class="red">*</small><small>出口权</small>
+                    </label>
+                    <input type="radio" checked name="export" value="0"><label for="">有</label>
+                    <input type="radio" name="export" value="1"><label for="">无</label>
+                  </div>
+                  <div class="customscode">
+                    <label>
+                      <small class="red">*</small><small>海关注册登记编码</small>
+                    </label>
+                    <input name="customs_code" id="customs_code" class="customs_code">
+                  </div>
+                  <div class="asdf">
+                    <label>
+                      <small class="red">*</small><small>税局备案海关代码</small>
+                    </label>
+                    <input name="tax_customs_code" id="tax_customs_code" class="tax_customs_code">
+                  </div>
+                </div>
+              </form>
+            </fieldset>
+
+          </div>
+        </li>
+        <li style="width:62%">
+          <div class="am-popup-bd">
+            <div>
+              <label>
+                <small>证照信息</small>
+              </label>
+              <form id="img_form">
+                <div class="image_box">
+                  <ul class="am-avg-sm am-thumbnails">
+                    <li>
+                      <div class="am-form-file pic_customs_certificate">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i>海关注册登记证书</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_customs_certificate">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_business_license">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i>税务登记证副本照片</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_business_license">
+                      </div>
+                      <div class="am-form-file">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_verification">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i> <small class="red">*</small>一般纳税人认定书照片</button>
+                        <input type="file" class="pic_verification" accept="image/*" multiple>
+                        <input type="hidden" name="pic_verification">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_register">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i><small class="red">*</small> 营业执照</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_register">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_receipts_income">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i> 进项发票</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_receipts_income">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_brand">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i> <small class="red">*</small>厂牌照片</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_brand">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_production">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i><small class="red">*</small> 生产线照片</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_production">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_home">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i>厂房租赁合同(或房产证)</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_home">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file tax_return">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i> 纳税申报表</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="tax_return">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_credit_rating">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i> 纳税信用等级</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_credit_rating">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_warehouse_photos">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i> 仓库照片</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_warehouse_photos">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pic_other">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i> 其他</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pic_other">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                  </ul>
+                </div>
+              </form>
+            </div>
+            <div>
+              <div class="am-cf update_product">
+                <div class="am-u-sm-4 am-fl" style="padding-left: 0rem;">
+                    <label>
+                        <small>产品信息</small>
+                    </label>
+                    <input type="hidden" name="pid" class="pid">
+                </div>
+                <button class="am-btn am-btn-success am-fr am-btn-xs addPro">添加产品</button>
+              </div>
+              <div class="am-g update_product" style="padding-top:10px">
+                <table class="am-table am-table-bordered am-table-radius am-table-striped" id="pro_tab">
+                  <thead>
+                    <tr>
+                      <th width="15%">
+                        <small>产品图片</small>
+                      </th>
+                      <th width="15%">
+                        <small>产品名称</small>
+                      </th>
+                      <th width="20%">
+                        <small>HSCode</small>
+                      </th>
+                      <th width="40%">
+                        <small>产品规格</small>
+                      </th>
+                      <th width="10%">
+                        <small>操作</small>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>审核意见</small>
+              </label>
+              <textarea class="opinion" id="opinion" rows="3" disabled></textarea>
+            </div>
+            <p class="buttonContent">
+              <button class="submit_btn am-btn am-btn-primary" data-type="2">提交开票人预审</button>
+              <button class="submit_save am-btn am-btn-default" data-type="1">保存至草稿</button>
+              <button class="relate_btn am-btn am-btn-primary update_product">确定</button>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div class="am-popup" id="districtlist">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">请选择境内货源地</h4>
+          <span data-am-modal-close class="am-close dis-close">&times;</span>
+        </div>
+        <div class="am-popup-bd">
+            <div class="search_box">
+                <input type="text" class="district_name" placeholder="输入境内货源地名称">
+                <input type="button" class="search_dis am-btn am-btn-primary" value="查询">
+            </div>
+          <table class="am-table am-table-bordered">
+            <thead>
+              <tr>
+                  <th>境内货源地</th>
+                  <th>境内货源地编号</th>
+              </tr>
+            </thead>
+            <tbody class="districtList">
+
+            </tbody>
+          </table>
+          <div class="purpage page_turn">
+            <ul id="district_page"></ul>
+          </div>
+          <button class="submit_dis am-btn am-btn-primary">提交</button>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../../static/js/common.js"></script>
+<script>
+  //获取税率
+  function drawerRate() {
+    $.get('/api/drawerrate', {
+      token: $.cookie('token')
+    }, function (res) {
+      if (res.code == 200) {
+        var html = ''
+        res.data.map(function (i, k) {
+          html += `<option value="${i.value}">${i.name}</option>`
+        })
+        $('#tax_rate').html(html)
+      } else {
+        layer.msg(res.msg)
+      }
+    })
+  }
+
+    $('.district').on('click',function(){
+        getDistrict(1)
+    })
+    $('.search_dis').on('click',function(){
+        getDistrict(1)
+    })
+
+  //选择境内货源地
+  $(document).on('click','.submit_dis',function(){
+      if ($('.districtList tr.active').length != 1) {
+        layer.msg('请选择一条数据')
+        return false
+      }
+      let id = $('.districtList tr.active').data('id')
+          dis_name = $('.districtList tr.active .district_name').text()
+      $('.district').val(dis_name)
+      $('.district').parent().find('input[type="hidden"]').val(id)
+      $('.dis-close').trigger('click')
+  })
+  function getDistrict(page){
+      var api = '/api/district/list';
+          keyword =  $('.district_name').val()
+      $.ajax({
+          url: api,
+          type: 'get',
+          data: {
+              token: $.cookie('token'),
+              page: page,
+              keyword: keyword
+          },
+          success: function (res) {
+              var total = res.data.total
+                  html = ''
+              $('.districtList').html("");
+              $.each(res.data.data,function (a,b) {
+                html += '<tr data-id="' + b.id + '">' +
+                  '<td class="district_name">' + b.district_name + '</td>' +
+                  '<td class="">' + b.district_code + '</td>'
+                  '</tr>';
+              })
+              $('.districtList').html(html);
+              //调用分页
+              crepage($('#district_page'), res.data.currentPage, res.data.total, getDistrict)
+          }
+      })
+  }
+  //产品列表
+  function getProList(page) {
+    $.get('/api/product/product_choose', {
+      token: $.cookie('token'),
+      keyword: $('.search_input').val(),
+      pageSize: 10,
+      page: page
+    }, function (res) {
+      if (res.data.data != '') {
+        var data = res.data.data
+        var html = '',
+          picture = ''
+        data.map(function (item) {
+          if (item.picture.indexOf('|') != -1) {
+            picture = item.picture.split('|')[0]
+        } else {
+            picture = item.picture
+        }
+          html += `<tr data-id="${item.id}">
+                  <td>
+                    <small>
+                      <input type="checkbox">
+                    </small>
+                  </td>
+                  <td>
+                    <img src="${picture}" alt="" width="40px">
+                  </td>
+                  <td>
+                    <small>${item.name}</small>
+                  </td>
+                  <td>
+                    <small>${item.hscode}</small>
+                  </td>
+                  <td>
+                    <small>${item.standard}</small>
+                  </td>
+                </tr>`
+        })
+        $('#drawer_proList tbody').html(html)
+        crepage($('#pro_page'), res.data.currentPage, res.data.total, getProList)
+      } else {
+        // $('#drawer_proList tbody').html(
+        //   '<tr><td style="text-align:center;border-top:none;" colspan="5">暂无数据</td></tr>')
+      }
+    })
+  }
+  $(function () {
+    $('.asdf').hide()
+    $('.addPro').on('click', function () {
+      layer.open({
+        type: 1,
+        area: ['700px', '600px'],
+        btn: ['确定', '取消'],
+        content: `<div id="productlist">
+          <div class="am-input-group productSearch" style="padding:3px 5px">
+            <input type="text" class="search_input" style="vertical-align: inherit">
+            <span class="am-input-group-btn" style="width:auto;">
+              <button class="am-btn am-btn-primary am-btn-xs" type="button" onclick="getProList(1)">
+                <span class="am-icon-search"></span>
+              </button>
+            </span>
+          </div>
+        <table id="drawer_proList" class="am-table am-table-bordered am-table-radius am-table-striped" style="text-align:center">
+          <thead>
+            <tr>
+              <th width="10%" style="text-align:center">
+                <small>
+                  <input type="checkbox" class="isAllCheck">
+                </small>
+              </th>
+              <th width="10%" style="text-align:center">
+                <small>产品图片</small>
+              </th>
+              <th width="10%" style="text-align:center">
+                <small>产品名称</small>
+              </th>
+              <th width="20%" style="text-align:center">
+                <small>HSCode</small>
+              </th>
+              <th width="50%" style="text-align:center">
+                <small>产品规格</small>
+              </th>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="purpage page_turn">
+            <ul id="pro_page"></ul>
+        </div></div>`,
+        success: function () {
+          getProList(1)
+        },
+        btn1: function (index) {
+          html = ''
+          $('#drawer_proList tbody input:checked').parents('tr').map(function (i, item) {
+            // console.log(item.innerHTML)
+            let id = $(this).data('id')
+            html += `<tr data-id="${id}">${item.innerHTML}<td>
+                <small>
+                  <button type="button" class="del_pro am-btn am-btn-primary am-btn-xs">删除</button>
+                </small>
+              </td></tr>`
+          })
+          $('#pro_tab tbody').append(html)
+          $('#pro_tab tbody input').parents('td').remove()
+          layer.close(index)
+        }
+      })
+    })
+    //编辑时赋值
+    if (getUrlParam('id') != '' && getUrlParam('id') != null) {
+      $.get('/api/drawer/' + getUrlParam('id'), {
+        token: $.cookie('token')
+      }, function (res) {
+        if (res.code != 200) {
+          layer.msg(res.code + res.msg)
+          return false
+        }
+        var data = res.data
+        var str = ['pic_brand', 'pic_register', 'pic_business_license', 'pic_receipts_income',
+          'pic_verification', 'pic_production', 'pic_home', 'pic_warehouse_photos','pic_customs_certificate',
+          'tax_return','pic_credit_rating','pic_other'
+        ]
+
+        for (var i in data) {
+          i != 'export' ? $('input[name=' + i + ']').val(data[i]) : ""
+          $('[name="export"]:eq(' + (data.export != null ? data.export : 0) + ')').attr("checked", true)
+          str.map(function (item, k) {
+            if (item == i) {
+              data[i] != null ? creImg(data[i], i) : ''
+            }
+          })
+        }
+        if(data.status == 3){
+            $('.update_product').show()
+            $('#info_form input, #img_form input').prop('disabled',true)
+            $('#img_form span').hide()
+            $('.submit_btn, .submit_save').hide()
+        } else {
+            $('.update_product').hide()
+        }
+        if (data.export == 0) {
+          $('.customscode').show()
+              $('.asdf').hide()
+        } else {
+          $('.customscode').hide()
+              $('.asdf').show()
+        }
+        var html = ''
+        if (data.product == null || data.product == '') {
+          // $('#pro_tab tbody').html('<tr><td colspan="5" style="text-align:center">暂无数据</td></tr>')
+        } else {
+            let picture = ''
+          data.product.map(function (item, index) {
+            if (item.picture.indexOf('|') != -1) {
+                picture = item.picture.split('|')[0]
+            } else {
+                picture = item.picture
+            }
+            html += `<tr data-id="${item.id}">
+                  <td>
+                    <img src="${picture}" alt="" width="40px">
+                  </td>
+                  <td>
+                    <small>${item.name}</small>
+                  </td>
+                  <td>
+                    <small>${item.hscode}</small>
+                  </td>
+                  <td>
+                    <small>${item.standard}</small>
+                  </td>
+                  <td>
+                    <small>
+                      <button type="button" class="del_pro am-btn am-btn-primary am-btn-xs">删除</button>
+                    </small>
+                  </td>
+                <tr>`
+          })
+          $('#pro_tab tbody').html(html)
+        }
+      })
+    }
+    //全选按钮
+    $(document).on('click', '.isAllCheck', function () {
+      $('#drawer_proList tbody input').prop('checked', $(this).is(':checked'))
+    }).on('click', '[name="export"]', function () {
+      if ($('[name="export"]:checked').val() == 0) {
+        $('.customscode').show()
+        $('.asdf').hide()
+      } else {
+        $('.customscode').hide()
+            $('.asdf').show()
+      }
+    })
+
+    $('.tax_at').on('change', function () {
+      $(this).val($(this).attr('value'))
+    }).change()
+
+    //保存至草稿和添加至审核按钮
+    $(document).on('click','.submit_save, .submit_btn', function () {
+      var data = $('#info_form').serializeObject()
+      var data1 = $('#img_form').serializeObject()
+      var data = $.extend(data, data1)
+      data.status = $(this).data('type')
+      $.ajax({
+        url: '/api/drawer/update/' + getUrlParam('id') + "?token=" + $.cookie('token'),
+        type: "post",
+        data: data,
+        success: function (res) {
+          if (res.code == 200) {
+            layer.msg(res.msg)
+            setTimeout(function () {
+              $('a.close_a span').trigger('click')
+            }, 700)
+          } else {
+            layer.msg(res.msg)
+          }
+        }
+      })
+    })
+
+    $(document).on('click', '.relate_btn', function () {
+        let pid = []
+        $('#pro_tab tbody tr').each(function(){
+            if($(this).data('id') != undefined && $(this).data('id') != '')pid.push($(this).data('id'))
+        })
+        console.log(pid);
+        $.ajax({
+            url: '/api/drawer/relate_product/' + getUrlParam('id'),
+            type: "post",
+            data: {
+              token: $.cookie('token'),
+              pid: pid
+            },
+            success: function (res) {
+              if (res.code == 200) {
+                layer.msg(res.msg)
+                setTimeout(function () {
+                  $('a.close_a span').trigger('click')
+                }, 700)
+              } else {
+                layer.msg(res.msg)
+              }
+            }
+        })
+    }).on('click', '.del_pro', function () {
+      $(this).parents('tr').remove()
+    })
+  })
+</script>

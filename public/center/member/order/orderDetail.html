@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+</head>
+<style>
+    .clearfix:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden
+    }
+    .pro_sec ul,
+    pro_sec li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .am-popup-bd .am-form-group li label {
+      width: auto;
+    }
+
+    .am-panel-title input {
+      border: none;
+      background: none;
+      color: #0e90d2;
+      margin-bottom: 3px;
+    }
+
+    .pro_sec input,
+    .pro_sec select {
+      border: none;
+      height: 24px;
+      line-height: 24px;
+      padding-left: 5px;
+
+    }
+
+    .pro_sec input {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .pro_sec li {
+      width: 33%;
+      float: left;
+      padding: 2px 0 2px 10px;
+      border-right: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
+    }
+
+    .pro_sec .last_li {
+      width: 34%;
+      border-right: none;
+    }
+
+    .pro_sec {
+      font-size: 12px;
+    }
+
+    .pro_sec ul li .am-btn {
+      font-size: 12px;
+    }
+
+    .am-popup-bd .am-form-group li select {
+      width: 150px;
+      height: auto;
+      display: inline-block;
+      text-indent: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+</style>
+<body>
+  <div>
+    <div class="am-popup-inner">
+      <div class="am-popup-hd">
+        <h4 class="am-popup-title">订单基本信息</h4>
+        <span data-am-modal-close class="am-close">&times;</span>
+      </div>
+      <div class="am-popup-bd">
+        <div class="am-progress">
+          <div class="am-progress-bar am-progress-bar4" style="width: 25%">1、下单</div>
+          <div class="am-progress-bar am-progress-bar2 am-progress-bar-success" style="width: 25%">2、受理中</div>
+          <div class="am-progress-bar am-progress-bar3" style="width: 25%">3、待报关</div>
+          <div class="am-progress-bar am-progress-bar5" style="width: 25%">4、报关完毕</div>
+        </div>
+        <br>
+        <div class="am-panel am-panel-default">
+          <div class="am-panel-hd">1、选择收汇方式与报关方式</div>
+          <div class="am-panel-bd">
+            <p>
+              <small>订单号：<span class="ordnumber"></span></small>
+            </p>
+            <p>
+              <small>收汇方式：<span class="exchange_method"></span></small>
+            </p>
+            <p>
+              <small>离境口岸：<span class="shipment_port"></span></small>
+            </p>
+            <!-- <p>
+              <small>出境关别： <span class="clearance_port"></span></small>
+            </p> -->
+            <p>
+              <small>唛头： <span class="shipping_mark"></span></small>
+            </p>
+            <p>
+              <small>报关方式： <span class="declare_mode"></span></small>
+            </p>
+            <p>
+              <small>监管方式： <span class="clearance_mode"></span></small>
+            </p>
+            <p>
+              <small>报关行名称：<span class="broker_name"></span></small>
+            </p>
+            <p>
+              <small>本单联系人：<span class="links_txt_name"></span></small>
+            </p>
+            <p>
+              <small>本单联系人电话：<span class="links_txt_phone"></span></small>
+            </p>
+          </div>
+        </div>
+        <div class="am-panel am-panel-default">
+          <div class="am-panel-hd">2、产品及开票人信息</div>
+          <div class="am-panel-bd">
+            <p>
+              <small>报关币种： <span class="currency"></span></small>
+            </p>
+            <p>
+              <small>成交方式：<span class="price_clause"></span></small>
+            </p>
+            <p>
+              <small>贸易国（地区）：<span class="trade_country"></span></small>
+            </p>
+            <p>
+              <small>运抵国（地区）：<span class="aim_country"></span></small>
+            </p>
+            <p>
+              <small>指运港：<span id="unloading_port"></span></small>
+            </p>
+            <p>
+              <small>包装方式： <span class="order_package"></span></small>
+            </p>
+            <p>
+              <small>装柜方式： <span class="loading_mode"></span></small>
+            </p>
+            <p>
+              <small>运输方式： <span class="transport"></span></small>
+            </p>
+            <p>
+              <small>包装种类： <span class="package"></span></small>
+            </p>
+            <p>
+              <small>其他包装种类： <span class="other_packages_type"></span></small>
+            </p>
+            <p>
+              <small>产品列表： </small>
+            </p>
+            <div class="pro_info_list"></div>
+            <p>
+              <small>产品数量： <span class="total_num"></span></small>
+            </p>
+            <p>
+              <small>总体积： <span class="total_volume"></span></small>
+            </p>
+            <p>
+              <small>总净重： <span class="total_net_weight"></span></small>
+            </p>
+            <p>
+              <small>总毛重： <span class="total_weight"></span></small>
+            </p>
+            <p>
+              <small>总货值： <span class="total_value"></span></small>
+            </p>
+            <p>
+              <small>运输包装件数： <span class="total_packnum"></span></small>
+            </p>
+          </div>
+        </div>
+        <div class="am-panel am-panel-default">
+          <div class="am-panel-hd">3、报关信息</div>
+          <div class="am-panel-bd">
+            <p>
+              <small>预计出货日期： <span class="shipping_at"></span></small>
+            </p>
+            <p>
+              <small>开船日期： <span class="sailing_at"></span></small>
+            </p>
+            <p>
+              <small>报关日期： <span class="customs_at"></span></small>
+            </p>
+            <p>
+              <small>境外贸易商：<span class="receive_name"></span>
+                <p>
+                  国家：<span class="receive_country"></span>
+                </p>
+              </small>
+            </p>
+            <p>
+              <small>货物存放地址：<span class="storage_address"></span></small>
+            </p>
+            <p>
+              <small>联系人：<span class="storage_link"></span></small>
+            </p>
+            <p>
+              <small>手机号：<span class="storage_phone"></span></small>
+            </p>
+            <p>
+              <small>合同类型： <span class="contract"></span></small>
+            </p>
+            <p>
+              <small>附件上传：
+                <p id="attach_upload">
+
+                </p>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../../static/js/common.js"></script>
+<script>
+  $('.am-progress-bar').removeClass('am-progress-bar-success')
+  function img(str){
+    var html =''
+    if(str.indexOf('|')>-1){
+      str.split('|').map(function(item){
+          if (/\.jpg$|\.png$|\.gif$|\.jpeg/i.test(item)){
+              window_url = item
+              jump = '<img class="preview" src="' + window_url + '" height="50">'
+          } else if (/\.pdf/i.test(item)) {
+              window_url = '/images/center/pdf.png'
+              jump = '<a href="' + item +'" target="view_window"><img src="' + window_url + '" height="50"></a>'
+          }else if (/\.ppt/i.test(item)) {
+              window_url = '/images/center/ppt.png'
+              jump = '<a href="' + item +'"><img src="' + window_url + '" height="50"></a>'
+          }else if (/\.doc$|\.docx/i.test(item)) {
+              window_url = '/images/center/doc.png'
+              jump = '<a href="' + item +'"><img src="' + window_url + '" height="50"></a>'
+          } else if (/\.xls$|\.xlsx/i.test(item)) {
+              window_url = '/images/center/doc.png'
+              jump = '<a href="' + item +'"><img src="' + window_url + '" height="50"></a>'
+          } else {
+              window_url = '/images/center/zip.png'
+              jump = '<a href="' + item +'"><img src="' + window_url + '" height="50"></a>'
+          }
+          html += '<div style="position:relative;margin-left:10px;display:inline-block">' + jump + '</div>'
+      })
+    } else {
+        if (/\.jpg$|\.png$|\.gif$|\.jpeg/i.test(str)){
+            window_url =  str
+            jump = '<img class="preview" src="' + window_url + '" height="50">'
+        } else if (/\.pdf/i.test(str)) {
+            window_url = '/images/center/pdf.png'
+            jump = '<a href="' + str +'" target="view_window"><img src="' + window_url + '" height="50" disabled></a>'
+        }else if (/\.ppt/i.test(str)) {
+            window_url = '/images/center/ppt.png'
+            jump = '<a href="' + str +'"><img src="' + window_url + '" height="50" disabled></a>'
+        }else if (/\.doc$|\.docx/i.test(str)) {
+            window_url = '/images/center/doc.png'
+             jump = '<a href="' + str +'"><img src="' + window_url + '" height="50" disabled></a>'
+        } else {
+            window_url = '/images/center/xls.png'
+            jump = '<a href="' + str +'"><img src="' + window_url + '" height="50" disabled></a>'
+        }
+        html = '<div style="position:relative;margin-left:10px;display:inline-block">' + jump + '</div>'
+    }
+    $('#attach_upload').html(html)
+  }
+  $(function () {
+    $.get('/api/order/create', {
+      token: $.cookie('token')
+    }, function (res) {
+      var dataArr = res.data
+      $.get('/api/order/' + getUrlParam('id'), {
+        token: $.cookie('token')
+      }, function (result) {
+        if ((result.code != undefined && result.code != 200) || result.code != 200) {
+          layer.msg(result.code + result.msg)
+          return false
+        }
+        data = result.data
+        $('.am-progress-bar'+data.status+'').addClass('am-progress-bar-success')
+        console.log(data);
+        $.get('/api/port?country=' + data.aim_country, {
+          token: $.cookie('token')
+        }, function (response) {
+          if (response.code == 200) {
+            for (var i in response.data) {
+              if (i == data.unloading_port) {
+                $('#unloading_port').text(response.data[i])
+              }
+            }
+          } else {
+            layer.msg(res.code + res.msg)
+          }
+        })
+        for (var i in data) {
+          for (var index in dataArr) {
+            if (i == index) {
+              data[i] = dataArr[i][data[i]]
+              break
+            }
+          }
+          $('.' + i).text(data[i] != null ? data[i] : '')
+        }
+        var html = '';
+            drawer_products = data.drawer_products
+        $.each(drawer_products,function(i,item){
+            html += `<section class="am-panel am-panel-default">
+                <header class="am-panel-hd">
+                    <h5 class="am-panel-title">产品名称：
+                        <input readonly id="name" style="width:50%" value="${item.product.name}(${item.pivot.company})">
+                    </h5>
+                </header>
+                <div class="pro_sec">
+                    <ul class="clearfix" style="min-width: 900px;">
+                        <li>
+                            <div>
+                                <label>产品分类：</label>
+                                <input id="" value="` + (item.product.brand == null ? '':item.product.brand.classify_str) +`" disabled="disabled">
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label>品牌类型：</label>
+                                <input id="brand" value='` + (item.product.brand == null ? '':item.product.brand.type_str) + `' disabled="disabled">
+                            </div>
+                        </li>
+                        <li class="last_li">
+                            <div>
+                                <label><small class="red">*</small>英文品名：</label>
+                                <input id="en_name" value='${item.product.en_name}' disabled="disabled">
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label><small class="red">*</small>境内货源地：</label>
+                                <input name="domestic_source" id="domestic_source" value="${item.pivot.domestic_source}" style="width: 70%; readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label>产地：</label>
+                                <input id="production_place" value="`+ (item.pivot.production_place == null ? '':item.pivot.production_place) +`" readonly />
+                            </div>
+                        </li>
+                        <li class="last_li">
+                            <div>
+                                <label><small class="red">*</small>原产国(地区)：</label>
+                                <input id="origin_country" value="${item.pivot.origin_country}" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label><small class="red">*</small>最终目的国(地区)： </label>
+                                <input id="destination_country" value="${item.pivot.destination_country}" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label><small class="red">*</small>货物属性：</label>
+                                <select class="removeClass" id="goods_attribute" disabled>
+                                    <option value="0" `+(item.pivot.goods_attribute == 0 ? 'selected':'')+`>自产</option>
+                                    <option value="1" `+(item.pivot.goods_attribute == 1 ? 'selected':'')+`>委托加工</option>
+                                    <option value="2" `+(item.pivot.goods_attribute == 2 ? 'selected':'')+`>外购</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="last_li">
+                            <div>
+                                <label><small class="red">*</small>HSCode：</label>
+                                <input id="HSCode" value="${item.product.hscode}" disabled="disabled">
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label>CIQ编码：</label>
+                                <input id="ciq_code" value="`+ (item.pivot.ciq_code == null ? '':item.pivot.ciq_code) +`" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label>退税率：</label>
+                                <input id="tax_refund_rate" value="${item.pivot.tax_refund_rate}" disabled="disabled">
+                            </div>
+                        </li>
+                        <li class="last_li">
+                            <div>
+                                <label>税率：</label>
+                                <input id="tax_rate" value="${item.pivot.tax_rate}" disabled="disabled">
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label>种类：</label>
+                                <input id="species" value="`+ (item.pivot.species == null ? '':item.pivot.species) +`" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label>表面材质：</label>
+                                <input id="surface_material" value="`+ (item.pivot.surface_material == null ? '':item.pivot.surface_material) +`" readonly />
+                            </div>
+                        </li>
+                        <li class="last_li">
+                            <div>
+                                <label>款号：</label>
+                                <input id="section_number" value="`+ (item.pivot.section_number == null ? '':item.pivot.section_number) +`" readonly />
+                            </div>
+                        </li>
+                        <li class="last_li" style="width:100%">
+                            <div>
+                                <label>出口货物在最终目的国（地区）是否享受优惠关税：</label>
+                                <select class="removeClass" id="enjoy_offer" disabled>
+                                    <option value="0" `+(item.pivot.enjoy_offer == 0 ? 'selected':'')+`>享受</option>
+                                    <option value="1" `+(item.pivot.enjoy_offer == 1 ? 'selected':'')+`>不享受</option>
+                                    <option value="2" `+(item.pivot.enjoy_offer == 2 ? 'selected':'')+`>不能确定</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label><small class="red">*</small>最大包装件数：</label>
+                                <input data-type="required" id="pack_number" value="${item.pivot.pack_number}" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label> <small class="red">*</small>净重(KG)：</label>
+                                <input id="net_weight" value="${item.pivot.net_weight}" readonly />
+                            </div>
+                        </li>
+                        <li class="last_li">
+                            <div>
+                                <label> <small class="red">*</small>毛重(KG)：</label>
+                                <input id="total_weight" value="${item.pivot.total_weight}" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label> <small class="red">*</small>体积(CBM)：</label>
+                                <input id="volume" value="${item.pivot.volume}" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label> <small class="red">*</small>产品数量：</label>
+                                <input id="number" value="${item.pivot.number}" readonly />
+                            </div>
+                        </li>
+                        <li class="last_li">
+                            <div>
+                                <label>单价(USD)：</label>
+                                <input id="single_price" value="${item.pivot.single_price}" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label>单位：</label>
+                                <input id="unit" value="`+ (item.pivot.unit == null ? '':item.pivot.unit) +`" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label> <small class="red">*</small>报关金额：</label>
+                                <input id="total_price" value="${item.pivot.total_price}" readonly />
+                            </div>
+                        </li>
+                        <li class="last_li">
+                            <div>
+                                <label><small class="red">*</small>开票金额(RMB)：</label>
+                                <input id="value" value="${item.pivot.value}" readonly />
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <label><small class="red">*</small>申报单位：</label>
+                                <input disabled="disabled" value="${item.pivot.measure_unit_cn}">
+                            </div>
+                        </li>
+                        <li class="last_li" style="width: 67%;">
+                            <div>
+                                <label>法定数量和单位：</label>
+                                <input id="default_num" value="`+ (item.pivot.default_num == null ? '':item.pivot.default_num) +`" readonly />
+                                <input id="default_unit" value="`+ (item.pivot.default_unit == null ? '':item.pivot.default_unit) +`" readonly />
+                            </div>
+                        </li>
+                        <li class="last_li" style="width: 100%;">
+                            <div>
+                                <label><small class="red">*</small>申报要素：</label>
+                                <input id="value" value="${item.pivot.standard}" style="width: 60%;" readonly />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>`
+        })
+        $(".pro_info_list").html(html)
+        if (data.exchange_method == 0) {
+          $(".exchange_method").html("汇款(如T/T)")
+        } else if (data.exchange_method == 1) {
+          $(".exchange_method").html("托收(D/P，D/A")
+        } else if (data.exchange_method == 2) {
+          $(".exchange_method").html("信用证(L/C)")
+        } else if (data.exchange_method == 3) {
+          $(".exchange_method").html("赊销(OA)")
+        }
+        if (data.enter_price_method == 0) {
+          $(".enter_price_method").html("指定货物报价单价")
+        } else if (data.enter_price_method == 1) {
+          $(".enter_price_method").html("指定货物报关货值")
+        }
+        if (data.attach_upload != null && data.attach_upload != '') {
+          img(data.attach_upload)
+        }
+        if (data.link != null && data.link != undefined) {
+          $(".links_txt_name").html(data.link.name)
+          $(".links_txt_phone").html(data.link.phone)
+        }
+        if (data.deposit != null && data.deposit != undefined) {
+          $(".storage_address").html(data.deposit.address)
+          $(".storage_link").html(data.deposit.name)
+          $(".storage_phone").html(data.deposit.phone)
+        }
+        if (data.receive != null && data.receive != undefined) {
+          $(".receive_name").html(data.receive.name)
+          $(".receive_country").html(data.receive.country)
+        }
+
+      })
+    })
+
+
+  })
+</script>

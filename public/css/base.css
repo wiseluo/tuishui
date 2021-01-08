@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* 你自己的样式 */
+
+/*贸易系统强制表格不换行*/
+.am-btn{ border-radius:4px; font-size: 14px;}
+.productSearch input{ height: 30px; line-height: 30px; border: 1px solid #ccc; border-radius: 4px 0 0 4px; }
+.productSearch .am-input-group-btn> .am-btn{border: none; height: 30px; border-radius: 0px 4px 4px 0; }
+.productSearch .am-input-group> .am-btn{border: none; height: 30px; border-radius: 0px 4px 4px 0; }
+.productSearch .am-input-group>p{ font-size: 14px; margin:0 10px 0 20px; line-height: 30px; }
+.am-table>thead>tr>th{ font-size: 14px; background: #eee; }
+.am-table>tbody>tr.new_tr>td>input{ border:1px solid #ccc; border-radius: 4px; font-size: 14px; }
+.am-table-bordered>thead+tbody>tr:first-child>td{ border-top: none; }
+.layui-layer-btn a{ font-size: 14px; }
+.buttonContent{ text-align: center;}
+.buttonContent button, .buttonContent a{ font-size: 14px; }
+
+.am-panel-bd .am-form-group p{ font-size: 14px; margin-bottom: 5px; }
+.am-panel-bd .am-form-group{ font-size: 14px; margin-bottom: 0.8rem;}
+.am-form-file{ background: #fff; }
+.am-form-file img{ padding: 2px;border-radius: 4px; border:1px dashed #bebcbc; }
+/*品牌管理*/
+.am-popup-bd .am-form-group label{ width: 116px; display: inline-block; }
+.am-popup-bd .am-form-group input[type="text"], .am-popup-bd .am-form-group .am-selected, .am-popup-bd .am-form-group select{ width:calc(100% - 125px);height: 32px;display: inline-block; text-indent:0.5rem;border:1px solid #ccc; border-radius: 4px; font-size: 14px;  }
+.am-popup-bd .am-form-group textarea{ width:calc(100% - 125px);display: inline-block; text-indent:0.5rem;border:1px solid #ccc; border-radius: 4px; font-size: 14px;  }
+.am-popup-bd .am-form-group .am-selected button{ width: 98%; border:none; font-size: 14px; padding-left: 0; }
+.am-popup-bd .am-form-group .am-radio{ margin: 0; }
+.flieBox{ display: inline-block; }
+.flieBox input{ font-size: 14px; }
+
+.img_box{ width:calc(100% - 125px); display: inline-block;}
+.am-table tbody tr td .am-btn{padding: .3em 0.6em;}
+.logo_box, .auth_box{ display: inline-block; }
+
+
+.am-table tbody tr td input{ border-radius: 4px; font-size: 14px; }
+/*立即下单*/
+.am-popup-bd .am-form-group.specialLabel label{ width: 130px; display: inline-block; }
+/*.am-popup-bd .am-form-group a.new_receive, .am-popup-bd .am-form-group a.new_deposit{ width:calc(100% - 116px); display: inline-block;}
+*/
+.am-progress{height: 3rem;}
+.am-progress-bar{ line-height: 3rem; font-size: 1.6rem;}
+.forceToTextOverFlow_div {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: inherit;
+}
+
+.am-form-file {
+    position: relative;
+}

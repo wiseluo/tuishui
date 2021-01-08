@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0px;
+	padding:0px;
+	}
+.banner_box{
+	
+	background-image:none !important;
+		
+	min-width: 1120px;
+	}
+
+.hero.is-large .hero-body {
+    padding-bottom: 18rem;
+    padding-top: 18rem;
+   
+}
+.is-pulled-right{
+   /* margin-right: 89px; */
+	box-shadow: none !important;
+	/* padding: 4.25rem !important;
+	margin-top:60px; */
+	background: none;
+	min-width: 300px;
+	width: 35%;
+	
+   
+	
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+	
+	}
+.container{
+	position:static !important;
+	
+	}
+.hero.is-large .hero-body{
+	padding-top:0px !important;
+	}
+.title1{
+	
+	/* margin-bottom:44px;
+	margin-top: 30px; */
+	}
+.input-name{
+	
+	/* margin-top:30px; */
+	width:100%;
+	float:left;
+	margin-bottom:0px !important;
+	
+	
+	}
+.input-name .input-text{
+	float:left;
+	width: 17%;
+	font-weight:normal;
+	color:#333;
+	font-size:16px;
+	line-height:50px;
+	white-space: nowrap;
+	}
+.input-name .input-input{
+	float:left;
+	width:80%;
+	padding-left:3%;
+	
+	
+	}
+.input-name .input-input input{
+	height:50px;
+	box-shadow:none !important;
+	background:#f7f7f7;
+	border:none !important;
+	border-radius:20px;
+	
+	
+	}
+.input-name .input-input input::-webkit-input-placeholder{
+	
+	color:#ddd;
+	
+	}
+.input-name .input-input input::-moz-input-placeholder{
+	
+	color:#ddd;
+	
+	}
+.input-name .input-input input::-ms-input-placeholder{
+	
+	color:#ddd;
+	
+	}
+.is-grouped{
+	float:left;
+	width:100%;
+	/* margin-top:50px; */
+	
+	
+	}
+.is-link{
+	
+	width:138px !important;
+	height:50px;
+	background:#51beff !important;
+	border-radius:20px;
+	text-align:center;
+	line-height:50px;
+	font-size:16px;
+	color:#fff;
+	margin-left:20px;
+	}
+.is-login{
+	width:138px !important;
+	height:50px;
+	background:#fca426 !important;
+	border-radius:20px;
+	text-align:center;
+	line-height:50px;
+	font-size:16px;
+	color:#fff;
+	border:none !important;
+	margin-left:30px;
+	
+	
+	}
+.is-login:hover{
+	color:#fff;
+	
+	
+	}
+.wj{
+	color: #d2d2d2 !important;
+    cursor: default;
+    font-size: 14px;
+    /* margin-top: 20px; */
+    margin-right: 14px;
+    float: right;
+	text-align: right;
+	}

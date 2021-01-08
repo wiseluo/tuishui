@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="Bookmark" href="/favicon.ico">
+    <link rel="Shortcut Icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../hui/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../hui/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="../hui/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../hui/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="../hui/static/h-ui.admin/css/style.css" />
+    <script type="text/javascript" src="../hui/lib/jquery/1.9.1/jquery.min.js"></script>
+    <link href="../static/js/layer/theme/default/layer.css" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/layer/layer.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../static/js/common.js"></script>
+    <title>商翔集团综合服务平台(退税)</title>
+    <meta name="keywords" content="Admin">
+    <meta name="description" content="Admin">
+    <style>
+        body {
+            background-color: #efeef0;
+        }
+        .tips_num {
+            position: absolute;
+            top: 5px;
+            display: inline-block;
+            border-radius: 10px;
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+            font-size: 12px;
+            background-color: red;
+            color: #fff;
+        }
+        .navbar-item{ display: inline-block;}
+        .navbar-item img {
+            max-height: 5rem;
+            width: 200px;
+        }
+        .hide{display: none}
+    </style>
+</head>
+
+<body>
+    <header class="navbar-wrapper">
+        <div class="navbar navbar-fixed-top">
+            <div class="container-fluid cl">
+                <a class="navbar-item" href="#">
+                    <img class="banner_img" src="/images/center/my.png" alt="Bulma: a modern CSS framework based on Flexbox" width="200"
+                        height="43">
+                </a>
+                <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+                    <ul class="cl" style="padding-top: 6px;position:relative">
+                        <li>
+                            <i class="fa fa-bell-o bell_tips" style="font-size: 1.5em"></i>
+                            <span class="tips_num hide"></span>
+                        </li>
+                        <li class="dropDown dropDown_hover">
+                            <a href="#" id="user_name" class="dropDown_A">
+                                <i class="Hui-iconfont">&#xe6d5;</i>
+                            </a>
+                            <ul class="dropDown-menu menu radius box-shadow">
+                                <li>
+                                    <a href="/">退出</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <aside class="Hui-aside">
+        <div class="menu_dropdown bk_2">
+            <dl id="menu-article">
+                <dt>
+                    <i class="Hui-iconfont">&#xe616;</i>
+                    <span style="padding-left: 10px;color:#999">下单准备</span>
+                </dt>
+                <dd style="display: block;">
+                    <ul>
+                        <li>
+                            <a data-href="/member/product/drawer.html" data-title="开票人管理" href="javascript:void(0)">开票人管理</a>
+                        </li>
+                        <li>
+                            <a data-href="/member/product/product.html" data-title="产品管理" href="javascript:void(0)">产品管理</a>
+                        </li>
+                        <li>
+                            <a data-href="/member/product/brand.html" data-title="品牌管理" href="javascript:void(0)">品牌管理</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-picture">
+                <dt>
+                    <i class="Hui-iconfont">&#xe613;</i>
+                    <span style="padding-left: 10px;color:#999">订单管理</span>
+                </dt>
+                <dd style="display: block;">
+                    <ul>
+                        <li>
+                            <a data-href="/member/order/index.html" data-title="立即下单" href="javascript:void(0)">立即下单</a>
+                        </li>
+                        <li>
+                            <a data-href="/member/order/order.html" data-title="出口服务订单" href="javascript:void(0)">出口服务订单</a>
+                        </li>
+                        <li>
+                            <a data-href="/member/order/file.html" data-title="业务预警" href="javascript:void(0)">业务预警</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-center" style="display:none">
+                <dt>
+                    <i class="Hui-iconfont">&#xe613;</i>
+                    <span style="padding-left: 10px;color:#999">退税管理</span>
+                </dt>
+                <dd style="display: none;">
+                    <ul>
+                        <li>
+                            <a data-href="/member/center/index.html" data-title="退税款查询" href="javascript:void(0)">退税款查询</a>
+                        </li>
+                        <li>
+                            <a data-href="center_bill" data-title="退税发票管理" href="javascript:void(0)">退税发票管理</a>
+                        </li>
+                        <li>
+                            <a data-href="/member/center/letters.html" data-title="函调信息管理" href="javascript:void(0)">函调信息管理</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-center">
+                <dt>
+                    <i class="Hui-iconfont">&#xe613;</i>
+                    <span style="padding-left: 10px;color:#999">资金管理</span>
+                </dt>
+                <dd style="display: block;">
+                    <ul>
+                        <li>
+                            <a data-href="/member/capital/invoice.html" data-title="发票管理" href="javascript:void(0)">发票管理</a>
+                        </li>
+                    </ul>
+                </dd>
+                <dd style="display: block;">
+                    <ul>
+                        <li>
+                            <a data-href="/member/capital/forex.html" data-title="外汇管理" href="javascript:void(0)">外汇管理</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-center">
+                <dt>
+                    <i class="Hui-iconfont">&#xe613;</i>
+                    <span style="padding-left: 10px;color:#999">客户信息</span>
+                </dt>
+                <dd style="display: block;">
+                    <ul>
+                        <li>
+                            <a class="aaaa" data-href="/member/user/personal_info.html" data-title="客户信息" href="javascript:void(0)">客户信息</a>
+                        </li>
+                        <li>
+                            <a class="aaaa" data-href="/member/user/update_passWord.html" data-title="重置密码" href="javascript:void(0)">修改密码</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </aside>
+    <div class="dislpayArrow hidden-xs"></div>
+    <section class="Hui-article-box">
+        <div id="Hui-tabNav" class="Hui-tabNav hidden-xs">
+            <div class="Hui-tabNav-wp">
+                <ul id="min_title_list" class="acrossTab cl">
+                    <li class="active">
+                        <span title="用户首页" data-href="home.html">用户首页</span>
+                        <em></em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="iframe_box" class="Hui-article">
+            <div class="show_iframe">
+                <div style="display:none" class="loading"></div>
+                <iframe frameborder="0" src="home.html" scrolling="true"></iframe>
+            </div>
+        </div>
+        <div class="tips_box" style="display:none;padding:30px">
+            <div class="tips_list"></div>
+            <div class="purpage page_turn">
+              <ul id="page"></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="contextMenu" id="Huiadminmenu">
+        <ul>
+            <li id="closethis">关闭当前 </li>
+            <li id="closeall">关闭全部 </li>
+        </ul>
+    </div> -->
+    <!--_footer 作为公共模版分离出去-->
+    <script type="text/javascript" src="../hui/lib/layer/2.4/layer.js"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+    <script type="text/javascript" src="../hui/static/h-ui/js//H-ui.min.js"></script>
+    <script type="text/javascript" src="../hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+    <!--/_footer 作为公共模版分离出去-->
+
+    <!--请在下方写此页面业务相关的脚本-->
+    <!-- <script src="https://cdn.bootcss.com/jquery-contextmenu/3.0.0-beta.2/jquery.contextMenu.js"></script> -->
+    <script type="text/javascript">
+        var host = window.location.hostname
+            port = window.location.port
+        if(host == 'myts.sumsoar.com' || port == '817'){
+            $('title').html('义乌商翔贸易有限公司')
+            $('.banner_img').attr('src','/images/center/my.png')
+        } else if(host == 'jdts.sumsoar.com' || port == '818') {
+            $('title').html('浙江聚达供应链服务有限公司')
+            $('.banner_img').attr('src','../../static/images/jdt1.png')
+        }
+        /*个人信息*/
+        $('#user_name').text($.cookie('username'))
+
+        function myselfinfo() {
+            layer.open({
+                type: 1,
+                area: ['300px', '200px'],
+                fix: false, //不固定
+                maxmin: true,
+                shade: 0.4,
+                title: '查看信息',
+                content: '<div>管理员信息</div>'
+            });
+        }
+        $(function () {
+            if ($.cookie('is_auth') == 0) {
+               $('.aaaa').trigger('click')
+            }
+        })
+        $(document).off('click').on('click','.bell_tips',function(){  //消息提醒弹框
+            layer.open({
+                type: 1,
+                title: '消息提醒',
+                area: '600px',
+                btn: ['稍后提醒','我知道了'],
+                content: $('.tips_box'),
+                shade: false,
+                yes: function(i){
+                    layer.close(i)
+                },
+                btn2: function(i){
+                    if(tips_flag){
+                        $.ajax({
+                            type: 'post',
+                            url: '/api/notice_readed',
+                            data: {
+                                token: $.cookie('token')
+                            },
+                            success: function(res){
+                                layer.msg(res.msg)
+                                tips_list()
+                            }
+                        })
+                    }
+                }
+            })
+        })
+        tips_list()
+        var tips_flag = true
+        function tips_list(page){
+            $.ajax({
+                type: 'get',
+                url: '/api/notice',
+                data:{
+                    token: $.cookie('token'),
+                    page: page
+                },
+                success: function(res){
+                    if(res.code == 200){
+                        let content = ''
+                        if(res.data.data.length){
+                            $.each(res.data.data,function(i,item){
+                                content += `<p>${(i+1)}.<small>${item.content}</small></p>`
+                                tips_flag = true
+                            })
+                        } else {
+                            tips_flag = false
+                            content = `<h1 style="text-align:center">暂无消息</h1>`
+                        }
+                        if(res.data.total){
+                            $('.tips_num').html(res.data.total)
+                            $('.tips_num').show()
+                            $('.tips_list').html(content)
+                            crepage($('#page'), res.data.currentPage, res.data.total, tips_list)
+                        } else {
+                            $('.tips_list').html(content)
+                        }
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>drawer</title>
+  <link href="https://libs.cdnjs.net/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script src="../../static/js/common.js"></script>
+  <style>
+    .am-container {
+      max-width: 100%;
+    }
+
+    .am-avg-sm-4>li {
+      width: 33%;
+    }
+
+    img.am-radius {
+      margin-top: 5px !important;
+    }
+
+    .am-pagination>li>a,
+    .am-pagination>li>span {
+      padding: 0.1rem 0.5rem !important;
+    }
+
+    @media (min-height: 630px) and (min-width: 630px) {
+      .am-popup {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        margin-left: 0;
+        margin-top: 0;
+        -webkit-transform: translateY(1024px);
+        -ms-transform: translateY(1024px);
+        transform: translateY(1024px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="am-container am-u-sm－12 am-u-md-12 am-u-lg-12" style="padding-top:10px">
+    <div class="am-g">
+      <div class="am-u-sm-11 am-u-sm-centered">
+        <div class="am-cf">
+          <div class="am-u-sm-4 am-fl productSearch" style="padding-left: 0rem;">
+            <div class="am-input-group" style="display: flex">
+              <input type="text">
+              <button class="am-btn am-btn-primary am-btn-xs" type="button">搜索</button>
+            </div>
+          </div>
+        </div>
+        <div class="am-g" style="padding-top:10px">
+          <table class="am-table am-table-bordered am-table-radius am-table-striped">
+            <thead>
+              <tr>
+                <th>
+                  <small>订单号</small>
+                </th>
+                <th>
+                  <small>下单时间</small>
+                </th>
+                <th>
+                  <small>退税类型</small>
+                </th>
+                <th>
+                  <small>发票状态</small>
+                </th>
+                <th>
+                  <small>备案单证</small>
+                </th>
+                <th>
+                  <small>外汇状态</small>
+                </th>
+                <th>
+                  <small>订单状态</small>
+                </th>
+                <th>
+                  <small>操作</small>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <small>710006-157</small>
+                </td>
+                <td>
+                  <small>2017-03-09 19:26:42</small>
+                </td>
+                <td>
+                  <small>自行退（免）税</small>
+                </td>
+                <td>
+                  <small>未收齐</small>
+                </td>
+                <td>
+                  <small>未收齐</small>
+                </td>
+                <td>
+                  <small>待收齐</small>
+                </td>
+                <td>
+                  <small>已完成</small>
+                </td>
+                <td>
+                  <small>
+                    <button type="button" class="am-btn am-btn-primary am-btn-xs" data-am-modal="{target: '#draweredit'}">详情</button>
+                  </small>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <ul class="am-pagination am-pagination-right">
+            <li class="am-disabled">
+              <a href="#">上一页</a>
+            </li>
+            <li class="am-active">
+              <a href="#">1</a>
+            </li>
+            <li>
+              <a href="#">2</a>
+            </li>
+            <li>
+              <a href="#">3</a>
+            </li>
+            <li>
+              <a href="#">4</a>
+            </li>
+            <li>
+              <a href="#">5</a>
+            </li>
+            <li>
+              <a href="#">下一页</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="am-popup" id="draweredit">
+      <div class="am-popup-inner">
+        <div class="am-popup-hd">
+          <h4 class="am-popup-title">
+            <small>开票人公司基本信息</small>
+          </h4>
+          <span data-am-modal-close class="am-close">&times;</span>
+        </div>
+        <ul class="am-avg-sm-2 am-avg-md-2 am-avg-lg-2 am-thumbnails">
+          <li style="width: 37%">
+            <div class="am-popup-bd">
+              <form class="am-form">
+                <fieldset>
+                  <div class="am-form-group">
+                    <label>
+                      <small>开票人公司名称</small>
+                    </label>
+                    <input type="text" class="am-form" placeholder="输入开票人公司名称">
+                  </div>
+                  <div class="am-form-group">
+                    <label>
+                      <small>开票人联系方式</small>
+                    </label>
+                    <input type="text" class="am-form" placeholder="输入开票人联系方式">
+                  </div>
+                  <div class="am-form-group">
+                    <label>
+                      <small>纳税人识别号</small>
+                    </label>
+                    <input type="text" class="am-form" placeholder="输入纳税人识别号">
+                  </div>
+                  <div class="am-form-group">
+                    <label>
+                      <small>营业执照注册号</small>
+                    </label>
+                    <input type="text" class="am-form" placeholder="输入营业执照注册号">
+                  </div>
+                  <div class="am-form-group">
+                    <label>
+                      <small>一般纳税人认定时间</small>
+                    </label>
+                    <input type="text" class="am-form" placeholder="输入一般纳税人认定时间" data-am-datepicker readonly required />
+                  </div>
+                  <div class="am-form-group">
+                    <label>
+                      <small>开票人地址</small>
+                    </label>
+                    <ul class="am-avg-sm-4 am-thumbnails">
+                      <li>
+                        <select id="one" data-am-one>
+                          <option>省份</option>
+                        </select>
+                      </li>
+                      <li>
+                        <select id="two" data-am-two>
+                          <option>城市</option>
+                        </select>
+                      </li>
+                      <li>
+                        <select id="three" data-am-three>
+                          <option>区域</option>
+                        </select>
+                      </li>
+                    </ul>
+                    <input type="text" class="" id="doc-ipt-email-1" placeholder="输入详细地址">
+                  </div>
+                  <div class="am-form-group">
+                    <label>
+                      <small>境内货源地</small>
+                    </label>
+                    <input type="text" class="" id="doc-ipt-email-1" placeholder="输入境内货源地">
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </li>
+          <li style="width:62%">
+            <div class="am-popup-bd">
+              <div class="am-form-group">
+                <label>
+                  <small>证照信息</small>
+                </label>
+                <div>
+                  <input type="file" id="doc-ipt-file-2">
+                </div>
+                <p>
+                  <img class="am-radius" alt="100*100" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80"
+                    width="100" height="100" />
+                  <img class="am-radius" alt="100*100" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80"
+                    width="100" height="100" />
+                  <img class="am-radius" alt="100*100" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80"
+                    width="100" height="100" />
+                  <img class="am-radius" alt="100*100" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80"
+                    width="100" height="100" />
+                  <img class="am-radius" alt="100*100" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80"
+                    width="100" height="100" />
+                  <img class="am-radius" alt="100*100" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80"
+                    width="100" height="100" />
+                  <img class="am-radius" alt="100*100" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80"
+                    width="100" height="100" />
+                </p>
+              </div>
+              <div class="am-form-group">
+                <div class="am-cf">
+                  <div class="am-u-sm-4 am-fl" style="padding-left: 0rem;">
+                    <label>
+                      <small>产品信息</small>
+                    </label>
+                  </div>
+                  <button class="am-btn am-btn-success am-fr am-btn-xs" data-am-modal="{target: '#productlist'}">添加产品</button>
+                </div>
+                <div class="am-g" style="padding-top:10px">
+                  <table class="am-table am-table-bordered am-table-radius am-table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          <small>产品图片</small>
+                        </th>
+                        <th>
+                          <small>产品名称</small>
+                        </th>
+                        <th>
+                          <small>HSCode</small>
+                        </th>
+                        <th>
+                          <small>型号</small>
+                        </th>
+                        <th>
+                          <small>货号</small>
+                        </th>
+                        <th>
+                          <small>操作</small>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <img src="http://112.13.199.14:203/dist/img/photo_icon.png" alt="" width="40px">
+                        </td>
+                        <td>
+                          <small>购物袋</small>
+                        </td>
+                        <td>
+                          <small>6304939000</small>
+                        </td>
+                        <td>
+                          <small>无型号</small>
+                        </td>
+                        <td>
+                          <small>无货号</small>
+                        </td>
+                        <td>
+                          <small>
+                            <button type="button" class="am-btn am-btn-primary am-btn-xs">删除</button>
+                          </small>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p>
+                <button type="submit" class="am-btn am-btn-default">提交</button>
+              </p>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

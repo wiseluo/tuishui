@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script src="../../static/js/jquery/3.3.1/jquery.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+  <script src="../../static/amazeui/2.7.2/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  ul {
+    padding-left:1rem; 
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .money_top {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .money_top ul {
+    border-bottom: 2px solid #eee;
+    margin-bottom: 0;
+  }
+
+  .money_top ul li {
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    color: #6F6F6F;
+    margin-bottom: -2px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+  .money_top ul .orange {
+    color: #FF9149;
+    border-bottom: 2px solid #FF9149;
+  }
+
+  .money_top ul .orange a {
+    color: #FF9149;
+  }
+
+  .money_top ul li a {
+    color: #666;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .money_top ul li:hover {
+    color: #FF9149;
+    border-bottom: 2px solid #FF9149;
+  }
+
+  .exchange_title {
+    width: 96%;
+    margin:1px auto;
+    line-height: 35px;
+  }
+
+  .exchange_header {
+    border-top: 1px solid #cccccc;
+  }
+
+  .details_pross {
+    width: 100%;
+    height: 21px;
+    margin-top: 30px;
+  }
+  .details_blue {
+    float: left;
+    height: 21px;
+    background: #1686CC;
+  }
+  .details_gray{
+    float: left;
+    height: 21px;
+    background: #999;
+  }
+  .exchange_details {
+    width: 96%;
+    height: 190px;
+    background: #F5F7FA;
+    margin:5px auto;
+  }
+  .exchange_left {
+    width: 35%;
+    height: 190px;
+    padding: 15px;
+    border-right: 1px solid #e5e5e5;
+    float: left;
+  }
+  .exchange_right {
+    width: 65%;
+    height: 190px;
+    padding: 15px;
+    border-right: 1px solid #e5e5e5;
+    float: left;
+  }
+  .details_one,.details_two {
+    font-size: 14px;
+  }
+  /* .details_one small {
+    color:#AEAEAE;
+  } */
+  .sum span {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .blue_square,.gray_square {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    background: #1686CC;
+    margin-right: 5px;
+  }
+  .gray_square {
+    background: #999;
+  }
+  .details_two {
+    height: 58px;
+  }
+  .exchange_content {
+    width: 96%;
+    margin:10px auto;
+  }
+  .exchange_menu {
+    width: 100%;
+    margin:10px auto;
+    float: left;
+    border-bottom: 1px solid #ccc;
+  }
+  .exchange_menu li {
+    line-height: 15px;
+    height: 27px;
+    float: left;
+    padding: 0 8px;
+    margin-top: 10px;
+    font-size: 13px;
+    margin-bottom: -1px;
+  }
+  .exchange_menu li span {
+    cursor: pointer;
+  }
+
+  .tab_li.show span {
+    color: #0e90d2;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .details_one .receipt_num {
+    color:#000000;
+    font-weight: 600;
+  }
+  .tab_box .am-table  tr td{ font-size: 14px; }
+  .tab_box .am-table  tr td input{ border:1px solid #ccc;line-height: 24px;padding-left: 5px; }
+</style>
+
+<body>
+  <div>
+    <div class="money_top">
+      <ul>
+        <li class="orange"><a>我的外汇</a></li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+    <div class="exchange_title">
+      <small>外汇列表</small>><small>收汇单<small class="identifier"></small>详情</small>
+    </div>
+    <div class="exchange_header">
+      <div class="exchange_title">
+        <label> 收汇单 <span class="identifier"></span> 详情</label>
+      </div>
+      <div class="exchange_details">
+        <div class="exchange_left">
+          <div class="details_one sum">
+            总金额：<span class="currency"></span><span class="amount"></span>
+          </div>
+          <div class="details_one">
+            汇率：<span class="rate"></span>
+          </div>
+          <div class="details_one">
+            约(CNY)：<span class="rmb"></span>
+          </div>
+          <div class="details_pross">
+            <div class="details_blue"></div>
+            <div class="details_gray"></div>
+          </div>
+          <div class="details_one">
+            <span class="blue_square"></span><small>已关联：<span class="receipted_amount"></span class="">USD</small>
+          </div>
+          <div class="details_one">
+            <span class="gray_square"></span><small>未关联：<span id="unreceipted_amount" class="receipt_num"></span class="">USD</small>
+          </div>
+        </div>
+        <div class="exchange_right">
+          <div class="details_two">
+            付汇账号：<span class="receipt_number"></span>
+          </div>
+          <div class="details_two">
+            付款人：<span class="payer"></span>
+          </div>
+          <div class="details_two">
+            收汇时间：<span class="received_at"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="exchange_content">
+      <ul id="myTab" class="exchange_menu">
+        <li data-name="tab_one" class="tab_li show" data-type="0">
+          <span>
+            未关联订单
+          </span>
+        </li>
+        <li style="border-left: 1px solid #797979;padding: 0;height: 15px;margin-top: 10px;"></li>
+        <li data-name="tab_two" class="tab_li" data-type="1"><span>关联订单</span></li>
+      </ul>
+      <div class="tab_box">
+        <div id="tab_one" class="tab_div">
+          <div class="am-cf">
+            <div class="am-u-sm-4 am-fl productSearch" style="padding-left: 0rem;">
+              <div class="am-input-group " style="display: flex">
+                <input type="text" class="search_txt" value="" id="dwkeyword">
+                <button class="am-btn am-btn-primary am-btn-xs" id="sceachdw" type="button">搜索</button>
+              </div>
+            </div>
+          </div>
+          <div class="am-g" style="padding-top:10px">
+            <table class="am-table am-table-bordered am-table-radius am-table-striped" id="un_relevance_table">
+              <thead>
+                <tr>
+                  <th>
+                    <small>订单号</small>
+                  </th>
+                  <th>
+                    <small>下单日期</small>
+                  </th>
+                  <th>
+                    <small>报关金额</small>
+                  </th>
+                  <th>
+                    <small>待关联金额</small>
+                  </th>
+                  <th>
+                    <small>录入关联金额(USD)</small>
+                  </th>
+                  <th>
+                    <small>操作</small>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+            <div class="purpage page_turn">
+              <ul id="page"></ul>
+            </div>
+          </div>
+        </div>
+        <div id="tab_two" class="tab_div" style="display: none">
+          <div class="am-g" style="padding-top:10px">
+            <table class="am-table am-table-bordered am-table-radius am-table-striped" id="relevance_table">
+              <thead>
+                <tr>
+                  <th>
+                    <small>订单号</small>
+                  </th>
+                  <th>
+                    <small>关联日期</small>
+                  </th>
+                  <th>
+                    <small>报关金额</small>
+                  </th>
+                  <th>
+                    <small>已关联该笔订单的金额</small>
+                  </th>
+                  <th>
+                    <small>订金资金状况(USD)</small>
+                  </th>
+                  <th>
+                    <small>操作</small>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+            <div class="purpage page_turn">
+              <ul id="page"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="../../static/js/common.js"></script>
+<script>
+  function info(){
+    $.get('/api/finance/receipt/number/' + getUrlParam('id'), {
+      token: $.cookie('token')
+    }, function (res) {
+      for (var i in res.data) {
+        $('.' + i).text(res.data[i])
+      }
+      $('.currency').text(res.data.currency.name)
+      $('.currency_symbol').text(res.data.currency.value)
+      $('#unreceipted_amount').text(res.data.amount / 1 - res.data.receipted_amount / 1)
+      var width = 0
+      width = Math.floor(100 * (res.data.amount / 1 - res.data.receipted_amount / 1) / res.data.amount / 1)
+      $('.details_gray').css('width', width + '%')
+      $('.details_blue').css('width', 100 - width + '%')
+      getOrderList(1)
+    })
+  }
+  function getOrderList(page) {
+    $.get('/api/finance/receipt/order/' + getUrlParam('id') + '/' + $('.tab_li.show').data('type'), {
+      page: page,
+      token: $.cookie('token')
+    }, function (res) {
+      var data = res.data.data
+      var html = ''
+      var order = {}
+      if ($('.tab_li.show').data('type') == 0) {
+        if (data != null && data != '' && data.length != 0) {
+          data.map(function (item, index) {
+            if ($('#unreceipted_amount').text() == 0) {
+              // if (item.receipt == '') {
+              //   html += ''
+              // } else {
+                html += `<tr data-id="` + item.id + `">
+                  <td>` + item.ordnumber +
+                  `</td>
+                  <td>` +
+                  item.created_at + `</td>
+                  <td>` + item.total_value +
+                  `</td>
+                  <td>` + (item.total_value -
+                    item.receipted_amount) +
+                  `</td>
+                  <td><input class="money_input" type="text" disabled placeholder="请输入关联金额"></td>
+                  <td></td>
+          </tr>`
+              // }
+            } else {
+              html += `<tr data-id="` + item.id + `">
+                  <td>` + item.ordnumber +
+                `</td>
+                  <td>` +
+                item.created_at + `</td>
+                  <td>` + item.total_value +
+                `</td>
+                  <td>` + (item.total_value -
+                  item.receipted_amount) +
+                `</td>
+                  <td><input class="money_input" type="text" placeholder="请输入关联金额"></td>
+                  <td><button data-id="` +
+                item.id +
+                `" class="am-btn am-btn-success am-btn-sm relevance_btn">关联</button></td>
+          </tr>`
+            }
+          })
+          $('#un_relevance_table tbody').html(html)
+
+          crepage($('#page'), res.currentPage, res.total, getOrderList)
+
+        } else {
+          $('#un_relevance_table tbody').html('<tr><td colspan="6" style="text-align:center">暂无数据</td></tr>')
+        }
+      } else {
+        order = data[0].orders;
+        if (order != null && order != '' && order.length != 0) {
+          order.map(function (item, index) {
+            html += `<tr data-id="` + item.id + `">
+          <td>` + item.ordnumber + `</td>
+          <td>` + (item.received_at == null ? '' : 'item.received_at') + `</td>
+          <td>` + item.total_value + `</td>
+          <td>` + item.pivot
+              .money +
+              `</td>
+          <td>` + (item.is_remit == 2 ? '已收齐' : '未收齐') +
+              `</td>
+          <td><button data-pivot="` + item.pivot.id + `" data-id="` + item.id +
+              `" class="am-btn am-btn-success am-btn-sm cancel_btn">取消关联</button></td>
+          </tr>`
+          })
+          $('#relevance_table tbody').html(html)
+          crepage($('#page'), res.currentPage, res.total, getOrderList)
+        } else {
+          $('#relevance_table tbody').html('<tr><td colspan="6" style="text-align:center">暂无数据</td></tr>')
+        }
+      }
+    })
+  }
+  $(function () {
+    info()
+    $(document).on('click', '.tab_li', function () {
+      $(this).addClass('show').siblings().removeClass('show')
+      var id = $('.tab_li.show').data('name')
+      $('.tab_div#' + id).css('display', 'block').siblings().css('display', 'none')
+      getOrderList(1)
+    }).on('click', '.relevance_btn', function () {
+      var money = $(this).parent().prev().children('input').val()
+      if (money == '') {
+        layer.msg('录入金额不可为空')
+        return false
+      }
+      $.post('/api/finance/receipt/binding/' + getUrlParam('id'), {
+        token: $.cookie('token'),
+        order_id: $(this).data('id'),
+        money: money
+      }, function (res) {
+        if (res.code == 200) {
+          layer.msg(res.msg)
+          getOrderList(1)
+          info()
+        } else {
+          layer.msg(res.code + res.msg)
+        }
+      })
+    }).on('keyup', '.money_input', function () {
+      var number = $(this).parent().prev().text()
+      // $(this).val($(this).val().replace(/\D/g, ""))
+      if ($(this).val() * 1 > number * 1) {
+        layer.msg('录入金额不可超过待录入金额')
+        $(this).val('')
+      }
+    }).on('click', '.cancel_btn', function () {
+      $.get('/api/finance/receipt/unbinding/' + getUrlParam('id'), {
+        token: $.cookie('token'),
+        order_id: $(this).data('id'),
+        pivot_id: $(this).data('pivot')
+      }, function (res) {
+        if (res.code == 200) {
+          layer.msg(res.msg)
+          getOrderList(1)
+        } else {
+          layer.msg(res.code + res.msg)
+        }
+      })
+    })
+  })
+</script>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>开票人详情</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+</head>
+
+<body>
+  <div id="drawerinfo">
+    <div class="am-popup-inner">
+      <div class="am-popup-hd">
+        <h4 class="am-popup-title">
+          <small>开票人公司基本信息</small>
+        </h4>
+        <a href="./drawer.html"><span data-am-modal-close class="am-close">&times;</span></a>
+      </div>
+      <ul class="am-avg-sm-2 am-avg-md-2 am-avg-lg-2 ">
+        <li style="width: 37%">
+          <div class="am-popup-bd">
+            <form class="am-form">
+              <fieldset>
+                <div class="am-form-group">
+                  <label>
+                    <small>开票人公司名称</small>
+                  </label>
+                  <input type="text" class="am-form-xs company" placeholder="输入开票人公司名称" readonly>
+                </div>
+                <div class="am-form-group">
+                  <label>
+                    <small>纳税人识别号</small>
+                  </label>
+                  <input type="text" class="am-form tax_id" placeholder="输入纳税人识别号" readonly>
+                </div>
+                <div class="am-form-group">
+                  <label>
+                    <small>一般纳税人认定时间</small>
+                  </label>
+                  <input type="text" class="am-form tax_at" placeholder="输入一般纳税人认定时间" data-am-datepicker readonly
+                    required>
+                </div>
+                <div class="am-form-group">
+                  <label>
+                    <small>开票工厂收件人</small>
+                  </label>
+                  <input type="text" class="addressee" placeholder="输入收件人" readonly>
+                  <small>请正确填写工厂收件信息，聚达寄送资料将以此收件信息为准</small>
+                </div>
+                <div class="am-form-group">
+                  <label>
+                    <small>开票工厂收件地址</small>
+                  </label>
+                  <input type="text" readonly class="raddress" placeholder="输入详细地址">
+                </div>
+                <div class="am-form-group">
+                  <label>
+                    <small>开票工厂联系电话</small>
+                  </label>
+                  <input type="text" readonly class="telephone" placeholder="输入详细地址">
+                </div>
+                <div class="am-form-group">
+                  <label>
+                    <small>工厂生产地址</small>
+                  </label>
+                  <input type="text" readonly class="address" placeholder="输入详细地址">
+                  <small>工厂生产地址:即工厂地址，需和税务登记证地址一致,如不一致，需提供材料证明</small>
+                </div>
+                <div class="am-form-group">
+                  <label>
+                    <small>境内货源地</small>
+                  </label>
+                  <input type="text" readonly class="domestic_source" placeholder="输入境内货源地">
+                  <small>请根据企业注册第为准，选择正确的境内货源地</small>
+                </div>
+                <div class="am-form-group">
+                  <label>
+                    <small>开票人增值税率</small>
+                    <input type="hidden" name="pid" class="pid">
+                  </label>
+                  <input type="text" name="tax_rate" readonly id="tax_rate" class="tax_rate">
+                </div>
+                <div class="am-form-group">
+                    <label>
+                      <small class="red">*</small><small>税局备案海关代码</small>
+                    </label>
+                    <input type="text" readonly name="tax_customs_code" id="tax_customs_code" class="tax_customs_code">
+                  </div>
+                <div class="am-form-group">
+                  <label>
+                    <small>出口权</small>
+                  </label>
+                  <input type="radio" checked name="export" value="0"><small for="">有</small>
+                  <input type="radio" name="export" value="1"><small for="">无</small>
+                </div>
+                <div class="customscode am-form-group">
+                  <label>
+                  <small>海关注册登记编码</small>
+                  </label>
+                  <input type="text" readonly name="customs_code" id="customs_code" class="customs_code">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </li>
+        <li style="width:62%">
+          <div class="am-popup-bd">
+            <div class="am-form-group">
+              <label>
+                <small>证照信息</small>
+              </label>
+              <p class="img_box">
+
+              </p>
+            </div>
+            <div class="am-form-group">
+              <div class="am-cf">
+                <div class="am-u-sm-4 am-fl" style="padding-left: 0rem;">
+                  <label>
+                    <small>产品信息</small>
+                  </label>
+                </div>
+                <!-- <button class="am-btn am-btn-success am-fr am-btn-xs addPro">添加产品</button> -->
+              </div>
+              <div class="am-g" style="padding-top:10px">
+                <table class="am-table am-table-bordered am-table-radius am-table-striped" id="proList">
+                  <thead>
+                    <tr>
+                      <th width="20%">
+                        <small>产品图片</small>
+                      </th>
+                      <th width="20%">
+                        <small>产品名称</small>
+                      </th>
+                      <th width="20%">
+                        <small>HSCode</small>
+                      </th>
+                      <th width="20%">
+                        <small>产品规格</small>
+                      </th>
+                      <th width="20%">
+                        <small>操作</small>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>审核意见</small>
+              </label>
+              <textarea class="opinion" id="opinion" rows="3" disabled></textarea>
+            </div>
+            <!-- <p class="buttonContent">
+              <button class="submit_btn am-btn am-btn-primary">提交</button>
+            </p> -->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="../../static/js/common.js"></script>
+<script>
+  function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return undefined; //返回参数值
+  }
+  //编辑时生成图片
+  function creImg(str) {
+    // console.log(window.location.host);
+    var imgArr = [],
+      html = ''
+    if (str.indexOf('|') != -1) {
+      imgArr = str.split('|')
+      imgArr.map(function (item) {
+        html += '<img class="preview" style="margin-left:10px" src=http://' + window.location.host + item + ' height="50">'
+      })
+    } else {
+      html = '<img class="preview" style="margin-left:10px" src=http://' + window.location.host + str + ' height="50">'
+    }
+    $('.img_box').append('<div style="display:inline-block;">' + html + '</div>')
+  }
+  $(function () {
+    var pid = [] //产品id
+
+    $('.tax_at').on('change',function(){
+      $(this).val($(this).attr('value'))
+    }).change()
+    $(document).on('click', '.del_pro', function () {
+      for (var i = 0; i < pid.length; i++) {
+        if (pid[i] / 1 == $(this).data('id')) {
+          pid.splice(i, 1);
+          break;
+        }
+      }
+      $(this).parents('tr').remove()
+    }).on('click', '.submit_btn', function () {
+      $.post('/api/drawer_product', {
+        token: $.cookie('token'),
+        id: getUrlParam('id'),
+        pid: pid.join(',')
+      }, function (res) {
+        layer.msg(res.msg)
+        if (res.code != 200) {
+          layer.msg(res.code + res.msg)
+          return false
+        }
+      })
+    })
+    $.get('/api/drawer/' + getUrlParam('id'), {
+      token: $.cookie('token')
+    }, function (res) {
+      if (res.code != 200) {
+        layer.msg(res.code + res.msg)
+        return false
+      }
+      var data = res.data,
+        html = '';
+      var str = ['pic_brand', 'pic_register', 'pic_business_license', 'pic_receipts_income', 'pic_verification',
+        'pic_production', 'pic_home', 'pic_warehouse_photos','pic_customs_certificate',
+        'tax_return','pic_credit_rating','pic_other'
+      ]
+      for (var i in data) {
+        $('.' + i).val(data[i])
+        str.map(function (item, k) {
+          if (item == i) {
+            data[i] != null ? creImg(data[i], i) : ''
+          }
+        })
+      }
+      if(data.export ==0){
+        $('.customscode').show()
+      }else{
+        $('.customscode').hide()
+      }
+      $('[name="export"]:eq(' + (data.export != null ? data.export / 1 : 0) + ')').attr("checked", true)
+      if (data.product != '' && data.product != null) {
+        data.product.map(function (item) {
+          pid.push(item.id)
+          if (item.picture.indexOf('|') != -1) {
+            picture = item.picture.split('|')[0]
+          }else {
+            picture = item.picture
+          }
+          html += `<tr id="${ item.id}">
+                  <td>
+                    <img src="${picture}" alt="" width="40px">
+                  </td>
+                  <td>
+                    <small>${item.name}</small>
+                  </td>
+                  <td>
+                    <small>${item.hscode}</small>
+                  </td>
+                  <td>
+                    <small>${item.standard}</small>
+                  </td> <td>
+                  </td><tr>`
+        })
+        $('#proList tbody').html(html)
+      } else {
+        $('#proList tbody').html('<tr><td style="text-align:center" colspan="5">暂无数据</td></tr>')
+      }
+    })
+  })
+</script>

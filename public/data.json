@@ -1,0 +1,109 @@
+{
+  "data": [
+    {
+      "id": "2",
+      "apply_name": "符合和",
+      "pro_name": "产品1",
+      "pro_enname": "eregdgfdd",
+      "pro_hscode": "fg1222",
+      "pro_brand": "fhffg",
+      "pro_type": 6,
+      "pro_package": "该方法符",
+      "pro_material": "fgd发货",
+      "pro_composition": "个",
+      "taxRefundRate": 13,
+      "pro_number": 13,
+      "pics": [
+        {
+          "name": "外包装",
+          "size": "155k",
+          "suffix": "png",
+          "url": "images/thumb_1.png"
+        },
+        {
+          "name": "外包装",
+          "size": "155k",
+          "suffix": "png",
+          "url": "images/thumb_1.png"
+        },
+        {
+          "name": "外包装",
+          "size": "155k",
+          "suffix": "png",
+          "url": "images/thumb_1.png"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "apply_name": "符合和",
+      "pro_name": "产品1",
+      "pro_enname": "eregdgfdd",
+      "pro_hscode": "fg1222",
+      "pro_brand": "fhffg",
+      "pro_type": 6,
+      "pro_package": "该方法符",
+      "pro_material": "fgd发货",
+      "pro_composition": "个",
+      "taxRefundRate": 13,
+      "pro_number": 13
+    },
+    {
+      "id": "4",
+      "apply_name": "符合和",
+      "pro_name": "产品1",
+      "pro_enname": "eregdgfdd",
+      "pro_hscode": "fg1222",
+      "pro_brand": "fhffg",
+      "pro_type": 6,
+      "pro_package": "该方法符",
+      "pro_material": "fgd发货",
+      "pro_composition": "个",
+      "taxRefundRate": 13,
+      "pro_number": 13
+    },
+    {
+      "id": "5",
+      "apply_name": "符合和",
+      "pro_name": "产品1",
+      "pro_enname": "eregdgfdd",
+      "pro_hscode": "fg1222",
+      "pro_brand": "fhffg",
+      "pro_type": 6,
+      "pro_package": "该方法符",
+      "pro_material": "fgd发货",
+      "pro_composition": "个",
+      "taxRefundRate": 13,
+      "pro_number": 13
+    },
+    {
+      "id": "6",
+      "apply_name": "符合和",
+      "pro_name": "产品1",
+      "pro_enname": "eregdgfdd",
+      "pro_hscode": "fg1222",
+      "pro_brand": "fhffg",
+      "pro_type": 6,
+      "pro_package": "该方法符",
+      "pro_material": "fgd发货",
+      "pro_composition": "个",
+      "taxRefundRate": 13,
+      "pro_number": 13
+    },
+    {
+      "id": "7",
+      "apply_name": "符合和",
+      "pro_name": "产品1",
+      "pro_enname": "eregdgfdd",
+      "pro_hscode": "fg1222",
+      "pro_brand": "fhffg",
+      "pro_type": 6,
+      "pro_package": "该方法符",
+      "pro_material": "fgd发货",
+      "pro_composition": "个",
+      "taxRefundRate": 13,
+      "pro_number": 13
+    }
+  ],
+  "page": "<select><option value=\"10\">10 条/页</option><option value=\"20\">20 条/页</option></select><span class=\"disabled\">上一页</span> <span class=\"me\">1</span> <span data-page=\"2\">2</span> <span data-page=\"2\">下一页</span> 第 <input type=\"text\" class=\"page_input\" name=\"custompage\" size=\"3\" data-pagenum=\"2\"> 页 共 17 条"
+}

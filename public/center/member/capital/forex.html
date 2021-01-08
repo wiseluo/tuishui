@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script src="../../static/js/jquery/3.3.1/jquery.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+  <script src="../../static/amazeui/2.7.2/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  ul {
+    padding-left:1rem; 
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .money_top {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .money_top ul {
+    border-bottom: 2px solid #eee;
+  }
+
+  .money_top ul li {
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    color: #6F6F6F;
+    margin-bottom: -2px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+  .money_top ul .orange {
+    color: #FF9149;
+    border-bottom: 2px solid #FF9149;
+  }
+
+  .money_top ul .orange a {
+    color: #FF9149;
+  }
+
+  .money_top ul li a {
+    color: #666;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .money_top ul li:hover {
+    color: #FF9149;
+    border-bottom: 2px solid #FF9149;
+  }
+
+  .money_top1{
+	margin-top: 10px;
+}
+.money_top1 ul{margin-bottom: 0;}
+.money_top1 ul a{
+    padding: 0 30px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	background: #DAE2ED;
+	float: left;
+	margin-right: 8px;
+	font-size: 15px;
+	border: 1px solid #d7d9dc;
+	border-bottom: 0;
+	cursor: pointer;
+	color: #666;
+}
+.money_top1 .orange{
+    background: #fff;
+}
+.money_top1 .orange a{
+    background: #fff;
+    color: #ef6b00;
+}
+.money_top1 li a{
+    display: block;
+}
+.money_top1 li:hover{
+    background: #fff;
+}
+.money_content{
+	width: 98.8%;
+	border:1px solid rgba(242, 242, 242, 1);
+	margin: 0 auto 20px auto;
+}
+.money_content1{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 10px; padding:10px 0px;
+	border-bottom:1px solid #C9C9C9;
+  background: #eee;
+  padding: 10px;
+  margin-left: 0;
+}
+.am-table-radius{ border-right: none; }
+
+.money_sum{
+	margin: 0px 0 5px 0;
+}
+.money_sum li.boldweight{ font-weight:bold; text-decoration:underline;}
+.money_sum li{
+	float: left;
+	margin-right: 43px;
+	font-size: 13px;
+	line-height:20px;
+}
+.money_sum1{
+	height: 45px;
+	margin-top: 8px;
+	font-size: 13px;
+}
+.money_time{
+	margin-left: 10px;
+	float: left;
+}
+.money_time span{
+	font-weight: 700;
+	color: #5E5E5E;
+	line-height: 24px;
+}
+.money_time input , .money_state input{
+	width: 130px;
+	text-indent: 6px; border:1px solid #ccc; line-height:22px; border-radius:4px;
+}
+.money_state{
+	float: left;
+	margin-left: 23px;
+}
+.money_state span{
+	font-weight: 700;
+	color: #5E5E5E;
+	line-height: 24px;
+}
+.money_state select{
+	width: 95px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #C6C6C6;
+}
+
+.money_sum1 button{
+	width: 55px;
+	border: 0;
+	background: #FF6600;
+	border-radius: 4px;
+	width: 50px;
+	margin-left: 55px;
+	line-height: 22px;
+	color: #fff;
+	font-size: 14px;
+		
+
+}
+.zhuce  input[type=radio], .zhuce input[type=checkbox]{
+	width: 15px;
+	height: 15px;
+	position: relative;
+	top: 2px;
+}
+.money_menu{
+	width: 100%;
+	margin:0 auto;
+	background: #DAE2ED;
+}
+.money_menu ul{ margin:0;}
+.money_menu li{
+	line-height: 50px;
+	text-align: center;
+	float: left;
+	font-size: 14px;
+}
+.money_menu .am-table tr th{ border-bottom: none; }
+.money_text{
+	width: 100%;
+	margin:0 auto;
+}
+.money_text a.detailbtn{ background:#ff6600;color:#fff; padding:4px 11px; border-radius:4px; cursor:pointer;}
+ .money_text a.detailbtn:hover{ background:#e55c00;} 
+
+ .money_text a.deletebtn{ background:#eee;color:#000; padding:4px 11px; border-radius:4px; cursor:pointer;}
+ .money_text a.deletebtn:hover{ background:#dcdcdc;} 
+
+ .money_text a.editbtn2{ background:#3b8bd6;color:#fff; padding:4px 11px; border-radius:4px; cursor:pointer;}
+ .money_text a.editbtn2:hover{ background:#317dc4;} 
+
+
+.money_text ul li:last-child::before{ content:'';display: block;clear: both;  }
+
+.money_text a.editbtn{ background:#3b8bd6; color:#fff; padding:2px 8px; border-radius:4px; cursor:pointer;}
+.money_text a.editbtn:hover{ background:#317dc4;}
+.money_text a.delete_drawer{ background:#eee; color:#000; padding:2px 8px; border-radius:4px; cursor:pointer;}
+.money_text a.delete_drawer:hover{ background:#dcdcdc;}
+.money_text a.copy{ background:#ff6600; color:#fff; padding:2px 8px; border-radius:4px; cursor:pointer;}
+.money_text a.copy:hover{ background:#de5f0a;}
+.money_text ul{
+	width: 100%;
+	border-bottom: 1px solid #DAE2ED; margin:0;
+	height:50px;
+	line-height:50px;
+	margin:0;
+}
+.money_text li.dingdan_caozuo span{
+	display: inline-block;
+	width: auto;
+	 margin:0;
+}
+.money_text li{
+	text-align: center;
+	min-height: 20px;
+	float: left;
+	font-size: 14px;
+	border-bottom:1px solid #DAE2ED;
+}
+.money_text li button{
+	width:50px; 
+	height:30px;
+	border:0;
+	border-radius: 5px;
+	margin-top: 5px; 
+	}
+.downloads1 ul li  strong.title{
+	display: inline-block;
+	width: 120px;
+	margin-bottom: 15px;
+}
+.money_text li p{ margin:0;}
+.money_text li span{
+	line-height: 20px;
+	display: block; 
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+ 
+}
+.money_text button,.add_receival{
+	border: 0;
+	background: #FF6600;
+	border-radius: 4px;
+	width: 50px;
+	margin: 0 auto;
+	margin-top: 18px;
+	line-height: 22px;
+	color: #fff;
+	font-size: 12px;
+} 
+.money_text button.fileinput-button{
+	margin-top: 0;
+}
+</style>
+
+<body>
+  <div>
+    <div class="money_top">
+      <ul>
+        <li class="orange"><a>我的外汇</a></li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+    <div class="money_top1">
+      <ul>
+        <li class="orange">
+          <a>外汇列表</a>
+          <div class="clear"></div>
+        </li>
+      </ul>
+    </div>
+    <div id="myTabContent" class="tab-content">
+      <div class="money_content tab-pane fade in orange" id="waihui_list" style="position: relative;">
+        <!-- <div class="money_content1" style="height:auto;">
+          <ul class="money_sum">
+            <li class="boldweight">
+              总的外汇美元金额：<span>USD </span>
+            </li>
+            <li>
+              未结汇美元金额：<span>USD 0</span>
+            </li>
+
+            <li>
+              待审查美元金额：<span>USD</span>
+            </li>
+            <li>
+              人民币账户余额：<span>CNY</span>
+            </li>
+            <div class="clear"></div>
+          </ul>
+          <ul class="money_sum">
+            <li class="boldweight">
+              总的欧元外汇金额：<span>EUR</span>
+            </li>
+            <li>
+              未结汇欧元金额：<span>EUR</span>
+            </li>
+
+            <li>
+              待审查欧元金额：<span>EUR </span>
+            </li>
+            <div class="clear"></div>
+          </ul>
+          <ul class="money_sum">
+            <li class="boldweight">
+              EUR总额度：
+              <span>
+                <input id="eur" class="inputs" type="hidden" readonly>
+              </span>
+            </li>
+            <li class="boldweight">
+              USD总额度：
+              <span>
+                <input id="usd" class="inputs" type="hidden" readonly>
+              </span>
+            </li>
+
+            <div class="clear"></div>
+          </ul>
+        </div> -->
+        <!-- <div class="money_sum1">
+          <form action="" method="get">
+            <div class="money_time">
+              <span>时间段：</span><input name="begin_time" data-am-datepicker readonly required><span style="margin:0 4px; color:#ddd;">—</span><input
+                name="end_time" data-am-datepicker readonly required>
+            </div>
+            <div class="money_type money_state">
+              <span>币种：</span>
+              <select id="" name="money_type">
+                <option selected="" value="所有">所有</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+
+              </select>
+            </div>
+            <div class="money_state">
+              <span>关联状态：</span>
+              <select id="u217_input" name="status">
+                <option selected="" value="所有">所有</option>
+                <option value="已关联">已关联 </option>
+                <option value="未关联">未关联 </option>
+                <option value="部分已关联">部分已关联</option>
+              </select>
+            </div>
+            <button style="margin-left:15px;margin-top:-2px;" class="click">查询</button>
+          </form>
+        </div> -->
+        <div class="money_menu">
+          <table class="am-table am-table-bordered am-table-radius am-table-striped" id="">
+            <thead>
+              <tr>
+                <th width="20%">
+                  <small>客户名称</small>
+                </th>
+                <th width="10%">
+                  <small>收款日期</small>
+                </th> 
+                <th width="10%">
+                  <small>收汇单号</small>
+                </th>
+                <th width="10%">
+                  <small>收汇金额</small>
+                </th>
+                <th width="5%">
+                  <small>币种</small>
+                </th>
+                <!-- <th width="10%">
+                  <small>结汇状态</small>
+                </th> -->
+                <th width="5%">
+                  <small>汇率</small>
+                </th>
+                <th width="10%">
+                  <small>人民币金额</small>
+                </th>
+                <th width="10%">
+                  <small>汇款人</small>
+                </th>
+                <th width="10%">
+                  <small>关联状态</small>
+                </th>
+                <th width="10%">
+                  <small>操作</small>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="receipt">
+             
+            </tbody>
+            <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="../../static/js/common.js"></script>
+<script>
+  function receipt(page){
+     $.get('/api/finance/receipt', {
+     // keyword: $("#ddh").val(),
+      token: $.cookie("token"),
+      //status: 5,
+      page: page,
+      pageSize: 10,
+    }, function (res) {
+      var data = res.data;
+      var html = '';
+      data.data.map(function (item, index) {
+        html += ` <tr>
+                <td><small>`+item.customer.name+`</small></td>
+                <td><small>`+(item.received_at == null ? '' : item.received_at)+`</small></td>
+                <td><small>`+item.receipt_number+`</small></td>
+                <td><small>`+item.amount+`</small></td>
+                <td><small>`+item.currency.name+`</small></td>
+                <td><small>`+item.rate+`</small></td>
+                <td><small>`+item.rmb+`</small></td>
+                <td><small>`+(item.payer == null ? '' : item.payer)+`</small></td>
+                <td><small>`+item.relate_str+`</small></td>
+                <td>`+ (item.status == 3 || item.status == 5 ? '<small><a href="./forexDetail.html?id='+item.id+'"><button type="button" class="am-btn am-btn-success am-btn-sm">关联订单</button></a></small>' : '') +`</td>
+              </tr>`;
+      })
+      $('#receipt').html(html);   
+      crepage($('#page'), data.current_page, data.total, receipt)
+    })
+  }
+  $(function(){
+    receipt(1)
+  })
+</script>

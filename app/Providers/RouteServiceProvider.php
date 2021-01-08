@@ -1,0 +1,100 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+
+class RouteServiceProvider extends ServiceProvider
+{
+    /**
+     * This namespace is applied to your controller routes.
+     *
+     * In addition, it is set as the URL generator's root namespace.
+     *
+     * @var string
+     */
+    protected $namespace = 'App\Http\Controllers';
+
+    /**
+     * Define your route model bindings, pattern filters, etc.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+
+        Route::pattern('id', '\d+');
+        Route::pattern('status', '\d');
+        Route::pattern('type', 'update|create|delete|save|read|approve|update_done|relate_product');
+
+        parent::boot();
+    }
+
+    /**
+     * Define the routes for the application.
+     *
+     * @return void
+     */
+    public function map()
+    {
+        $this->mapApiRoutes();
+
+        $this->mapWebRoutes();
+
+        $this->mapErpRoutes();
+
+        $this->mapExternalRoutes();
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebRoutes()
+    {
+        Route::middleware('web')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/web.php'));
+    }
+
+    /**
+     * Define the "api" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapApiRoutes()
+    {
+        Route::prefix('api') //前缀
+             ->middleware('api') //中间件
+             ->namespace($this->namespace)
+             ->group(base_path('routes/api.php')); //自定义路由文件绝对路径
+    }
+
+    /**
+     * Define the "erp" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapErpRoutes()
+    {
+        Route::prefix('erp') //前缀
+             //->middleware('erp') //中间件
+             ->namespace($this->namespace)
+             ->group(base_path('routes/erp.php')); //自定义路由文件绝对路径
+    }
+
+    protected function mapExternalRoutes()
+    {
+        Route::prefix('external') //前缀
+             ->namespace($this->namespace)
+             ->group(base_path('routes/external.php')); //自定义路由文件绝对路径
+    }
+}

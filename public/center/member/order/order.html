@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>homepage</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link href="../../static/css/base.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script src="../../static/js/jquery.cookie.js"></script>
+  <script src="../../static/js/common.js"></script>
+  <script src="../../static/js/bootstrap-paginator.min.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .am-container {
+      max-width: 100%;
+    }
+
+    .am-selected {
+      width: 100%;
+    }
+
+    .am-pagination>li>a,
+    .am-pagination>li>span {
+      padding: 0.1rem 0.5rem !important;
+    }
+
+    @media (min-height: 630px) and (min-width: 630px) {
+      .am-popup {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        margin-left: 0;
+        margin-top: 0;
+        -webkit-transform: translateY(1024px);
+        -ms-transform: translateY(1024px);
+        transform: translateY(1024px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="am-container am-u-sm－12 am-u-md-12 am-u-lg-12" style="padding-top:10px">
+    <div class="am-tabs am-u-sm－12 am-u-md-12 am-u-lg-12">
+      <ul class="am-tabs-nav am-nav am-nav-tabs" id="order_tab">
+        <li class="am-active">
+          <a href="javascript: void(0)" data-type="">
+            <small>所有</small>
+          </a>
+        </li>
+        <li>
+          <a href="javascript: void(0)" data-type="1">
+            <small>草稿</small>
+          </a>
+        </li>
+        <li>
+          <a href="javascript: void(0)" data-type="2">
+            <small>审批中</small>
+          </a>
+        </li>
+        <li>
+          <a href="javascript: void(0)" data-type="3">
+            <small>审批通过</small>
+          </a>
+        </li>
+        <li>
+          <a href="javascript: void(0)" data-type="4">
+            <small>审批拒绝</small>
+          </a>
+        </li>
+        <li>
+          <a href="javascript: void(0)" data-type="5">
+            <small>已结案</small>
+          </a>
+        </li>
+      </ul>
+      <div class="am-tabs-bd">
+        <div class="am-tab-panel am-active">
+          <div class="am-cf">
+            <div class="am-u-sm-4 am-fl productSearch" style="padding-left: 0rem;">
+              <div class="am-input-group" style="display: -webkit-inline-box;">
+                <p>订单号:</p>
+                <input type="text" class="am-form order_number"  style="width:150px;border-radius: 4px;">
+                <p >下单时间:</p>
+                <input type="text" class="am-form apply_start_date" data-am-datepicker readonly required style="width:150px;border-radius: 4px;" />
+                <span style="display:flex; font-size: 12px; color: #999; margin:0 10px; line-height: 30px;">—</span>
+                <input type="text" class="am-form apply_end_date" data-am-datepicker readonly required style="width:150px;border-radius: 4px;" />
+                <button class="am-btn am-btn-primary" onclick="getOrderList(1)" style="border-radius: 4px;">查询</button>
+              </div>
+            </div>
+          </div>
+          <div class="am-g am-scrollable-horizontal" style="padding-top:10px" align="center" valign="middle">
+            <table class="am-table am-table-bordered am-table-radius am-table-striped  am-text-nowrap" id="order_list">
+              <thead>
+                <tr>
+                  <th>
+                    <small>订单号</small>
+                  </th>
+                  <th>
+                    <small>报关状态</small>
+                  </th>
+                  <th>
+                    <small>报关详情</small>
+                  </th>
+                  <th>
+                    <small>订单状态</small>
+                  </th>
+                  <th>
+                    <small>下单时间</small>
+                  </th>
+                  <th>
+                    <small>发票状态</small>
+                  </th>
+                  <th style="width: 200px;">
+                    <small>操作</small>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+            <div class="purpage page_turn">
+              <ul id="page"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function getOrderList(page) {
+      $.get('/api/order', {
+        page: page,
+        pageSize: 10,
+        keyword:$('.order_number').val(),
+        apply_start_date:$('.apply_start_date').val(),
+        apply_end_date:$('.apply_end_date').val(),
+        status: $('#order_tab li.am-active a').data('type'),
+        token: $.cookie('token')
+      }, function (res) {
+        if(res.code !=200){
+          layer.msg(res.msg)
+          return false
+        }
+        var data = res.data
+        var html = ''
+        data.data.map(function (item, index) {
+          html +=
+            ` <tr>
+                <td>
+                  <a>
+                    <small>${item.ordnumber}</small>
+                  </a>
+                </td>
+                <td>
+                    <small>${item.clearance_status}</small>
+                </td>
+                <td>
+                    <small>${item.declare_mode_name}</small>
+                </td>
+                <td>
+                  <small>${item.status_str}</small>
+                </td>
+                <td>
+                  <small>${item.created_at}</small>
+                </td>
+                <td>
+                  <small>${item.invoice_complete_str}</small>
+                </td>
+                <td>
+                  <a href="orderDetail.html?id=${item.id}" ><button class="am-btn am-btn-success am-btn-xs">详情</button></a>
+                   <a `+(item.status!=1?`style="display:none"`:'')+`><button class="am-btn am-btn-danger del_order am-btn-xs" data-id="${item.id}">删除</button></a>
+                  <a `+(item.status!=1&&item.status!=4?`style="display:none"`:'')+` href="index.html?id=${item.id}"><button class="am-btn am-btn-warning am-btn-xs">编辑</button></a>
+                  <a `+(item.status!=2?`style="display:none"`:'')+`><button class="get_back am-btn am-btn-secondary am-btn-xs" data-id="${item.id}">取回</button></a>
+                  <a href="index.html?id=${item.id}&type=1"><button class="am-btn am-btn-primary am-btn-xs">复制</button></a>
+                </td>
+              </tr>`
+        })
+        $('#order_list tbody').html(html)
+        crepage($('#page'), data.page, data.total, getOrderList)
+      })
+    }
+    $(function () {
+      $(document).on('click', '#order_tab li', function () {
+        $(this).addClass('am-active').siblings().removeClass('am-active')
+        getOrderList(1)
+      })
+
+      //取回订单
+      $(document).on('click','.get_back',function(){
+          let id = $(this).data('id')
+          $.ajax({
+              type: 'post',
+              url: '/api/order/retrieve/' + id,
+              data:{
+                  token: $.cookie('token')
+              },
+              success: function(res){
+                  if(res.code == 200) {
+                      layer.msg(res.msg)
+                      getOrderList(1)
+                  }
+              }
+          })
+      })
+
+      //删除草稿订单
+      $(document).on('click','.del_order',function(){
+          let id = $(this).data('id')
+          layer.confirm('确定要删除草稿订单吗？', {
+              btn: ['确定', '取消']
+          }, function () {
+              $.ajax({
+                  type: 'POST',
+                  url: "/api/order/delete/" + id,
+                  data:{
+                      token: $.cookie('token')
+                  },
+                  success: function (res) {
+                      layer.msg(res.msg)
+                      getOrderList(1)
+                  }
+              })
+          })
+      })
+
+      getOrderList(1)
+      var tabCounter = 0;
+      var $tab = $('#doc-tab-demo-1');
+      var $nav = $tab.find('.am-tabs-nav');
+      var $bd = $tab.find('.am-tabs-bd');
+
+      function addTab() {
+        var nav = `<li><span class="am-icon-close"></span>
+            <a href="javascript: void(0)"><small>标签${tabCounter}</a></li>`
+        var content = `<div class="am-tab-panel">动态插入的标签内容${tabCounter}</div>`
+
+        $nav.append(nav);
+        $bd.append(content);
+        tabCounter++;
+        $tab.tabs('refresh');
+      }
+    });
+  </script>
+</body>
+
+</html>

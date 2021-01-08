@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link href="../../static/js/select2/css/select2.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script src="../../static/js/select2/js/select2.min.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+</head>
+<style>
+  .am-form-file {
+    display: inline-block;
+  }
+  .red {
+    color:red;
+  }
+  .am-avg-sm li {
+    width: 90%;
+  }
+  .am-form .am-form-group label{ width: 90px; display: inline-block; }
+  .am-form .am-form-group input, .am-form .am-form-group select, .am-form .am-form-group textarea{ width: calc(100% - 100px); display: inline-block; border-radius: 4px; font-size: 14px;}
+  .imgBox{ width: calc(100% - 100px); display: inline-block; font-size: 14px;}
+  .am-form .am-form-file input {width: 100%;height: 100%}
+  .fa{position: absolute;font-family: FontAwesome;font-style: normal;font-weight: normal;}
+  .searchBtn{top: 4px;right: 40px;}
+  .fa-question-circle{top: 10px;left: 70px;}
+  .searchBtn::before{content: "\f002";}
+  .fa-question-circle::before{content: "\f059";color: red}
+  .explain_tips{position: absolute;background-color: #fff}
+  .explain{margin: 0;font-size: 12px;text-indent: 2em}
+  .select2-container{z-index: 0}
+</style>
+
+<body>
+  <div>
+    <div class="am-popup-inner">
+      <div class="am-popup-hd">
+        <h4 class="am-popup-title">产品基本信息</h4>
+        <a class="close_a" href="./product.html"><span data-am-modal-close class="am-close">&times;</span></a>
+      </div>
+      <div class="am-popup-bd">
+
+        <fieldset>
+          <form id="info_form" class="am-form">
+            <div class="am-form-group" style="position: relative">
+              <label>
+                <small class="red">*</small><small>产品名称</small>
+              </label>
+              <input type="text" name="name" class="name" placeholder="输入产品名称后按回车进行hscode选择">
+              <i class="searchBtn fa"></i>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small><small>产品英文名称</small>
+              </label>
+              <input type="text" name="en_name" class="en_name" placeholder="输入产品英文名称">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small class="red">*</small><small>HScode</small>
+              </label>
+              <input type="text" name="hscode" class="hscode" placeholder="先填写产品名称">
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>货号</small>
+              </label>
+              <input type="text" name="number" class="number" placeholder="输入货号">
+            </div>
+            <div class="am-form-group">
+              <label for="measure_unit">
+                <small>申报单位</small>
+              </label>
+              <select id="measure_unit" name="measure_unit" class="measure_unit">
+
+              </select>
+            </div>
+            <div class="am-form-group">
+              <label>
+                <small>法定单位</small>
+              </label>
+              <input type="text" name="unit" class="unit" placeholder="法定单位" readonly>
+            </div>
+            <div class="am-form-group">
+              <label for="doc-select-1">
+                <small>品牌</small>
+              </label>
+              <input type="text" readonly class="brand" id="brand">
+              <input type="hidden" name="brand_id" class="brand_id">
+              <span class="am-form-caret"></span>
+            </div>
+            <div class="am-form-group">
+              <label for="tax_refund_rate">
+                <small class="red">*</small><small>退税率(%)</small>
+              </label>
+              <select id="tax_refund_rate" name="tax_refund_rate" class="tax_refund_rate">
+
+              </select>
+              <span class="am-form-caret"></span>
+            </div>
+            <div class="am-g" style="padding-top:10px">
+              <table class="am-table am-table-bordered am-table-radius am-table-striped" id="standard_tab">
+                <thead>
+                  <tr>
+                    <th>
+                      <small>名字</small>
+                    </th>
+                    <th>
+                      <small>值</small>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="am-form-group" style="background:#FFF; ">
+              <label>
+                <small>商品图片</small>
+              </label>
+              <div class="imgBox">
+                <div>
+                  <ul class="am-avg-sm am-thumbnails">
+                    <li>
+                      <div class="am-form-file picture">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i><small class="red">*</small>产品图片</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="picture">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file customs_img">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i>历史报关单</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="customs_img">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file appearance_img">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i>产品整体外观图</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="appearance_img">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file brand_img">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i>型号/品牌确认图</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="brand_img">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file pack_img">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i>产品内包装图</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="pack_img">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                    <li>
+                      <div class="am-form-file other_img">
+                        <button type="button" class="am-btn am-btn-default am-btn-sm">
+                          <i class="am-icon-cloud-upload"></i> 其他</button>
+                        <input type="file" accept="image/*" multiple>
+                        <input type="hidden" name="other_img">
+                      </div>
+                      <div class="am-form-file"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label for="doc-ta-1">
+                <small>备注</small>
+              </label>
+              <textarea class="remark" name="remark" rows="5" id="doc-ta-1"></textarea>
+              <input type="hidden" name="link_id" class="link_id">
+            </div>
+          </form>
+
+          <div class="am-g" style="padding-top:10px">
+            <label for="doc-ta-1">
+              <small class="red">*</small><small>联系人</small>
+              <button class="links_choose am-btn am-btn-primary am-radius am-btn-xs am-btn">选择</button>
+            </label>
+            <table class="am-table am-table-bordered am-table-radius am-table-striped" id="links_div">
+              <thead>
+                <tr>
+                  <th>
+                    <small>名字</small>
+                  </th>
+                  <th>
+                    <small>电话</small>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <div class="am-form-group">
+            <label>
+              <small>审核意见</small>
+            </label>
+            <textarea class="opinion" rows="3" disabled></textarea>
+          </div>
+          <p class="buttonContent">
+            <button class="sub_btn am-btn am-btn-primary" data-type="2">提交</button>
+            <button class="sub_save am-btn am-btn-default" data-type="1">保存为草稿</button>
+          </p>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../../static/js/common.js"></script>
+<script>
+  function tax_refund_rate() {
+    $.get('/api/father/12', {
+      token: $.cookie('token')
+    }, function (res) {
+      var html = ''
+      for (var i in res.data) {
+        html += '<option value="' + res.data[i] + '">' + res.data[i] + '</option>'
+      };
+      $('#tax_refund_rate').html(html)
+    })
+  }
+
+  function measure_unit() {
+    $.get('/api/father/15', {
+      token: $.cookie('token')
+    }, function (res) {
+      var html = ''
+      for (var i in res.data) {
+        html += '<option value="' + i + '">' + res.data[i] + '</option>'
+      };
+      $('#measure_unit').html(html)
+      $('#measure_unit').select2()
+    })
+  }
+
+  function getBrand(page) {
+    $.get('/api/brand', {
+      token: $.cookie('token'),
+      status: 3,
+      page: page
+    }, function (res) {
+      if (res.data != '') {
+        var data = res.data.data,
+          html = ''
+        data.map(function (i, k) {
+          html += `<tr id="` + i.id + `">
+              <td>` + i.name + `</td>
+            </tr>`
+        })
+        $('#hscodeTab tbody').html(html)
+        crepage($('#hsPage'), res.data.currentPage, res.data.total, getBrand)
+      } else {
+        $('#hscodeTab tbody').html(
+          '<tr><td style="text-align:center;border-top:none; font-size:14px;" colspan="4">暂无数据</td></tr>');
+      }
+    })
+  }
+
+  function getHsCode(page) {
+    $.get('/api/custom_sys/product_list', {
+      token: $.cookie('token'),
+      keyword: $('.name').val(),
+      standard: $('.standard_val').val(),
+      page: page
+    }, function (res) {
+      if (res.data != '') {
+        var data = res.data.data,
+          html = ''
+        data.map(function (i, k) {
+          html += `<tr style="font-size:12px">
+              <td>` + i.HSCODE + `</td>
+              <td>` + i.PRODNAME +`</td>
+              <td>` + i.PRODSP + `</td>
+              <td>` + i.TAXRADIO +`</td>
+              <td>` + i.UNIT + `</td>
+            </tr>`
+        })
+        $('#hscodeTab tbody').html(html)
+        crepage($('#hsPage'), res.data.currentPage, res.data.total, getHsCode)
+      } else {
+        $('#hscodeTab tbody').html(
+          '<tr><td style="text-align:center;border-top:none; font-size:14px;" colspan="4">暂无数据</td></tr>');
+      }
+    })
+  }
+
+  function linksList(page) {
+    $.get('/api/links', {
+      token: $.cookie('token'),
+      status: 3
+      // page: page
+    }, function (res) {
+      if (res.data != '') {
+        var data =res.data.data,
+          html = ''
+        data.map(function (i, k) {
+          html += `<tr data-id="${i.id}">
+              <td>${i.name}</td>
+              <td style="display:none">${i.country}</td>
+              <td style="display:none"> ${i.address}</td>
+              <td>${i.phone}</td>
+            </tr>`
+        })
+        $('#linksList tbody').html(html)
+        // crepage($('#linksPage'), res.data.currentPage, res.data.total, linksList)
+      } else {
+        $('#linksList tbody').html(
+          '<tr><td style="text-align:center;border-top:none; font-size:14px;" colspan="4">暂无数据</td></tr>');
+      }
+    })
+  }
+  $(function () {
+    tax_refund_rate()
+    measure_unit()
+    //修改时赋值
+    if (getUrlParam('id') != null && getUrlParam('id') != '') {
+      $.get('/api/product/' + getUrlParam('id'), {
+        token: $.cookie('token')
+      }, function (res) {
+        var data = res.data,
+          str = ['customs_img', 'appearance_img', 'picture', 'brand_img', 'pack_img', 'other_img']
+        for (var i in data) {
+          $('.' + i).val(data[i])
+          if (i == 'brand') {
+            data.brand != null ? $('#brand').val(data.brand.name) : ''
+          } else {
+            str.map(function (item, k) {
+              if (item == i) {
+                console.log(data[i])
+                $('[name="' + i + '"]').val(data[i])
+                data[i] != null ? creImg(data[i], i) : ''
+              }
+            })
+          }
+        }
+        $('#tax_refund_rate').val(data.tax_refund_rate).change()
+        $('#measure_unit').val(data.measure_unit).change()
+        var proValue = data.standard.split('|')
+        //产品属性
+        $.get('/api/custom_sys/element/' + res.data.hscode, {
+          token: $.cookie('token')
+        }, function (response) {
+          var html = '',
+            index = 0,
+            tips = ''
+            hh = 0
+            tips = `<i class="fa fa-question-circle"></i>
+                <div class="explain_tips" style="display:none">
+                    <p class="explain">0.“无品牌”，是指进出口商品或包装上免除任何标志或牌名的情形。</p>
+                    <p class="explain">1.“境内自主品牌”，是指由境内企业自主开发、拥有自主知识产权的品牌。</p>
+                    <p class="explain">2.“境内收购品牌”，是指境内企业收购的原境外品牌。</p>
+                    <p class="explain">3.“境外品牌（贴牌生产）”，是指境内企业代工贴牌生产中使用的境外品牌。</p>
+                    <p class="explain">4.“境外品牌（其他）”，是指除代工贴牌生产以外使用的境外品牌。</p>
+                </div>`
+          console.log(response.data)
+          response.data.map(function (i, k) {
+            index++
+            if (i == '货号') {
+              hh = 1
+            }
+            if (i == '品牌') {
+              hh = 2
+            }
+            html +=` <tr>
+                <td `+(i == '品牌类型' ? "style='position:relative'":'')+`>
+                  <small>${i}</small>`+(i == '品牌类型' ? tips:'')+`
+                </td>
+              <td>
+                <small><input ` +
+              (hh == 1 ? `id="gl_number"` : (hh == 2 ? `id="gl_brand"` : '')) + `
+              name="standards[${index}]" type="text" value="` + (proValue[k] != undefined ? proValue[k] : '') +
+              `"></small>
+              </td>
+            </tr>`
+          })
+          $('#standard_tab tbody').html(html)
+          $('.fa-question-circle').mouseover(function(){
+              $(document).find('.explain_tips').show()
+          })
+          $('.fa-question-circle').mouseout(function(){
+              $(document).find('.explain_tips').hide()
+          })
+          if (hh == 1) {
+            $(document).on('keyup', '.number', function () {
+              $('#gl_number').val($(this).val())
+            })
+          }
+        })
+
+        //联系人
+        if (data.link !== null && data.link != '') {
+          var html = ''
+          html = `<tr id="${res.data.link.id}">
+            <td>${data.link.name}</td>
+            <td>${data.link.phone}</td>
+            </tr>`
+        } else {
+          html = `<tr>
+            <td colspan="2">暂无联系人</td>
+            </tr>`
+        }
+        $('#links_div tbody').html(html)
+      })
+    }
+
+    $(document).on('click', '.links_choose', function () {
+      layer.open({
+        type: 1,
+        title: '联系人列表',
+        area: ['700px', '450px'],
+        btn: ['确定', '取消'],
+        content: `<button class="am-btn am-btn-success new_link am-btn-sm" style="margin:10px 5px 10px 10px">新增联系人</button>
+              <button class="links_btn am-btn am-btn-secondary am-btn-sm" style="display:none;margin:10px 5px 10px 10px;">保存</button>
+              <button class="cancel_btn am-btn am-btn-warning am-btn-sm" style="display:none;margin:10px 5px 10px 10px;">取消</button>
+              <form id="linksForm">
+              <table class="am-table am-table-bordered" id="linksList">
+              <thead>
+                <tr>
+                  <th>联系人姓名</th>
+                  <th style="display:none">国家</th>
+                  <th style="display:none">地址</th>
+                  <th>联系电话</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+            </form>
+            <div class="purpage page_turn">
+            <ul id="linksPage"></ul>
+          </div>`,
+        success: function () {
+          linksList()
+        },
+        btn1: function (i) {
+          if ($('#linksList .new_tr').length > 0) {
+            layer.msg('请先保存联系人信息')
+            return false
+          } else if ($('#linksList tbody tr.active').length < 0) {
+            layer.msg('请先点击选择一条联系人数据')
+            return false
+          }
+          var html = ''
+          html = '<tr>' +
+            '<td>' + $('#linksList tbody tr.active td:eq(0)').text() + '</td>' +
+            '<td>' + $('#linksList tbody tr.active td:eq(3)').text() + '</td>' +
+            '</tr>'
+          $('#links_div tbody').html(html)
+          $('.link_id').val($('#linksList tbody tr.active').data('id'))
+          layer.close(i)
+        }
+      })
+    }).on('click', '.new_link', function () {
+      //新建联系人
+      var html = '<tr class="new_tr">' +
+        '<td>' +
+        '<input type="text" name="name" class="am-form-field" placeholder="姓名" value="">' +
+        '</td>' +
+        // '<td style="display:none">' +
+        // '<input type="text" name="country" class="am-form-field" placeholder="国家"  value="">' +
+        // '</td>' +
+        // '<td style="display:none">' +
+        // '<input type="text" name="address" class="am-form-field" placeholder="详细地址"  value="">' +
+        // '</td>' +
+        '<td>' +
+        '<input type="text" name="phone" class="am-form-field" placeholder="联系人电话"  value="">' +
+        '</td>' +
+        '</tr>'
+      $('#linksList tbody').prepend(html)
+      $('.links_btn,.cancel_btn').css('display', 'inline-block')
+    }).on('click', '.links_btn', function () {
+      //保存联系人
+      var data = $('#linksForm').serializeObject()
+      $.post('/api/links', {
+        token: $.cookie('token'),
+        data
+      }, function (res) {
+        if (res.code == 200) {
+          layer.msg('新建成功')
+          $('.links_btn,.cancel_btn').css('display', 'none')
+          $('.new_tr').remove()
+          linksList()
+        } else {
+          layer.msg('新建失败')
+        }
+      })
+    }).on('click', '.cancel_btn', function () {
+      //取消新建
+      $('.links_btn,.cancel_btn').css('display', 'none')
+      $('.new_tr').remove()
+    })
+
+    //产品搜索
+    $(document).off('keyup','.standard_val')
+    $(document).on('keyup','.standard_val',function(){
+        getHsCode(1)
+    })
+    //填写产品名称按回车搜索hscode
+    $(document).on('click','.searchBtn',function(){
+        proHtml()
+    })
+    $(document).on('keyup', '.name', function (e) {
+      if (e.which === 13) {
+        proHtml()
+      }
+    }).on('click', '.sub_btn,.sub_save', function () {
+      //提交,保存
+      var fdata = $('#info_form').serializeArray()
+      //var data1 = $('#standard_form').serialize()
+      //var arr = {}
+      //for (var i in data1) {
+      //arr['standards'].push(data1[i])
+      //}
+      //data.standards = arr
+      var data = {};
+      data['standards'] = Array();
+      $.each(fdata, function (i, item) {
+        if (item.name.indexOf('standards') != -1) {
+          data['standards'].push(item.value);
+        } else {
+          data[item.name] = item.value;
+        }
+      });
+      data.status = $(this).data('type')
+
+      var url = ''
+
+      getUrlParam('id') != null ? url = '/api/product/update/' + getUrlParam('id') : url = '/api/product'
+
+      $.post(url, {
+        token: $.cookie('token'),
+        data
+      }, function (res) {
+        layer.msg(res.msg)
+        if (res.code == 200) {
+          setTimeout(function () {
+            $('a.close_a span').trigger('click')
+          }, 700)
+        }
+      }, "json")
+    })
+
+    //产品弹框
+    function proHtml(){
+        layer.open({
+          type: 1,
+          btn: ['确定', '取消'],
+          area: ['1000px', '600px'],
+          content: `<div><input class="standard_val" placeholder="请输入搜索内容" style="margin-bottom: 15px" /></div>
+              <table  class="am-table am-table-bordered am-table-radius" id="hscodeTab">
+          <thead>
+            <th width="15%">hsCode</th>
+            <th width="15%">商品名称</th>
+            <th width="45%">商品规格</th>
+            <th width="10%">退税率</th>
+            <th width="15%">法定单位</th>
+          </thead>
+          <tbody></tbody>
+          </table>
+          <div class="purpage page_turn">
+            <ul id="hsPage"></ul>
+          </div>`,
+          success: function () {
+            getHsCode(1)
+          },
+          btn1: function (i) {
+            var hscode = $('#hscodeTab tbody tr.active td:eq(0)').text()
+            var unit = $('#hscodeTab tbody tr.active td:eq(4)').text()
+            $('.hscode').val(hscode)
+            $('.unit').val(unit)
+            var proValue = []
+            $('#tax_refund_rate').val($('#hscodeTab tbody tr.active td:eq(3)').text()).change()
+            proValue = $('#hscodeTab tbody tr.active td:eq(2)').text().split('|')
+            $.get('/api/custom_sys/element', {
+              hscode:hscode,
+              token: $.cookie('token')
+            }, function (response) {
+              var html = '',
+                index = 0,
+                hh = 0
+                tips = `<i class="fa fa-question-circle"></i>
+                    <div class="explain_tips" style="display:none">
+                        <p class="explain">0.“无品牌”，是指进出口商品或包装上免除任何标志或牌名的情形。</p>
+                        <p class="explain">1.“境内自主品牌”，是指由境内企业自主开发、拥有自主知识产权的品牌。</p>
+                        <p class="explain">2.“境内收购品牌”，是指境内企业收购的原境外品牌。</p>
+                        <p class="explain">3.“境外品牌（贴牌生产）”，是指境内企业代工贴牌生产中使用的境外品牌。</p>
+                        <p class="explain">4.“境外品牌（其他）”，是指除代工贴牌生产以外使用的境外品牌。</p>
+                    </div>`
+                    console.log(response);
+              response.data.map(function (i, k) {
+                index++
+                if (i == '货号') {
+                  hh = 1
+                }
+                if (i == '品牌') {
+                  hh = 2
+                }
+                html +=` <tr>
+                  <td `+(i == '品牌类型' ? "class='tips' style='position:relative'":'')+`>
+                    <small>${i}</small>`+(i == '品牌类型' ? tips:'')+`
+                  </td>
+                  <td>
+                    <small><input ` +
+                  (hh == 1 ? `id="gl_number"` : (hh == 2 ? `id="gl_brand"` : '')) + `
+                  name="standards[${index}]" type="text" value="` + (proValue[k] != undefined ? proValue[k] : '') +
+                  `"></small>
+                  </td>
+                </tr>`
+              })
+              $('#standard_tab tbody').html(html)
+              $('.fa-question-circle').mouseover(function(){
+                  $(document).find('.explain_tips').show()
+              })
+              $('.fa-question-circle').mouseout(function(){
+                  $(document).find('.explain_tips').hide()
+              })
+              if (hh == 1) {
+                $(document).on('keyup', '.number', function () {
+                  $('#gl_number').val($(this).val())
+                })
+              }
+              layer.close(i)
+            })
+          }
+        })
+    }
+
+
+    $(document).on('click', '.brand', function () {
+      layer.open({
+        type: 1,
+        btn: ['确定', '取消'],
+        area: ['400px', '500px'],
+        content: `<table  class="am-table am-table-bordered am-table-radius" id="hscodeTab">
+          <thead>
+            <th>品牌名称</th>
+          </thead>
+          <tbody></tbody>
+          </table>
+          <div class="purpage page_turn">
+            <ul id="hsPage"></ul>
+          </div>`,
+        success: function () {
+          getBrand(1)
+        },
+        btn1: function (i) {
+          $('.brand, #gl_brand').val($('#hscodeTab tbody tr.active td:eq(0)').text())
+          $('.brand_id').val($('#hscodeTab tbody tr.active').attr('id'))
+          layer.close(i)
+        }
+      })
+    })
+  })
+</script>

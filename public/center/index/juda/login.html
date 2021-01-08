@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>浙江聚达供应链服务有限公司</title>
+    <link href="../../static/css/bulma.min.css" rel="stylesheet">
+   <link href="../../static/css/login.css" rel="stylesheet">
+    <link href="../../static/js/layer/theme/default/layer.css" rel="stylesheet">
+    <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+    <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+    <style>
+        .banner_box {
+            width: 100%;
+            height: 100%;
+            background-image: url(../../static/images/bg.jpg);
+            background-size: cover;
+            position: relative;
+
+        }
+
+        .notification {
+            background-color: #f5f5f500
+        }
+
+        .navbar-brand,
+        .navbar-tabs {
+            min-height: 5rem;
+        }
+
+        .container {
+            position: absolute;
+            top: 25%;
+            width: 100%
+        }
+
+        a.img_a {
+            width: 34%;
+            float: left;
+        }
+
+        .navbar-item img {
+            max-height: 5rem;
+            width: 80%;
+        }
+
+        .field:not(:last-child) {
+            margin-bottom: 1.75rem
+        }
+
+        .control,.button {
+            text-align: center;
+            width: 100%;
+        }
+        .login {
+            text-align: center;
+            width: 35% !important;
+        }
+        .contentCenter{width: 1344px; margin: 10px auto;}
+        .navbar-brand{ width: 50%; display: inline; }
+		.top-right{
+			margin-top:20px;
+		}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar is-transparent">
+        <div class="contentCenter">
+            <div class="navbar-brand">
+                <a class="navbar-item img_a" href="#">
+                    <img src="../../static/images/jdt1.png" alt="Bulma: a modern CSS framework based on Flexbox" height="100">
+                </a>
+                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-start">
+                </div>
+
+                <div class="navbar-end top-right">
+                    <div class="navbar-item">
+                        <a class="navbar-item" href="/">
+                            首页
+                        </a>
+                        <a class="navbar-item" href="#">
+                            登录
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+     <section class="hero is-large" style="position:relative;min-width: 1120px;">
+    <img src="../../static/images/login-background.jpg" id="bg-img" style="min-width: 1120px;" />
+        <div class="banner_box" style="position:absolute" >
+            <div class="hero-body">
+                <div class="container" >
+                    <div class="box is-pulled-right	" id="inp-box" style="padding: 0;">
+                        <div class="column title1" style="flex-grow: unset;">
+                            <h5 class="title is-5" style="text-align:center;font-size:24px;color:#000;white-space: nowrap;margin-top:100px;">欢迎使用聚达退税服务</h5>
+                        </div>
+                        <div class="field input-name">
+                            <label class="label input-text">用户名</label>
+                            <div class="control input-input">
+                                <input class="input username" type="text" placeholder="请输入您的商翔用户名">
+                            </div>
+                        </div>
+                        <div class="field input-name">
+                            <label class="label input-text">密码</label>
+                            <div class="control input-input">
+                                <input class="input password" type="password" placeholder="请输入您的密码">
+                            </div>
+                        </div>
+                        <p class="reset wj" style="color:blue;cursor:default">忘记密码</p>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <a class="button login is-link">
+                                   登录
+                                </a>
+                                <a href='/member/user/register.html' class="button login is-login">
+                                   去注册
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav class="level " style="background-color: black;position: absolute;bottom: -5px;width: 100%;">
+        <div class="level-item has-text-centered ">
+            <div>
+                <h6 style="color:white;margin: 15px; ">©2019 版权所有（浙江商翔网络科技有限公司）</h6>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
+<script>
+    function login() {
+        $.post('/api/login', {
+            username: $('.username').val(),
+            password: $('.password').val()
+        }, function (res) {
+            if (res.code !== 200) {
+                layer.msg(res.msg)
+            } else {
+                layer.msg('登录成功')
+                $.cookie('token', res.token, {
+                    path: '/'
+                })
+                $.cookie('username', res.name, {
+                    path: '/'
+                })
+                $.cookie('is_auth',res.is_auth, {
+                    path: '/'
+                })
+                // return false
+                window.location.href = "/member/index.html"
+            }
+        })
+    }
+    $(function () {
+        $(document).on('click', '.button.is-link', function (res) {
+            login()
+        }).on('keyup',function(e){
+            if(e.which == 13){
+                login()
+            }
+        })
+        $(document).on('click','.reset',function(){
+            layer.confirm('请联系管理员重置密码',{title:'提示'}, function(index){
+              layer.close(index);
+            });
+        })
+    })
+</script>
+<script>
+	var timeout = null; //onresize触发次数过多，设置定时器
+	window.onresize = function() {
+		clearTimeout(timeout);
+		timeout = setTimeout(function() {
+			window.location.reload();
+		}, 100); //页面大小变化，重新加载页面以刷新MAP
+	}
+	window.onload=function(){
+		var w = $("#bg-img").width(),
+			h = $("#bg-img").height(),
+			bw = w * 0.26,
+			bh = h * 0.8,
+			lw = w * 0.55,
+			th = h * 0.085;
+		$("#inp-box").css({"width":bw,"height":bh,"left":lw,"top":th});
+	}
+</script>

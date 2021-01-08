@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>homepage</title>
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/css/app.css">
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+  <link href="../../static/js/layer/theme/default/layer.css" rel="stylesheet">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/jquery.cookie.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script src="../../static/amazeui/2.7.2/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+  <script src="../../static/js/layer/layer.js"></script>
+
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .am-container {
+      max-width: 100%;
+    }
+
+    .am-selected {
+      width: 100%;
+    }
+
+    .am-form-file {
+      display: inline-block;
+      font-size: 12px;
+    }
+
+    .am-pagination>li>a,
+    .am-pagination>li>span {
+      padding: 0.1rem 0.5rem !important;
+    }
+   .am-table-bordered>thead+tbody>tr:first-child>td{ border-top: none; }
+   .am-pagination>li>a, .am-pagination>li>span {
+    padding: 0.3rem 0.8rem !important; font-size: 14px;
+}
+  </style>
+
+</head>
+
+<body>
+  <div class="am-container am-u-sm－12 am-u-md-12 am-u-lg-12" style="padding-top:10px">
+    <div class="am-tabs am-u-sm－12 am-u-md-12 am-u-lg-12" data-am-tabs="{noSwipe: 1}" id="doc-tab-demo-1">
+      <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li class="am-active">
+          <a href="javascript: void(0)">
+            <small>所有</small>
+          </a>
+        </li>
+      </ul>
+      <div class="am-tabs-bd">
+        <div class="am-tab-panel am-active">
+          <div class="am-cf">
+            <div class="am-u-sm-4 am-fl productSearch" style="padding-left: 0rem;">
+              <div class="am-input-group-btn " style="display: -webkit-inline-box;">
+                <p>订单号:</p>
+                <input type="text" class="am-btn" id="ddh" style="width:150px; border-radius: 4px 0 0 4px; border:1px solid #ccc; height: 30px; line-height: 30px;">
+                <button class="am-btn am-btn-primary am-btn-xs" style="border-radius: 0 4px 4px 0; height: 30px; border:none;">查询</button>
+              </div>
+            </div>
+          </div>
+          <div class="am-g am-scrollable-horizontal" style="padding-top:10px" align="center" valign="middle">
+            <table class="am-table am-table-bordered am-table-radius am-table-striped  am-text-nowrap">
+              <thead>
+                <tr>
+                  <th>
+                    <small>订单号</small>
+                  </th>
+                  <th>
+                    <small>报关状态</small>
+                  </th>
+                  <th>
+                    <small>合同</small>
+                  </th>
+                  <th>
+                    <small>报关预录单</small>
+                  </th>
+                  <th>
+                    <small>报关单</small>
+                  </th>
+                  <th>
+                    <small>放行通知书</small>
+                  </th>
+                  <th>
+                    <small>提单</small>
+                  </th>
+                  <th>
+                    <small>运输发票</small>
+                  </th>
+                  <th>
+                    <small>其他资料</small>
+                  </th>
+                  <th>
+                    <small>报关资料</small>
+                  </th>
+                  <th>
+                    <small>开票资料</small>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="tbody">
+              </tbody>
+            </table>
+            <div class="purpage page_turn">
+              <ul id="page"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    $(function () {
+      fileTable(1)
+
+      function crepage(e, page, totalpage, getEvent) {
+        var element = e
+        totalpage = Math.ceil(totalpage / 10)
+        element.bootstrapPaginator({
+          bootstrapMajorVersion: 3, //bootstrap版本
+          currentPage: page, //当前页面
+          numberOfPages: 7, //一页显示几个按钮（在ul里面生成5个li）
+          totalPages: totalpage != 0 ? totalpage : 1, //总页数
+          itemTexts: function (type, page, current) {
+            switch (type) {
+              case "first":
+                return "首页";
+              case "prev":
+                return "上一页";
+              case "next":
+                return "下一页";
+              case "last":
+                return "末页";
+              case "page":
+                return page;
+            }
+          },
+          onPageClicked: function (event, originalEvent, type, page) {
+            getEvent(page)
+          }
+        })
+      }
+      var tabCounter = 0;
+      var $tab = $('#doc-tab-demo-1');
+      var $nav = $tab.find('.am-tabs-nav');
+      var $bd = $tab.find('.am-tabs-bd');
+
+      function addTab() {
+        var nav = '<li><span class="am-icon-close"></span>' +
+          '<a href="javascript: void(0)">标签 ' + tabCounter + '</a></li>';
+        var content = '<div class="am-tab-panel">动态插入的标签内容' + tabCounter + '</div>';
+
+        $nav.append(nav);
+        $bd.append(content);
+        tabCounter++;
+        $tab.tabs('refresh');
+      }
+
+      function fileTable(page) {
+        $.get('/api/clearance', {
+          keyword: $("#ddh").val(),
+          token: $.cookie("token"),
+          gtstatus: 2,
+          page: page,
+          pageSize: 10,
+        }, function (res) {
+          var data = res.rows;
+          var html = '';
+          console.log(data)
+          if (data != null && data != '') {
+            data.map(function (item, index) {
+              html += `<tr data-id="${item.id}">
+              <td>
+                <a>
+                  <small>${item.ordnumber}</small>
+                </a>
+              </td>
+              <td>
+                <small>暂无</small>
+              </td>
+              <td>
+                  <a href="#" class="btn btn-s-md btn-primary uploadImage" data-upload="image" data-input="generator${index}" data-name="generator">
+                       `+ ((item.generator != null && item.generator != '') ? '已有文件上传' : '上传') +`
+                  </a>
+                  <input type="hidden" class="fileReader generator${index}" name="generator" value="` +
+                (item.generator != null ? item.generator : '') +
+                `">
+              </td>
+              <td>
+                  <a href="#" class="btn btn-s-md btn-primary uploadImage" data-upload="image" data-input="prerecord${index}" data-name="prerecord">
+                       `+ ((item.prerecord != null && item.prerecord != '') ? '已有文件上传' : '上传') +`
+                  </a>
+                  <input type="hidden" class="fileReader prerecord${index}" name="prerecord" value="` +
+                (item.prerecord != null ? item.prerecord : '') +
+                `">
+              </td>
+              <td>
+                  <a href="#" class="btn btn-s-md btn-primary uploadImage" data-upload="image" data-input="declare${index}" data-name="declare">
+                      `+ ((item.declare != null && item.declare != '') ? '已有文件上传' : '上传') +`
+                  </a>
+                  <input type="hidden" class="fileReader declare${index}" name="declare" value="` +
+                (item.declare != null ? item.declare : '') +
+                `">
+              </td>
+              <td>
+                  <a href="#" class="btn btn-s-md btn-primary uploadImage" data-upload="image" data-input="release${index}" data-name="release">
+                       `+ ((item.release != null && item.release != '') ? '已有文件上传' : '上传') +`
+                  </a>
+                  <input type="hidden" class="fileReader release${index}" name="release" value="` +
+                (item.release != null ? item.release : '') +
+                `">
+              </td>
+              <td>
+                  <a href="#" class="btn btn-s-md btn-primary uploadImage" data-upload="image" data-input="lading${index}" data-name="lading">
+                        `+ ((item.lading != null && item.lading != '') ? '已有文件上传' : '上传') +`
+                  </a>
+                  <input type="hidden" class="fileReader lading${index}" name="lading" value="` +
+                (item.lading != null ? item.lading : '') +
+                `">
+              </td>
+              <td>
+                  <a href="#" class="btn btn-s-md btn-primary uploadImage" data-upload="image" data-input="transport${index}" data-name="transport">
+                        `+ ((item.transport != null && item.transport != '') ? '已有文件上传' : '上传') +`
+                  </a>
+                  <input type="hidden" class="fileReader transport${index}" name="transport" value="` +
+                (item.transport != null ? item.transport : '') +
+                `">
+              </td>
+              <td>
+                  <a href="#" class="btn btn-s-md btn-primary uploadImage" data-upload="image" data-input="other_info${index}" data-name="other_info">
+                       `+ ((item.other_info != null && item.other_info != '') ? '已有文件上传' : '上传') +`
+                  </a>
+                  <input type="hidden" class="fileReader other_info${index}" name="other_info" value="` +
+                (item.other_info != null ? item.other_info : '') +
+                `">
+              </td>
+              <td>
+                <div class="am-form-file">
+                   <a href="/api/download/clearance_material/${item.id}?token=`+$.cookie('token')+`"><button class="am-btn am-btn-default am-btn-xs">下载</button></a>
+                </div>
+              </td>
+              <td>
+                <div class="am-form-file">
+                   <a href="/api/download/invoice_material/${item.id}?token=`+$.cookie('token')+`"><button class="am-btn am-btn-default am-btn-xs">下载</button></a>
+                </div>
+              </td>
+              </tr>`
+            })
+            $('#tbody').html(html);
+            crepage($('#page'), data.current_page, data.total, fileTable)
+          } else {
+            $('#tbody').html('<tr><td colspan="11" style="text-align:center">暂无数据</td></tr>');
+          }
+        })
+      }
+
+      //  查看图片
+      function imgMagnify(imgUrl) {
+        layer.open({
+          type: 1,
+          title: false,
+          closeBtn: 2,
+          area: '80%',
+          offset: '10%',
+          move: '.imgDrag',
+          skin: 'layui-layer-nobg', //没有背景色
+          content: '<div style="text-align: center">' +
+          '<img  class="imgDrag" style="max-width:100%" src="' + imgUrl + '">' +
+          '</div>'
+        });
+      }
+
+      function randerImage(target, imgList, glue) { //渲染图片
+        glue = glue || '|';
+        if (!imgList) {
+          return false;
+        }
+       // console.log(imgList);
+        if (typeof imgList !== 'string') {
+          return layer.alert('地址只能是字符串!');
+        }
+        imgList = imgList.split(glue);
+        console.log(imgList);
+            for (var i = 0, html = ''; i < imgList.length; i++) {
+                if (/\.jpg$|\.png$|\.gif$|\.jpeg/i.test(imgList[i])){
+                    imgSrc = '<img src="' + imgList[i] + '" data-src="' + imgList[i] + '"> ' +
+                    '<span class="gc_item_action"> ' +
+                    '<span class="gc_preview">预览</span> ' +
+                    '<span class="gc_delete">删除</span> ' +
+                    '</span>'
+                } else if (/\.pdf/i.test(imgList[i])) {
+                    window_url = '/images/center/pdf.png'
+                    imgSrc = '<img src="' + window_url + '" data-src="' + imgList[i] + '"> ' +
+                    '<span class="gc_item_action"> ' +
+                    '<span class="gc_preview pdf">预览</span> ' +
+                    '<span class="gc_delete">删除</span> ' +
+                    '</span>'
+                }else if (/\.ppt/i.test(imgList[i])) {
+                    window_url = '/images/center/ppt.png'
+                }else if (/\.doc$|\.docx/i.test(imgList[i])) {
+                    window_url = '/images/center/doc.png'
+                } else if (/\.xls$|\.xlsx/i.test(imgList[i])) {
+                    window_url = '/images/center/doc.png'
+                } else {
+                    window_url = '/images/center/zip.png'
+                }
+                if(!/\.jpg$|\.png$|\.gif$|\.jpeg$|\.pdf/i.test(imgList[i])){
+                    imgSrc = '<img src="' + window_url + '" data-src="' + imgList[i] + '"> ' +
+                    '<span class="gc_item_action"> ' +
+                    '<span class="gc_download">下载</span> ' +
+                    '<span class="gc_delete">删除</span> ' +
+                    '</span>'
+                }
+                html = '<li class="gc_item"> ' + imgSrc +'</li>'
+                target.append(html);
+            }
+      }
+      $(document).off('click','uploadImage')
+      $(document).on('click','.uploadImage',function(){
+          var $this = $(this);
+              name = $this.data('name')
+              id = $this.closest('tr').data('id')
+          /* 添加一个舞台 */
+          $(document.body)
+            .append('<div class="gc_upload_image"> ' +
+              '<ul class="gc_file_list"></ul> ' +
+              '<div class="gc_upload_btn"> ' +
+              '<i class="gc_upload_icon">+</i> ' +
+              '</div> ' +
+              '<input multiple type="file" class="gc_upload_input" data-id="'+id+'" data-name="'+name+'" data-input="' + $this.data('input') + '"> ' +
+              '</div>');
+          var $box = $('.gc_upload_image');
+          /* 首先根据input的值渲染图片*/
+           console.log(name);
+          console.log($("."+$this.data('input')+"").val());
+          randerImage($('.gc_file_list'), $("."+$this.data('input')+"").val());
+          $box.on('click', '.gc_upload_btn', function () {     //  上传按钮
+              $(this).next().trigger('click');
+            })
+            .on('change', '.gc_upload_input', function () {  //  上传至服务器
+             gc_upload_image(this);
+            })
+            .on('click', '.gc_preview', function () {        //  预览
+                if($(this).hasClass('pdf')){
+                    window.open($(this).parent().prev().data('src'))
+                } else {
+                    imgMagnify($(this).parent().prev().data('src'));
+                }
+            })
+            .on('click', '.gc_download', function () {        //下载
+                var img = $(this).parent().prev(),
+                    url = img.data('src')
+                window.location.href = url
+            })
+            .on('click', '.gc_delete', function () {         //  删除
+              var img = $(this).parent().prev(),
+                url = img.data('src'),
+                name = $box.find('.gc_upload_input').data('name'),
+                id = $box.find('.gc_upload_input').data('id'),
+                imgInput = $('.' + $box.find('.gc_upload_input').data('input') +'');
+              img.parent().remove();
+              if (imgInput.val() != '') {
+                var arrImg = imgInput.val().split('|');
+                for (var i = 0; i < arrImg.length; i++) {
+                  if (arrImg[i] == url) {
+                    arrImg.splice(i, 1);
+                    break;
+                  }
+                }
+                imgInput.val(arrImg.join('|'));
+                var filen = {
+                    "token": $.cookie('token')
+                }
+                filen[name] = imgInput.val()
+                fileData(filen,id)
+              }
+            });
+          /* 展示舞台 */
+          layer.open({
+            type: 1,
+            content: $box,
+            title: "添加图片",
+            area: '680px',
+            end: function () { //  弹窗被销毁时触发的回调
+              $('.gc_upload_image').remove();
+              if ($($this.data('input')).val() != '') {
+                if ($this.data('change')) {
+                  $this.addClass($this.data('change')).removeClass('btn-primary');
+                }
+                if ($this.data('changetext')) {
+                  $this.text($this.data('changetext'));
+                }
+              } else {
+                if ($this.data('change')) {
+                  $this.removeClass($this.data('change')).addClass('btn-primary');
+                }
+                if ($this.data('changetext')) {
+                  $this.text('上传图片');
+                }
+              }
+            }
+          });
+      })
+
+      function gc_upload_image(el) {
+        var target = $('[name=' + $(el).data('name') +']'),
+          show = $('.gc_file_list'),
+          name = $(el).data('name'),
+          id = $(el).data('id')
+          // uploadUrl = '/api/upload'; // 上传地址
+          var s = target.val();
+          var n = (s.split('/images/')).length;
+        if($('.hetong').index() !='-1') {
+            if(n>10){
+                layer.alert('最多上传10张图片！');
+                return false;
+            }
+        }
+        for (var i = 0, f; i < el.files.length; i++) {
+              f = el.files[i];
+              uploadingImage(f);
+        }
+        // 上传
+        function uploadingImage(f) {
+            // var id = $(this).parents('tr').data('id')
+            let formData = new FormData();
+            formData.append('token', $.cookie('token'))
+            formData.append('fileList', f)
+            $.ajax({
+              type: 'POST',
+              contentType: false,
+              processData: false,
+              mimeType: "multipart/form-data",
+              url: '/api/upload',
+              data: formData,
+              dataType:'json',
+              success: function (data) {
+                if (data.code == 200) {
+                    layer.msg('上传成功')
+                    var imgList = target.val();
+                        msg = data.msg
+                        imgList += imgList == '' ? msg : '|' + msg;
+                        target.val(imgList);
+                        randerImage(show, msg)
+                    var filen = {
+                        "token": $.cookie('token')
+                    }
+                    filen[name] = target.val()
+                    fileData(filen,id)
+                } else {
+                    layer.msg('上传失败，原因：'+data.msg)
+                }
+              }
+            })
+        }
+      }
+
+      //预览文件
+      $(document).on('click', '.preview', function () {
+        var $this = $(this),
+          url = $this.parent().next().children('input[type="hidden"]').val();
+        if (url === '') {
+          return false;
+        }
+        if (!/\.jpg$|\.png$|\.gif$|\.jpeg$|\.pdf/i.test(url)){
+            let http =  window.location.protocol
+            let domain =  window.location.host
+            let window_url = http + '//' + domain + url
+            console.log(window_url);
+            layer.open({
+                type: 2,
+                content: 'https://view.officeapps.live.com/op/view.aspx?src=' + window_url,
+                // content: 'https://view.officeapps.live.com/op/view.aspx?src=http://112.13.199.14:814/images/20190610/ihi0HXmjo0hONkfgVKlWg0BAehJ8GNUqOUK4mXNI.docx',
+                area: ['1000px','650px']
+            })
+        } else {
+            window.open(url)
+        }
+      });
+
+      function downloadFile(url, name) {
+        var a = document.createElement('a'),
+          list = url.split('/');
+        a.href = url;
+        a.download = name || list[list.length - 1];
+        $(document.body).append(a);
+        a.click();
+        a.parentNode.removeChild(a);
+      }
+
+      // 下载报关文件
+      $(document).on('click', '.download', function () {
+        var $this = $(this),
+          url = $(this).parent().next().children('input[type="hidden"]').val();
+        if (url === '') {
+          return false;
+        }
+        downloadFile(url, $this.data('filename'))
+      });
+
+      function fileData(filen,id){
+          $.ajax({
+            type: 'post',
+            url: '/api/clearance/update/' + id,
+            data: filen,
+            success: function (res) {
+              if (res.code == 200) {
+                fileTable(1)
+                layer.msg("修改成功")
+              }else {
+                layer.msg('修改失败')
+              }
+            }
+          })
+      }
+    });
+  </script>
+</body>

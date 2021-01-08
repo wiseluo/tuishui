@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="../../static/css/amazeui.min.css" rel="stylesheet">
+    <link href="../../static/js/select2/css/select2.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="../../static/js/layer/theme/default/layer.css">
+  <script type="text/javascript" src="../../hui/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="../../static/js/amazeui.min.js"></script>
+  <script src="../../static/js/select2/js/select2.min.js"></script>
+  <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="../../static/js/common.js"></script>
+  <script type="text/javascript" src="../../static/js/layer/layer.js"></script>
+  <script type="text/javascript" src="../../static/js/bootstrap-paginator.min.js"></script>
+</head>
+<style>
+    .active {
+        background-color: #FFC;
+    }
+    .red {
+        color:red;
+    }
+    .imgBox li {
+        width: 90%;
+    }
+    .am-form-file {
+        display: inline-block;
+    }
+    .select2-container{z-index: 0}
+</style>
+
+<body>
+  <div id="newbrand">
+    <div class="am-popup-inner">
+      <div class="am-popup-hd">
+        <h4 class="am-popup-title">品牌基本信息</h4>
+        <a href="./brand.html" class="brand-close"><span data-am-modal-close class="am-close">&times;</span></a>
+      </div>
+      <div class="am-popup-bd">
+        <fieldset>
+          <div class="am-form-group">
+            <label for="doc-ipt-text-1">
+              <small class="red">*</small><small>品牌名称</small>
+            </label>
+            <input id="name" type="text" class="" name="name" placeholder="输入品牌名称">
+          </div>
+          <div class="am-form-group">
+            <label>
+              <small class="red">*</small><small>品牌类型</small>
+            </label>
+            <select data-am-selected name="type" id="type">
+            </select>
+          </div>
+          <div class="am-form-group">
+            <label>
+              <small class="red">*</small><small>产品分类</small>
+            </label>
+            <select name="classify" id="classify">
+            </select>
+          </div>
+          <div class="imgBox">
+            <ul class="am-avg-sm am-thumbnails">
+              <li>
+                <div class="am-form-file logo_img">
+                  <button type="button" class="am-btn am-btn-default am-btn-sm">
+                    <i class="am-icon-cloud-upload"></i><small class="red">*</small>品牌 Logo 图</button>
+                  <input type="file" accept="image/*" id="logo_img" multiple>
+                  <input type="hidden" name="logo_img">
+                </div>
+                <div class="am-form-file"></div>
+              </li>
+              <li>
+                <div class="am-form-file auth_img">
+                  <button type="button" class="am-btn am-btn-default am-btn-sm">
+                    <i class="am-icon-cloud-upload"></i>授权书</button>
+                  <input type="file" accept="image/*" id="auth_img" multiple>
+                  <input type="hidden" name="auth_img">
+                </div>
+                <div class="am-form-file"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="am-form-group">
+            <label>
+              <small class="red">*</small><small>联系人</small>
+
+            </label>
+            <a type="button" class="am-btn am-btn-primary am-btn-xs addlinks">选择</a>
+            <div class="am-g" style="padding-top:10px">
+              <table class="am-table am-table-bordered am-table-radius am-table-striped" id="links_list">
+                <thead>
+                  <tr>
+                    <th>
+                      <small>选择</small>
+                    </th>
+                    <th>
+                      <small>名字</small>
+                    </th>
+                    <th>
+                      <small>电话</small>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="am-form-group">
+              <label>
+                <small>审核意见</small>
+              </label>
+              <textarea class="opinion" id="opinion" rows="3" disabled></textarea>
+          </div>
+          <p class="buttonContent">
+            <a id="addBrand" type="button" class="submit_btn am-btn am-btn-primary" data-type="2">确定添加</a>
+            <a id="saveBrand" type="button" class="submit_btn am-btn am-btn-primary" data-type="1">保存草稿</a>
+          </p>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<script>
+  var type_str_id = 0;
+
+  function ObjEach(obj, e) {
+    var html = ''
+    // console.log(obj)
+    for (var i in obj) {
+      html += '<option value="' + i + '">' + obj[i] + '</option>'
+    }
+    e.html(html)
+  }
+  function getLinks() {
+    $.get('/api/links', {
+      token: $.cookie("token"),
+    }, function (res) {
+      var html = '',
+      data = res.data.data
+      console.log(data)
+      for (var i = 0; i < data.length; i++) {
+        html += '<tr data-id="' + data[i].id + '">' +
+          '<td>' + data[i].name + '</td>' +
+          // '<td>' + data[i].country + '</td>' +
+          // '<td>' + data[i].address + '</td>' +
+          '<td>' + data[i].phone + '</td>' +
+          '</tr>'
+      }
+      $('#linksList tbody').html(html)
+    })
+  }
+
+  $(function () {
+    $.get('/api/father/17', {  //品牌类型
+      token: $.cookie('token')
+    }, function (res) {
+      ObjEach(res.data, $('#type'))
+    })
+    $.get('/api/father/18', {  //产品分类
+      token: $.cookie('token')
+    }, function (res) {
+      // ObjEach(res.data, $('#classify'))
+      let html = ''
+      for (var i in res.data) {
+        html += '<option value="' + i + '">' + res.data[i] + '</option>'
+      }
+       $('#classify').html(html)
+       $('#classify').select2()
+    })
+
+    if (getUrlParam("id") != null && getUrlParam("id") != '') {
+      $.get('/api/brand/' + getUrlParam('id'), {
+        token: $.cookie('token')
+      }, function (res) {
+        $("#name").val(res.data.name)
+        $("[name='auth_img']").val(res.data.auth_img)
+        $("[name='logo_img']").val(res.data.logo_img)
+        setTimeout(function(){
+          $('#type').val(res.data.type).change()
+        $('#classify').val(res.data.classify).change()
+        },600)
+        type_str_id = res.data.type
+        creImg(res.data.auth_img, 'auth_img')
+        creImg(res.data.logo_img, 'logo_img')
+        if (res.data.link != null) {
+          $('#links_list tbody').html(
+            '<tr id="' + res.data.link.id + '">' +
+            '<td><input type="radio" name="links_id" value="' + res.data.link.id + '"></td>' +
+            '<td>' + res.data.link.name + '</td>' +
+            '<td>' + res.data.link.phone + '</td>' +
+            '</tr>'
+          )
+        } else {
+          $('#links_list tbody').html('<tr><td style="text-align:center" colspan="3">没有客户</td></tr>')
+        }
+      })
+    }
+    $(document).on('click', 'table tbody tr', function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+    $(document).on('click', '.addlinks', function () {
+      layer.open({
+        type: 1,
+        title: '选择联系人',
+        area: ['600px', '400px'],
+        btn: ['确认', '取消'],
+        content: '<button class="am-btn am-btn-success new_link am-btn-sm" style="margin:10px 5px 10px 10px">新增联系人</button>' +
+          '<button class="links_btn am-btn am-btn-secondary am-btn-sm" style="display:none;margin:10px 5px 10px 10px;">保存</button>  ' +
+          '<button class="cancel_btn am-btn am-btn-warning am-btn-sm" style="display:none;margin:10px 5px 10px 10px;">取消</button>' +
+          '<form id="links_form">' +
+          '<table class="am-table am-table-bordered" id="linksList">' +
+          '<thead>' +
+          '<tr>' +
+          '<th>联系人</th>' +
+          // '<th>国家</th>' +
+          // '<th>详细地址</th>' +
+          '<th>联系电话</th>' +
+          '</tr>' +
+          '</thead>' +
+          '<tbody>' +
+          '</tbody>' +
+          '</table></form>',
+        success: function () {
+          getLinks()
+        },
+        btn1: function (i) {
+          if ($('#linksList .new_tr').length > 0) {
+            layer.msg('请先保存联系人信息')
+            return false
+          } else if ($('#linksList tbody tr.active').length < 0) {
+            layer.msg('请先点击选择一条联系人数据')
+            return false
+          }
+          var id = $('#linksList tbody tr.active').data('id')
+          var name = $('#linksList tbody tr.active td:eq(0)').text()
+          var phone = $('#linksList tbody tr.active td:eq(1)').text()
+          console.log(name)
+          $('#links_list tbody').html(
+            '<tr id="' + id + '">' +
+            '<td><input type="radio" checked name="links_id" value="' + id + '"></td>' +
+            '<td>' + name + '</td>' +
+            '<td>' + phone + '</td>' +
+            '</tr>'
+          )
+          layer.close(i)
+        }
+      })
+    }).on('click', '.submit_btn', function () {
+      var data = $('#brandForm').serializeObject()
+    }).on('click', '.new_link', function () {
+      var html = '<tr class="new_tr">' +
+        '<td>' +
+        '<input type="text" name="name" class="am-form-field" placeholder="姓名" value="">' +
+        '</td>' +
+        // '<td>' +
+        // '<input type="text" name="country" class="am-form-field" placeholder="国家"  value="">' +
+        // '</td>' +
+        // '<td>' +
+        // '<input type="text" name="address" class="am-form-field" placeholder="详细地址"  value="">' +
+        // '</td>' +
+        '<td>' +
+        '<input type="text" name="phone" class="am-form-field" placeholder="联系人电话"  value="">' +
+        '</td>' +
+        '</tr>'
+      $('#linksList tbody').prepend(html)
+      $('.links_btn,.cancel_btn').css('display', 'inline-block')
+    }).on('click', '.links_btn', function () {
+      var data = $('#links_form').serializeObject()
+      $.post('/api/links', {
+        token: $.cookie('token'),
+        data
+      }, function (res) {
+        // res = JSON.parse(res)
+        if (res.code == 200) {
+          layer.msg('新建成功')
+          $('#links_btn').css('display', 'none')
+          $('.new_tr').remove()
+          getLinks()
+        }else {
+          layer.msg('新建失败')
+        }
+      })
+    }).on('click', '.cancel_btn', function () {
+      //取消新建
+      $('.links_btn,.cancel_btn').css('display', 'none')
+      $('.new_tr').remove()
+    })
+
+
+    $("#addBrand,#saveBrand").click(function () {
+      var data = {
+        'token': $.cookie('token'),
+        'link_id': $("#links_list input[name='links_id']:checked").val(),
+        'type': $("#type option:selected").attr('value'),
+        'logo_img': $("[name='logo_img']").val(),
+        'auth_img': $("[name='auth_img']").val(),
+        'classify': $("#classify option:selected").attr("value"),
+        'name': $("#name").val(),
+        'status': $(this).data('type')
+      }
+      if (getUrlParam("type")) {
+        $.ajax({
+          type: 'put',
+          url: '/api/brand/' + getUrlParam("id"),
+          data: data,
+          success: function (data) {
+            layer.msg(data.msg)
+            if (data.code == 200) {
+              setTimeout(function () {
+                $('.brand-close span').trigger('click')
+              }, 700)
+            }
+          }
+        })
+      } else {
+        $.ajax({
+          type: 'POST',
+          url: '/api/brand',
+          data: data,
+          success: function (data) {
+            layer.msg(data.msg)
+            if (data.code == 200) {
+              setTimeout(function () {
+                $('.brand-close span').trigger('click')
+              }, 700)
+            }
+          }
+        })
+      }
+    })
+  })
+</script>
